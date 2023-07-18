@@ -12,11 +12,11 @@ function InputIcon() {
             </svg>
           </div>
           <select className="pl-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>กรุณาเลือกความสัมพันธ์</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
+            <option>กรุณาเลือกความสัมพันธ์</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>France</option>
+            <option>Germany</option>
           </select>
           {/* <input type="search" className="block w-full pl-10 pr-2 py-4 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" /> */}
           {/* <button type="submit" className="tw-button">Search</button> */}

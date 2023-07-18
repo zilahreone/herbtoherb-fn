@@ -6,61 +6,34 @@ import Search from './Search'
 import Card from './Card'
 import HerbDetail from './routers/HerbDetail'
 import Footer from './core/Footer'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './routers/Home'
 import Header from './core/Header.jsx'
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/",
-    element: <Home />
-  },
-]);
+import PageNotFound from './routers/PageNotFound'
+import Herb from './routers/Herb'
+import { Outlet, useLocation } from 'react-router-dom'
+import bg from '@/assets/bg/bg_top_left.png'
 
 function App() {
   const [count, setCount] = useState(0)
+  const location = useLocation()
 
   return (
-    <div className="flex flex-col min-h-screen w-full justify-between">
-      <div class="absolute w-full flex flex-row justify-center py-4">
-        <Header />
-      </div>
-      <div className=''>
-        <RouterProvider router={router} />
-      </div>
-      <Footer />
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-        {/* <div className='@container gc-h-container p-0'>
-          <Search></Search>
-          <div className='bg-green-200'>
-           <Card></Card>
+    <>
+      <div className="flex flex-col min-h-screen w-full justify-between">
+        <div className="absolute w-full flex flex-row justify-center py-4">
+          <Header />
+        </div>
+        {/* style={{ 'backgroundImage': `url(${bg})` }} */}
+        <div className=''>
+          <div className='inline-flex mt-[12vh] mx-[5vw] py-10'>
+            {location.pathname === '/' ? <Home /> : <Outlet />}
           </div>
-        </div> */}
-           {/* <HerbDetail></HerbDetail> */}
-    </div>
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </div>
+    </>
   )
 }
 

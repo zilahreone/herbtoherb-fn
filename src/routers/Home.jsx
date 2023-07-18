@@ -1,9 +1,13 @@
 import React from 'react'
+import Dropdown from '../components/Dropdown'
+import { Link } from 'react-router-dom'
+import HerbSearch from '../components/HerbSearch'
 
 function Home() {
   return (
-    // bg-[url('@/assets/bg/bg_top_left.png')]
-    <div className="bg-slate-200 h-screen pt-32">Home cdsfds</div>
+    <div>
+      <HerbSearch></HerbSearch>
+    </div>
   )
 }
 

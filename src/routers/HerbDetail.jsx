@@ -2,6 +2,7 @@ import React from 'react'
 import CardDetail from '../components/CardDetail'
 import Table from '../components/Table'
 import InputIcon from '../components/InputIcon'
+import { ScrollRestoration, useParams } from 'react-router-dom'
 
 const herbDetail = {
   name: 'กระเจี๊ยบแดง',
@@ -10,6 +11,7 @@ const herbDetail = {
 }
 
 function HerbDetail() {
+  const { herbId } = useParams()
   return (
     <>
       <div className='flex md:flex-row flex-col gap-2 bg-blue-100'>
