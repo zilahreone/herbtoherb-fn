@@ -80,7 +80,7 @@ function HerbSearch() {
         </div>
         <div className='flex flex-col items-center w-[80vw] h-[30vh] rounded-xl shadow-xl bg-gray-100'>
           <div className='mt-20 flex gap-6'>
-            <div className='min-w-fit w-1/4'>
+            <div className='min-w-fit'>
               <Dropdown
                 headIcon={
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4" >
@@ -96,7 +96,7 @@ function HerbSearch() {
                 }
               />
             </div>
-            <div className='min-w-fit w-1/4'>
+            <div className='min-w-fit'>
               <Dropdown
                 headIcon={
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 mr-4" >
@@ -107,7 +107,7 @@ function HerbSearch() {
                 selected={'Group of functional Ingredients'}
               />
             </div>
-            <div className='min-w-fit w-1/4'>
+            <div className='min-w-fit'>
               <Dropdown
                 headIcon={
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4" >
@@ -120,9 +120,9 @@ function HerbSearch() {
           </div>
         </div>
         <div className='-mt-8'>
-          <button type="submit" className="tw-button-submit font-medium rounded-full text-std px-12 py-4">
-            <Link to={'/herb'} >ค้นหา</Link>
-          </button>
+          <Link to={'/herb'} >
+            <button type="submit" className="tw-button-submit font-medium rounded-full text-std px-12 py-4">ค้นหา</button>
+          </Link>
         </div>
       </div>
     </>

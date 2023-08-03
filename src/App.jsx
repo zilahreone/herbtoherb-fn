@@ -10,7 +10,7 @@ import Home from './routers/Home'
 import Header from './core/Header.jsx'
 import PageNotFound from './routers/PageNotFound'
 import Herb from './routers/Herb'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
 import bg from '@/assets/bg/bg_top_left.png'
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
         <div className=''>
           <div className='inline-flex mt-[12vh] mx-[5vw] py-10'>
             {location.pathname === '/' ? <Home /> : <Outlet />}
+            <ScrollRestoration />
           </div>
         </div>
         <div>

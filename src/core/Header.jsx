@@ -40,7 +40,7 @@ function Header() {
           </nav>
         </div>
         <div>
-          <button className='tw-button-submit w-[242px] h-[50px]'>Button</button>
+          {/* <button className='tw-button-submit w-[242px] h-[50px]'>Button</button> */}
         </div>
       </div>
   )

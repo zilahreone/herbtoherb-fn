@@ -22,6 +22,15 @@
 .tw-button-submit {
   @apply text-white font-semibold rounded-full bg-gradient-to-b from-[#9D1A9F] to-[#572A80]
 }
+.tw-tab {
+  @apply cursor-pointer inline-flex items-center justify-center p-4 text-std text-blue-600 rounded-t-lg bg-gray-100
+}
+.tw-tab-active {
+  @apply bg-gradient-to-b from-[#9D1A9F] to-[#572A80] text-white
+}
+.tw-bg {
+  @apply bg-gradient-to-b from-[#9D1A9F] to-[#572A80]
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
