@@ -1,0 +1,1914 @@
+[
+  {
+    "functional_ingredient": "cyanidin-3-glucoside",
+    "important_health_benefits": [
+      "Anti-inflammatory effects",
+      "Potent antioxidant"
+    ],
+    "health_system_disease": [
+      "Immunity",
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "cyaniding-3-rutinoside",
+    "important_health_benefits": [
+      "Anti-mutagenesis and anticarcinogenesis"
+    ],
+    "health_system_disease": [
+      "Cancer"
+    ]
+  },
+  {
+    "functional_ingredient": "Gymnamic acid",
+    "important_health_benefits": [
+      "Block receptors in your intestines and thus sugar absorption, lowering your post-meal blood sugar levels",
+      "Stimulate insulin production in your pancreas, promoting the regeneration of insulin-producing islet cells",
+      "Reduce the production of substances linked to inflammation",
+      "Improve cholesterol and triglyceride levels",
+      "Block sweet receptors on taste buds"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Diabetes",
+      "Immunity",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "Schizandrins",
+    "important_health_benefits": [
+      "Boosting energy at the cellular level",
+      "Anti-inflammatory (Speeding recovery after surgery)",
+      "Protecting the liver from poisons",
+      "Improves attention and speed of thinking",
+      "Regulates blood sugar level"
+    ],
+    "health_system_disease": [
+      "Energy",
+      "Immunity",
+      "Liver",
+      "MentalHealth",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "เควอเซติน (Quercetin)",
+    "important_health_benefits": [
+      "Reduce blood pressure",
+      "Reduce the risk of chronic brain disorders",
+      "Inhibit cancer cell proliferation",
+      "Reduce the production of substances linked to inflammation",
+      "Ease allergy symptoms"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Brain",
+      "Cancer",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "เคอร์คูมิน (Curcumin)",
+    "important_health_benefits": [
+      "Anti-inflammatory"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "เคอร์คูมีนอยด์(Curcuminoid)",
+    "important_health_benefits": [
+      "Anti-inflammatory"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "เซซามิน (Sesamin)",
+    "important_health_benefits": [
+      "Regulate blood pressure level",
+      "Reduce LDL and triglycerides",
+      "Reduce blood sugar levels",
+      "Improve bone health"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "LipidLevels",
+      "Obesity",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "เซลลูโลส (Cellulose)",
+    "important_health_benefits": [
+      "Prevent breast cancer through nonestrogen pathways among postmenopausal women",
+      "Protect type 2 (non-insulin-dependent) diabetes",
+      "Keep the digestive tract flowing",
+      "Reduces risk of weight and fat gains"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes",
+      "Digestive",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "เทอพีนแลคโตน (Terpene lactones)",
+    "important_health_benefits": [
+      "Plasma protein-binding and platelet-activating factor antagonistic activity"
+    ],
+    "health_system_disease": [
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "เทอพีนอยด์ (Terpenoids)",
+    "important_health_benefits": [
+      "Prevent liver cancer",
+      "Relieves constipation",
+      "Anti-inflammatory",
+      "Antimicrobial",
+      "Antiviral",
+      "Stimulates immunity",
+      "Treatment of liver tumors"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Digestive",
+      "Immunity",
+      "Liver"
+    ]
+  },
+  {
+    "functional_ingredient": "เบต้า แคโรทีน (Beta-carotene)",
+    "important_health_benefits": [
+      "Reduce or prevent oxidative stress in the body",
+      "Prevent breast cancer through nonestrogen pathways among postmenopausal women",
+      "Prevent vision loss/ worsening age-related macular degeneration",
+      "Decrease sunburn/ Reduce sensitivity to the sun"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Eye",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "เบต้า กลูแคน (Beta-glucan)",
+    "important_health_benefits": [
+      "Prevent breast cancer/gastric cancer",
+      "Prevent heart disease",
+      "Enhance immune activation, which translates into anti-cancer activity",
+      "Reduce LDL",
+      "Reduce the risk of type 2 diabetes"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Cardiovascular",
+      "Immunity",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "เพกติน (Pectin)",
+    "important_health_benefits": [
+      "Protect the intestinal barrier from damage",
+      "Improve health and prevent disease by stimulating the growth and diversity of microbiota communities of small intestine"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "เพรกเนนไกลโคไซด์ (Pregnane glycosides)",
+    "important_health_benefits": [
+      "Produced melanocortin receptors-mediated suppression of food intake"
+    ],
+    "health_system_disease": [
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "เหล็ก (Iron)",
+    "important_health_benefits": [
+      "Need for heme synthesis in erythroid cells",
+      "Prevent fatigue and improve muscle strength"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Energy"
+    ]
+  },
+  {
+    "functional_ingredient": "เอเชียติโคไซด์ (Asiaticoside)",
+    "important_health_benefits": [
+      "Increased levels of antioxidants (enzymatic and nonenzymatic)",
+      "Has an anti-inflammatory property by inhibition of nitric oxide (NO)  and reduce pain (antinociception)",
+      "Increase collagen formation and angiogenesis and increase the tensile strength of the newly formed skin, furthering the healing of the wounds"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Immunity",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "เอมบริคานิน(Emblicanin)",
+    "important_health_benefits": [
+      "Keep free radical levels in balance/ Protect body against oxidative stress",
+      "Antimicrobial/Antiviral",
+      "Protect skin diseases"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Immunity",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "เฮมิเซลลูโลส (Hemicelluloses)",
+    "important_health_benefits": [
+      "Prevent breast cancer through nonestrogen pathways among postmenopausal women",
+      "Protect type 2 (non-insulin-dependent) diabetes",
+      "Keep the digestive tract flowing",
+      "Reduces risk of weight and fat gains"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes",
+      "Digestive",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "เฮสเพอริดีน (Hesperidine)",
+    "important_health_benefits": [
+      "Antiskin cancer",
+      "Anti-inflammatory",
+      "Healing, UV protection and skin lightening",
+      "Protect type 2 diabetes"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Immunity",
+      "Integumentary",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "แกมมา โอไรซานอล(Gamma-oryzanol)",
+    "important_health_benefits": [
+      "Protect tumor colon cancer",
+      "Decrease symptoms of menopause",
+      "Improve skin tone",
+      "Reduce premature aging skin",
+      "Reduce LDL and triglycerides",
+      "Sleep aids",
+      "Regulates blood sugar level"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Hormone",
+      "Integumentary",
+      "LipidLevels",
+      "MentalHealth",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "แคโรทีนอยด์ (Carotenoid)",
+    "important_health_benefits": [
+      "Enhance immune system"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "แคปไซซิน (Capsaicin)",
+    "important_health_benefits": [
+      "Modulate metabolism via activation of transient receptor potential vanilloid 1 (TRPV1), a receptors found in a range of other tissues , triggering calcium influx. Hece. Promote metabolic health"
+    ],
+    "health_system_disease": [
+      "Energy"
+    ]
+  },
+  {
+    "functional_ingredient": "แคลเซียม (Calcium)",
+    "important_health_benefits": [
+      "Lower blood pressure through  or calcitriol activation, and stimulating the renin–angiotensin–aldosterone signalling pathway that produces sodium and water reabsorption, thus increasing the vascular volume",
+      "Reduce the risk of recurrent colorectal adenomas, a benign glandular tumor of the colon and the rectum",
+      "Lower LDL cholesterol levels",
+      "Prevent  hypertensive disorders of pregnancy",
+      "Essential for constituent of anatomical structure"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Digestive",
+      "LipidLevels",
+      "Pregnancy",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "แทนนิน (Tannins)",
+    "important_health_benefits": [
+      "Regulate blood pressure level",
+      "Anti-inflammatory",
+      "Antimicrobial"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "แมกนีเซียม (Magnesium)",
+    "important_health_benefits": [
+      "Reduce the frequency, duration, and intensity of migraines",
+      "Prevent diabetic by improving insulin-sensitivity in pre-diabetics",
+      "Normal parathyroid hormone function",
+      "Reduce of kidney stone",
+      "Prevent depression by acting as a natural N-methyl-D-aspartic acid (NMDA) receptor antagonist/a coenzyme to convert tryptophan to serotonin",
+      "Treat insomnia and restless leg syndrome",
+      "Prevent metabolic syndrome",
+      "Require for conversion of vitamin D into its active form",
+      "Support calcium absorption and metabolism"
+    ],
+    "health_system_disease": [
+      "Brain",
+      "Diabetes",
+      "Hormone",
+      "Kidney",
+      "MentalHealth",
+      "MetabolicSyndrome",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "แอนโทไซยานิดิน (Anthocyanidins)",
+    "important_health_benefits": [
+      "Scavengers of reactive oxygen species (ROS) and behave as pro-oxidants"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "แอนโทไซยานิน (Anthocyanins)",
+    "important_health_benefits": [
+      "Scavengers of reactive oxygen species (ROS) and behave as pro-oxidants",
+      "Reduce of blood pressure",
+      "Suppress proliferation of cancer cell",
+      "Improve eyesight",
+      "Strong anti-inflammatory and inhibit bacterial adhesion and coaggregation",
+      "Protect against liver injuries"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "BloodPressure",
+      "Cancer",
+      "Eye",
+      "Immunity",
+      "Liver"
+    ]
+  },
+  {
+    "functional_ingredient": "แอลแลนโตอิน (Allantoin)",
+    "important_health_benefits": [
+      "Potent healing and soothing properties"
+    ],
+    "health_system_disease": [
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "แอลฟาโทโคเฟอรอล (Alpha-tocopherol)",
+    "important_health_benefits": [
+      "Keep free radical levels in balance/ Protect body against oxidative stress",
+      "Keep blood clots from forming",
+      "Reduce dementia",
+      "Prevent breast cancer",
+      "Improves digestive health",
+      "Protect skin diseases"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Blood",
+      "Brain",
+      "Cancer",
+      "Digestive",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "แอลลิซิน (Allicin)",
+    "important_health_benefits": [
+      "Scavenge free radical by reducing NOX activation and ROS generation, thus, reduce oxidative stress",
+      "Induce redox defenses depletion and then trigger apoptosis, besides, Allicin able to oxidize -SH functions in several biomolecules (i.e. cysteine, glutathione, proteins, and peptides), shifting intracellular redox status emerging glutathione depletion led to cell death, and to an overall anti-proliferative activity.",
+      "Donate hydrogen sulfide (H2S) increasing phosphorylation at endothelial nitric oxide synthase (eNOS) active site, resulting in improved NO bioavailability and inducing cardioprotective. Inhibit platelet aggregation",
+      "Lower blood sugar and prevent insulin resistance and other complications",
+      "Modulate immune responds via T cells and adhesion molecules, NF-κB activation inhibition, and TNF-α production down-regulation by T lymphocytes and macrophages"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Cardiovascular",
+      "Diabetes",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "แอลลิอิน (Alliin)",
+    "important_health_benefits": [
+      "Inhibit platelet aggregation (Anti-thrombotic)"
+    ],
+    "health_system_disease": [
+      "Blood"
+    ]
+  },
+  {
+    "functional_ingredient": "แอสตาแซนทิน (Astaxanthin)",
+    "important_health_benefits": [
+      "Inhibit reduction of antioxidant enzymes, superoxide dismutase (SOD),  and glutathione (GSH)",
+      "Inhibits MIF, IL-1β, TNF-α expression"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "โทโคเฟอรอล (Tocopherol)",
+    "important_health_benefits": [
+      "Prevent Oxidative stress by inhibiting the production of reactive oxygen species molecules",
+      "Regulate of platelet aggregation and protein kinase C activation",
+      "Protect cell membranes by increasing the orderliness of the membrane lipid packaging"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Blood",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "โบเซนเบอร์จิน (Boesenbergin)",
+    "important_health_benefits": [
+      "Induce a apoptosis resulting from mitochondrial dysfunction was assessed in human non-small cell lung cancer",
+      "Inhibit Nitric oxide (NO) production, So, reduce inflammation"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "โปรแอนโทไซยานิดิน (Proanthocyanidins)",
+    "important_health_benefits": [
+      "Scavengers of reactive oxygen species (ROS), block their propagation, and chelate metals with their o-diphenol groups",
+      "Modulate cell signaling pathways of various cell processes including growth, proliferation, and apoptosis",
+      "Inhibit the neuropeptides associated with food consumption and satiety",
+      "Decrease inflammation and inhibit bacterial adhesion and coaggregation",
+      "Inhibit digestive enzymes and suppress fat and glucose consumption"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Diabetes",
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "โปรไซยานิดิน (Procyanidins)",
+    "important_health_benefits": [
+      "Protect dementia",
+      "Suppress proliferation of cancer cell",
+      "Antimicrobial",
+      "Reduce blood sugar levels"
+    ],
+    "health_system_disease": [
+      "Brain",
+      "Cancer",
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "โปรตีน (Protein)",
+    "important_health_benefits": [
+      "Reduce blood pressure",
+      "Reduces appetite and hunger levels",
+      "Boost metabolism and increase fat burning",
+      "Reduce LDL and triglycerides",
+      "Increase muscle mass and strength"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Digestive",
+      "Energy",
+      "LipidLevels",
+      "Muscular"
+    ]
+  },
+  {
+    "functional_ingredient": "โพแทสเซียม (Potassium)",
+    "important_health_benefits": [
+      "Lower blood pressure of hypertension",
+      "Lower risk of cardiovascular disease",
+      "Reduce of kidney stone",
+      "Affect on acid-base balance of the skeleton"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Cardiovascular",
+      "Kidney",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "โพลิโคซานอล (Policosanol)",
+    "important_health_benefits": [
+      "Slow blood clotting  (Bleeding disorders)",
+      "Decrease cholesterol production in the liver",
+      "Reduce LDL and triglycerides",
+      "Regulates blood sugar level"
+    ],
+    "health_system_disease": [
+      "Cardiovacular",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "โฟเลต (Folate; Folic Acid; Vitamin B9)",
+    "important_health_benefits": [
+      "Prevent megaloblastic anaemia",
+      "Prevent neuropsychiatric disorders and cognitive decline",
+      "Prevent neural tube defects and other congenital disorders"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Brain",
+      "Pregnancy"
+    ]
+  },
+  {
+    "functional_ingredient": "โอเมก้า 3 (Omega - 3)",
+    "important_health_benefits": [
+      "Reduce blood pressure",
+      "Reduce plaque in the arteries",
+      "Reduce the chance of abnormal heart rhythm",
+      "Reduce the likelihood of heart attack and stroke",
+      "Lessen the chance of sudden cardiac death in people with heart disease",
+      "Reduce triglycerides"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Cardiovascular",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "โอเมก้า 6 (Omega - 6)",
+    "important_health_benefits": [
+      "Reduce the production of substances linked to inflammation"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "โอเมก้า 9 (Omega - 9)",
+    "important_health_benefits": [
+      "Improve insulin sensitivity",
+      "Reduce the production of substances linked to inflammation"
+    ],
+    "health_system_disease": [
+      "Diabetes",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "โอลิโกเมอริกโปรแอนโทไซยานิดิน (Oligomeric proanthocyanidins)",
+    "important_health_benefits": [
+      "Scavengers of reactive oxygen species (ROS) and behave as pro-oxidants",
+      "Modulate cell signaling pathways of various cell processes including growth, proliferation, and apoptosis",
+      "Inhibit the neuropeptides associated with food consumption and satiety",
+      "Decrease inflammation and inhibit bacterial adhesion and coaggregation",
+      "Inhibit digestive enzymes and suppress fat and glucose consumption"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Diabetes",
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "ใยอาหาร (Dietary fiber)",
+    "important_health_benefits": [
+      "Prevent breast cancer through nonestrogen pathways among postmenopausal women",
+      "Protect type 2 (non-insulin-dependent) diabetes",
+      "Keep the digestive tract flowing",
+      "Reduce appetite",
+      "Reduces risk of weight and fat gains"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes",
+      "Digestive",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "ไกลโคไซด์ (Glycosides)",
+    "important_health_benefits": [
+      "Effect on inducible nitric oxide synthase (iNOS) and cyclooxygenase-2 (COX-2); inducing cell death in human cancer cells",
+      "Reduce the formation of advanced glycation endproducts (AGEs); decrease in serum glucose levels; inducing a significant increase in insulin secretion; stimulating glycogen storage",
+      "Reduce in the expression of pro-inflammatory enzymes (COX-2, iNOS) and NO levels; protecting the vascular barrier integrity by inhibiting hyperpermeability, adhesion and migration of leukocytes",
+      "Against respiratory syncytial virus (RSV), anti-hepatitis B virus (anti-HBV)",
+      "Ameliorate the activities of superoxide dismutase (SOD), catalase (CAT), and glutathione peroxidase (GSH-Px)",
+      "Against histopathological and histochemical damage; preventive effect on Dgalactosamine-induced liver injury",
+      "Ameliorate on cholinergic blockade-induced cognitive impairment"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes",
+      "Immunity",
+      "Integumentary",
+      "Liver",
+      "Nerve"
+    ]
+  },
+  {
+    "functional_ingredient": "ไจพีโนไซด์ (Gypenosides)",
+    "important_health_benefits": [
+      "Induced DNA damage and DNA repair gene expression in human oral cancer SAS cells"
+    ],
+    "health_system_disease": [
+      "Cancer"
+    ]
+  },
+  {
+    "functional_ingredient": "ไซนารีน (Cynarine)",
+    "important_health_benefits": [
+      "Downregulate the Expression of Inducible Nitric Oxide Synthase in Human Coronary Smooth Muscle Cells"
+    ],
+    "health_system_disease": [
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรเทอ พีนอยด์ (Triterpenoids)",
+    "important_health_benefits": [
+      "Exhibit cytotoxicity against a variety of breast tumor cells"
+    ],
+    "health_system_disease": [
+      "Cancer"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรเทอพีนส์(Triterpenes)",
+    "important_health_benefits": [
+      "Stimulates immunity",
+      "Anti-inflammatory",
+      "Antiviral",
+      "Antimicrobial"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรเทอพีนส์ไกลโคไซด์(Triterpene glycosides)",
+    "important_health_benefits": [
+      "Keep free radical levels in balance/ Protect body against oxidative stress",
+      "Anti-inflammatory/Antimicrobial"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรเทอพีนส์ซาโปนินส์ (Triterpene saponins)",
+    "important_health_benefits": [
+      "Inhibit of cancer formation and progression"
+    ],
+    "health_system_disease": [
+      "Cancer"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรเทอพีนอยด์ (Triterpenoid compounds)",
+    "important_health_benefits": [
+      "Suppress proliferation of cancer cell",
+      "Anti-inflammatory",
+      "Antiviral",
+      "Antimicrobial",
+      "Antifungal"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "ไตรกลีเซอไรด์ (Medium-chain triglycerides (MCT))",
+    "important_health_benefits": [
+      "More rapidly absorbed and processed for energy"
+    ],
+    "health_system_disease": [
+      "Energy"
+    ]
+  },
+  {
+    "functional_ingredient": "ไทมอล (Thymol)",
+    "important_health_benefits": [
+      "Reduce heart disease by the carvacrol in thyme oil was an effective anti-inflammatory agent with cardioprotective capabilities, making it potentially beneficial for people with heart disease.",
+      "Improve oral health (The compound is an ingredient in several dental products, including Listerine Cool Mint mouthwash)",
+      "Reduce acne-causing bacteria on the skin",
+      "Prevent hair loss (need more research)",
+      "Protect breast cancer",
+      "Treat coughs and reduce the duration of respiratory tract infections, such as the common cold"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Digestive",
+      "Integumentary",
+      "Respiratory"
+    ]
+  },
+  {
+    "functional_ingredient": "ไนอาซิน (Vitamin B3) Niacin",
+    "important_health_benefits": [
+      "Lower LDL-C and very low-density lipoprotein Lipid levels and triglycerides and raises HDL-C",
+      "Treat of depression by its vasodilatory properties"
+    ],
+    "health_system_disease": [
+      "LipidLevels",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "ไบโลบาไลด์ (Bilobalide)",
+    "important_health_benefits": [
+      "Antagonist to GABA receptor"
+    ],
+    "health_system_disease": [
+      "Nervous"
+    ]
+  },
+  {
+    "functional_ingredient": "ไฟโคไซยานิน (Phycocyanin)",
+    "important_health_benefits": [
+      "Regulate blood pressure level",
+      "Anti-proliferation and pro-apoptotic effects on different cancer cell lines",
+      "Anti-inflammatory",
+      "Improves Symptoms of Allergic Rhinitis",
+      "Reduce LDL and triglycerides"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Cancer",
+      "Immunity",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "ไลโคพีน (Lycopene)",
+    "important_health_benefits": [
+      "Keep free radical levels in balance/ Protect body against oxidative stress",
+      "Reduce the incidence of lung, breast and kidney cancer",
+      "Reduce heart disease risk",
+      "Reduce the intensity of skin redness following exposure to UV rays",
+      "Reduce LDL and triglycerides"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Cardiovacular",
+      "Integumentary",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "ไอโอดีน (Iodine)",
+    "important_health_benefits": [
+      "Act as a specific scavenger of hydroxyl radicals",
+      "Essential for brain development during childhood",
+      "Reduce the incidence of breast cancer",
+      "Require for thyroid hormone synthesis",
+      "Strengthen the T-cell adaptive immune system"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "Cancer",
+      "Hormone",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดเฟอรูลิ (Ferulic acid)",
+    "important_health_benefits": [
+      "Scavenge superoxide anion radical and inhibits the lipid peroxidation"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดเอเชียติก (Asiatic acid)",
+    "important_health_benefits": [
+      "Inducible nitric oxide synthase (iNOS) and connected with the increase in the activities of antioxidant enzymes (CAT, superoxide dismutase [SOD], and GPx)",
+      "Maintain the stability of the blood-brain barrier and by protecting the mitochondrial functions and benefit cognitive function with less effect on blood pressure",
+      "Inhibit of tumor proliferation, survival, and metastasis",
+      "Stimulate collagen I synthesis in Human Keloid Fibroblasts via PPAR-γ Activation,  help burn wound healing",
+      "Protect the liver from injury via  mechanisms underlying antimitochondrial stress and and inflammation"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "Cancer",
+      "Integumentary",
+      "Liver"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดเออโซลิก (Ursolic acid)",
+    "important_health_benefits": [
+      "Inhibit cancer cell proliferation",
+      "Reduce lipid peroxide level by scavenging free radicals, improve lipid profiles, and decrease the serum levels of membrane-bound proteins after 7 days of treatment",
+      "Reduce blood glucose level",
+      "Reduce the production of substances linked to inflammation",
+      "Protect against several liver diseases, such as fatty liver disease, liver fibrosis, carcinoma and liver cancer.",
+      "Inhibit oxidative stress and excitotoxicity",
+      "Stimulate skeletal muscle synthesis"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Cardiovascular",
+      "Diabetes",
+      "Immunity",
+      "Liver",
+      "Nerve",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดแกมมาไลโนเลนิก (Gamma-linolenic acid (GLA))",
+    "important_health_benefits": [
+      "Prevent cancer",
+      "Reduce symptoms of nerve pain in people with diabetic neuropathy",
+      "Treat eczema",
+      "Reduce the risk of high cholesterol",
+      "Reduce ADHD symptoms, though the studies have not been well-designed",
+      "Treat hot flashes associated with menopause",
+      "Reduce pain, swelling, and morning stiffness"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes",
+      "Integumentary",
+      "LipidLevels",
+      "Nerve",
+      "Reproductive",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดแกลลิก (Gallic acid)",
+    "important_health_benefits": [
+      "Decrease the harmful oxidative consequences of myocardial infarction in the context of its antioxidant potency",
+      "Protect the mucosal layer of the gastrointestinal tract from ulcer",
+      "Reduce the production of substances linked to inflammation",
+      "Decrease the Aβ-induced toxicity in cultured cortical neurons",
+      "Inhibit diet-induced hyperglycemia and hypertriglyceridemia, reduce the size of adipocytes, and protect pancreatic β-cells"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Digestive",
+      "Immunity",
+      "Nerve",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดแอลฟา ไลโนเลอิก (Alpha-linoleic acid)",
+    "important_health_benefits": [
+      "Improve blood levels of EPA and DHA and resulted in improved behavior in ADHD",
+      "Reduce colon and breast cancer cell spread and growth and increased cancer cell death (apoptosis)",
+      "Reverse hardening of the blood vessels (atherosclerosis)",
+      "Improve wound healing, reduce inflammation, increase insulin sensitivity, and reduce fasting insulin levels in patients with diabetic foot ulcers",
+      "Help resolve diarrhea, possibly due to the support of the function of potassium channels",
+      "Reduce inflammatory markers (C-reactive protein, interleukin-6 and blood amyloid A) in a study (RCT) of 50 people with high cholesterol levels",
+      "Improve markers of kidney function, reduced total and LDL cholesterol, and excessive blood clotting in 9 patients with lupus-induced kidney inflammation",
+      "Improve skin sensitivity, hydration, and overall condition",
+      "Reduce incidence of stroke in a cohort study of 20,069 middle-aged people living in the Netherlands",
+      "Reduce intra-organ fat mass, body weight, waist size, and blood triglycerides by activating genes involved in fat break down and increases heat production in the gut, resulting in increased calorie-burning",
+      "Reduce fever with recurrent respiratory infections"
+    ],
+    "health_system_disease": [
+      "Brain",
+      "Cancer",
+      "Cardiovascular",
+      "Diabetes",
+      "Digestive",
+      "Immunity",
+      "Integumentary",
+      "Nerve",
+      "Obesity",
+      "Respiratory"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดโรสมารินิก(Rosmarinic acid)",
+    "important_health_benefits": [
+      "Protect body from oxidative damage and inflammation, which can lead to chronic diseases like cancer, heart disease, and type 2 diabetes",
+      "Reduce anxiety and improve memory and sleep quality",
+      "Prevent the negative effects of brain aging, even suggesting a protective effect against neurodegenerative diseases like Alzheimer’s",
+      "Help slow age-related macular degeneration (AMD), a common condition that affects vision",
+      "Increase the absorption of glucose into muscle cells, lowering blood sugar",
+      "Reduce the production of substances linked to inflammation",
+      "Improve mood by promoting a healthy balance of gut bacteria and reducing inflammation in the hippocampus, the part of your brain associated with emotions, learning, and memories"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "Eye",
+      "Immunity",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดโอเลอิก (Oleic acid)",
+    "important_health_benefits": [
+      "Regulate membrane lipid structure, which controls G protein-mediated signaling and causes a regulation in blood pressure",
+      "Against age-related cognitive decline and may work as a natural Alzheimer’s treatment",
+      "Activate of different intracellular pathways that are involved in the development of cancer cells",
+      "Control excess insulin, which is important for weight loss",
+      "Prevent Ulcerative Colitis with higher consumption of omega-6 fatty acids was positively associated with the development of ulcerative colitis, while higher consumption of oleic acid was inversely associated with ulcerative colitis development",
+      "Help to boost immune system and fight infections",
+      "Seal moisture into skin",
+      "Maintain HDL cholesterol levels and reduce triglycerides"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Brain",
+      "Cancer",
+      "Diabetes",
+      "Digestive",
+      "Immunity",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดไขมันไม่อิ่มตัว(Unsaturated fatty acid)",
+    "important_health_benefits": [
+      "Reduce the production of substances linked to inflammation"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดไลโนเลอิก (Linoleic acid)",
+    "important_health_benefits": [
+      "Effect on cell membranes, which impacts healthy brain function",
+      "Reduce the risk of cardiovascular disease, concluding that reducing intake levels would likely increase the risk. Researchers have contended that this is true when there’s a proper balance of omega-3 and omega-6 fatty acids, with a 1:1 ratio",
+      "Prevent or reduce the severity of autoimmune disease by enhancing immune function and regulating cellular immune reactions",
+      "Act as precursor of arachidonic acid, an omega-6 fatty acid that promotes the expression of several factors responsible for hair growth",
+      "Provide plasma membranes with the fluidity that’s essential at fertilization",
+      "Influence bone cell metabolism, help to preserve skeletal formation and may help to reduce the risk of osteoporosis and fractures"
+    ],
+    "health_system_disease": [
+      "Brain",
+      "Cardiovascular",
+      "Immunity",
+      "Integumentary",
+      "Reproductive",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดไฮดรอกซีซิตริก (Hydroxycitric acid)",
+    "important_health_benefits": [
+      "Reduce body fat mass"
+    ],
+    "health_system_disease": [
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดกลีเซอไรซิก (Glycyrrhizic acid)",
+    "important_health_benefits": [
+      "Anti-inflammatory and antimicrobial effects",
+      "Regulate glucose/glycogen balance"
+    ],
+    "health_system_disease": [
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดกลูคูโรนิก (Glucuronic acid)",
+    "important_health_benefits": [
+      "Oxidizable substrate, that significantly delays or inhibits oxidation of the substrate",
+      "Inhibit cancer cell proliferation",
+      "Bind with toxic molecules which enter the body and also the ability to increase excretion of these molecules from the physiology by the help of kidneys and intestines",
+      "Prevent the damage occurring to the liver by toxic substances"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Digestive",
+      "Liver"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดคราเทโกลิก (Crataegolic acid)",
+    "important_health_benefits": [
+      "Reduce the formation of atherosclerotic plaques"
+    ],
+    "health_system_disease": [
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดคลอโรจินิก (Chlorogenic acid)",
+    "important_health_benefits": [
+      "Reduce blood sugar levels"
+    ],
+    "health_system_disease": [
+      "Diabetes"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดควินิก (Quinic acid)",
+    "important_health_benefits": [
+      "Supports the synthesis of tryptophan and nicotinamide in the gastrointestinal (GI) tract, thus leads to DNA repair enhancement and NF-kB inhibition"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดคอนจูเกตไลโนเลอิก (Conjugated linoleic acid (CLA))",
+    "important_health_benefits": [
+      "anti-cancer benefit",
+      "reduce blood sugar"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Diabetes"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดคอนจูเกตไลโนเลอิก (Conjugated Linoleic acid (CLA))",
+    "important_health_benefits": [
+      "reduce blood sugar"
+    ],
+    "health_system_disease": [
+      "Diabetes"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดคาร์โนซิค (Carnosic acid)",
+    "important_health_benefits": [
+      "Protect body from oxidative damage and inflammation, which can lead to chronic diseases like cancer, heart disease, and type 2 diabetes",
+      "Reduce anxiety and improve memory and sleep quality",
+      "Prevent the negative effects of brain aging, even suggesting a protective effect against neurodegenerative diseases like Alzheimer’s",
+      "Help slow age-related macular degeneration (AMD), a common condition that affects vision",
+      "Increase the absorption of glucose into muscle cells, lowering blood sugar",
+      "Reduce the production of substances linked to inflammation",
+      "Improve mood by promoting a healthy balance of gut bacteria and reducing inflammation in the hippocampus, the part of your brain associated with emotions, learning, and memories"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "Eye",
+      "Immunity",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดซิตริก (Citric acid)",
+    "important_health_benefits": [
+      "Enhance the bioavailability of minerals, allowing body to better absorb nutrients.",
+      "Increase metabolizes energy by chemical reactions in body help transform food into usable energy",
+      "Protect against kidney stones by making your urine less favorable for the formation of stones"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "Energy",
+      "UrinarySystem"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดทาร์ทาริก (Tartaric acid)",
+    "important_health_benefits": [
+      "Improves glucose intolerance",
+      "Improve intestinal absorption as well which will increase the rate at which healthy nutrients flow into your bloodstream",
+      "Boost immunity"
+    ],
+    "health_system_disease": [
+      "Diabetes",
+      "Digestive",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดพัลมิโตเลอิก (Palmitoleic acid)",
+    "important_health_benefits": [
+      "Boost immunity"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดพัลมิติก (Palmitic acid)",
+    "important_health_benefits": [
+      "Improve insulin sensitivity and less fat tissue inflammation",
+      "Build block for compounds called sphingolipids, which are abundant in membranes that surround and protect your brain and nerve cells",
+      "Prevent lunf from collapsing when exhale by pulmonary surfactant incorporate palmitic acid into a molecule called dipalmitoylphosphatidylcholine (DPPC)"
+    ],
+    "health_system_disease": [
+      "Diabetes",
+      "Nerve",
+      "Respiratory"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดมาลิก (Malic acid)",
+    "important_health_benefits": [
+      "Improve symptoms of xerostomia (the fancy name for dry mouth) by stimulating saliva production in the mouth",
+      "Boost iron absorption especially important for pregnant women and people who struggle with anemia",
+      "Produce by the human body, and it’s a key player in the Krebs cycle. This cycle includes the metabolism of carbohydrates, proteins and fatty acids to create adenosine triphosphate, more commonly known as simply ATP",
+      "Boost athletic performance and discourage post-exercise muscle fatigue",
+      "Effect on skin refiner because it encourages the shedding of the outer layer of skin cells",
+      "Play an integral part in the energy-generating Krebs cycle that takes place in the human body (but more research is needed)"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "Energy",
+      "Immunity",
+      "Integumentary",
+      "Muscular"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดสเตียริก (Stearic acid)",
+    "important_health_benefits": [
+      "Increase  platelet aggregation"
+    ],
+    "health_system_disease": [
+      "Blood"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดอิรูสิก (Erucic acid)",
+    "important_health_benefits": [
+      "Interacts with cardiac mitochondrial cardiolipin affect the activity of mitochondrial membrane associated enzymes, cytochrome c oxidase, required for mithochondrial spiratory chain to produce energy. However, high content of erucic acid diet can lead to profound  cardiotoxicity, renal toxicity, or hematological toxicity with concomitant peroxisomal H2O2 production."
+    ],
+    "health_system_disease": [
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "กรดอีโคเซโนอิก (Eicosenoic acid)",
+    "important_health_benefits": [
+      "Support and regulation of a healthy pregnancy and normal infant development, Eicosenoic acid is a a precursor of erucic acid."
+    ],
+    "health_system_disease": [
+      "Pregnancy"
+    ]
+  },
+  {
+    "functional_ingredient": "กลีเซอไรซิน (Glycyrrhizin)",
+    "important_health_benefits": [
+      "Anti-inflammatory and antimicrobial effects",
+      "Regulate glucose/glycogen balance"
+    ],
+    "health_system_disease": [
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "กลูโคแมนแนน (Glucomannan)",
+    "important_health_benefits": [
+      "Improve the hyperglycemic state",
+      "Promote regular bowel movement and be a good prebiotic",
+      "Lower blood cholesterol"
+    ],
+    "health_system_disease": [
+      "Diabetes",
+      "Digestive",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "กลูโคซิโนเลต (Glucosinolates)",
+    "important_health_benefits": [
+      "Scavenge free radical and chelate ferrous ion",
+      "Interfere with key processes that drive carcinogenesis and metastasis, but also protect cells from redox imbalance",
+      "Reduce risk of developing coronary heart disease (CHD)"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "กาแล็กแทน (Galactans)",
+    "important_health_benefits": [
+      "Improves digestive health (Reflux)"
+    ],
+    "health_system_disease": [
+      "Digestive"
+    ]
+  },
+  {
+    "functional_ingredient": "กาแล็กโตแมนแนน (Galactomannans)",
+    "important_health_benefits": [
+      "Improves digestive health (Reflux)",
+      "Reduce LDL and triglycerides",
+      "Regulates blood sugar level"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "กิงโก ฟลาโวน ไกลโคไซด์ (Ginkgo flavone glycosides)",
+    "important_health_benefits": [
+      "Reduce the concentration of free radicals"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "กิงโกไลด์ (Ginkgolides)",
+    "important_health_benefits": [
+      "Platelet-activating factor receptor antagonist"
+    ],
+    "health_system_disease": [
+      "Cardiovascular"
+    ]
+  },
+  {
+    "functional_ingredient": "คลอโรฟิลล์ (Chlorophyll)",
+    "important_health_benefits": [
+      "Reduce the number of blood transfusions needed in people with thalassemia, a blood disorder",
+      "Reduce tumor size in mice that had been transplanted with human pancreatic cancer cells",
+      "Effect to reduce inflammation and bacterial growth in skin wounds.",
+      "Reduce cholesterol levels (The mechanism behind these findings, and whether it involves chlorophyll, is currently unknown)"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Cancer",
+      "Integumentary",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "คอร์ไดซีปิน (Cordycepin)",
+    "important_health_benefits": [
+      "potent anti-cancer, anti-oxidant and anti-inflammatory activities"
+    ],
+    "health_system_disease": [
+      "Cancer"
+    ]
+  },
+  {
+    "functional_ingredient": "คาเทชิน (Catechins)",
+    "important_health_benefits": [
+      "Scavenge reactive oxygen species (ROS)",
+      "Regulate vascular tone by activating endothelial nitric oxide, prevent vascular inflammation, inhibit proliferation of vascular smooth muscle cells by interfering with vascular cell growth factors involved in atherogenesis, and suppress platelet adhesion thereby inhibiting thrombogenesis",
+      "Regulate of glucose uptake from cells, insulinsensitivity or even regulation of beta cells function",
+      "Suppress leukocyte adhesion to endothelium and subsequent transmigration through inhibition of transcriptional factor NF-kB-mediated production of cytokines and adhesion molecules both in endothelial cells and inflammatory cells",
+      "Improve blood lipid profile by inhibiting the key enzymes involved in lipid biosynthesis and reduce intestinal lipid absorption",
+      "Induce weight loss by generating Short Chain Fatty Acid (SCFA) in gut through reactions among undigested carbohydrates, catechins, and gut microbiota may enhance lipid metabolism"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cardiovascular",
+      "Diabetes",
+      "Immunity",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "คาร์โบไฮเดรต (Carbohydrate)",
+    "important_health_benefits": [
+      "Provide cellular energy",
+      "Uplift mood by enhancing serotonin"
+    ],
+    "health_system_disease": [
+      "Energy",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "คาร์ทามิน (Carthamin)",
+    "important_health_benefits": [
+      "Decrease the whole blood viscosity, plasma viscosity, and erythrocyte aggregation"
+    ],
+    "health_system_disease": [
+      "Blood"
+    ]
+  },
+  {
+    "functional_ingredient": "จินเจรอล (Gingerols)",
+    "important_health_benefits": [
+      "Reduce blood sugars",
+      "Protect against age-related damage to the brain. It can also help improve brain function in middle-aged women",
+      "prevent cancer cell production (more studies are needed)",
+      "Improve heart disease risk by improving hemoglobin A1c (HbA1c), a marker for long-term blood sugar levels",
+      "Help relieve nausea and vomiting for people undergoing certain types of surgery. Ginger may also help chemotherapy-related nausea, but larger human studies are needed",
+      "Speed up emptying of the stomach which can be beneficial for people with indigestion and related stomach discomfort.",
+      "Reduce LDL cholesterol, total cholesterol, and blood triglyceride levels",
+      "Reduce blood insulin levels",
+      "Against menstrual pain when taken at the beginning of the menstrual period",
+      "Reduce joint pain and stiffness"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Brain",
+      "Cancer",
+      "Cardiovascular",
+      "Digestive",
+      "LipidLevels",
+      "Obesity",
+      "Reproductive",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "จินเซนโนไซด์ (Ginsenosides)",
+    "important_health_benefits": [
+      "Increase insulin production, enhance blood sugar uptake in cells",
+      "Provide antioxidant protection and maintain the health of cells",
+      "Improve symptoms of erectile dysfunction by decreasing oxidative stress in tissues",
+      "Reduce inflammatory markers and help protect against oxidative stress",
+      "Strengthen the immune system in people with cancer and even enhance the effects of certain vaccinations",
+      "Benefit mental functions, feelings of calmness and mood in both healthy people"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Cancer",
+      "Cardiovascular",
+      "Immunity",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "ซาโปนิน (Saponins)",
+    "important_health_benefits": [
+      "Induce cancer cell death",
+      "Improve cardiovascular health",
+      "Boost immune system",
+      "Keep blood sugar levels within normal limits"
+    ],
+    "health_system_disease": [
+      "Cancer",
+      "Cardiovascular",
+      "Immunity",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "ซาโปนินไกลโคไซด์ (Saponin glycosides)",
+    "important_health_benefits": [
+      "Prevent clumping of red blood cells",
+      "Lower LDL cholesterol and increse HDL cholesterol"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "LipidLevels"
+    ]
+  },
+  {
+    "functional_ingredient": "ซิลิกอน (Silicon)",
+    "important_health_benefits": [
+      "Exhibit roles in the structural integrity of nails, hair, and skin, overall collagen synthesis, bone mineralization"
+    ],
+    "health_system_disease": [
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "ซีแซนทิน (Zeaxanthin)",
+    "important_health_benefits": [
+      "Protect cells from damage/ Support the clearance of free radicals in eyes",
+      "Prevent vision loss/ worsening age-related macular degeneration",
+      "Protect sun damage/ Improve skin tone//Reduce premature aging skin"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Eye",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "ดีเอชเอ (DHA; Docosahexaenoic acid)",
+    "important_health_benefits": [
+      "Promote brain health (Higher intelligence,Better communication and social skills,Fewer behavioral problems,Decreased risk of developmental delay and Decreased risk of ADHD, autism and cerebral palsy)",
+      "Prevent age-related mental decline and Alzheimer’s disease, but more research is needed",
+      "Reduce the risk of some types of cancer, including colon, prostate and breast cancer",
+      "Improve numerous heart disease risk factors but omega-3 supplements do not seem to reduce your risk of heart attacks or strokes",
+      "Prevent macular degeneration, which can cause vision impairment and blindness",
+      "Reduce the production of molecules and substances linked to inflammation, such as inflammatory eicosanoids and cytokines",
+      "Help fight several autoimmune diseases, including type 1 diabetes, rheumatoid arthritis, ulcerative colitis, Crohn’s disease and psoriasis",
+      "Manage oil production and hydration skin",
+      "Prevent hyperkeratinization of hair follicles, which appears as the little red bumps often seen on upper arms",
+      "Reduce premature aging skin",
+      "Reducing the risk of acne",
+      "Reduce liver fat and inflammation in people with NAFLD",
+      "Prevent and treat depression and anxiety. EPA seems to be the most effective at fighting depression",
+      "Improve Mental health disorders",
+      "Protect age-related Mental health decline",
+      "Reduce insulin resistance, fight inflammation and improve several heart disease risk factors",
+      "Improve attention and reduce hyperactivity, impulsiveness and aggression",
+      "Link to levels of the hormone melatonin, which improves sleep",
+      "Reduce risk of asthma in both children and young adults",
+      "Improve bone strength by boosting the amount of calcium in your bones, which should lead to a reduced risk of osteoporosis",
+      "Reduce menstrual pain and may even be more effective than ibuprofen, an anti-inflammatory drug"
+    ],
+    "health_system_disease": [
+      "Brain",
+      "Cancer",
+      "Cardiovascular",
+      "Eye",
+      "Immunity",
+      "Integumentary",
+      "LipidLevels",
+      "MentalHealth",
+      "MetabolicSyndrome",
+      "Nerve",
+      "Respiratory",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "ทรานอะนีทอล (trans-Anethole)",
+    "important_health_benefits": [
+      "Antimicrobial activity"
+    ],
+    "health_system_disease": [
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "น้ำมันระเหย (Volatile oils)",
+    "important_health_benefits": [
+      "Antioxidative and antimicrobial",
+      "Antioxidative and antimicrobial",
+      "Antioxidative and antimicrobial"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Digestive",
+      "Respiratory"
+    ]
+  },
+  {
+    "functional_ingredient": "บาโคไซด์ เอ (Bacoside A)",
+    "important_health_benefits": [
+      "Modulate antioxidant enzymes, superoxide dismutase (SOD)",
+      "Modulation of memory functions, cognition  and neuroprotection",
+      "Anti-depressant activity"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "บาโคไซด์ บี (Bacoside B)",
+    "important_health_benefits": [
+      "Modulate antioxidant enzymes, superoxide dismutase (SOD)",
+      "Modulation of memory functions, cognition  and neuroprotection",
+      "Anti-depressant activity"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Brain",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "พอลิแซ็กคาไรด์ (Polysaccharides)",
+    "important_health_benefits": [
+      "Provide cellular energy",
+      "Uplift mood by enhancing serotonin"
+    ],
+    "health_system_disease": [
+      "Energy",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "พิเพอรีน (Piperine)",
+    "important_health_benefits": [
+      "Stimulate hydrochloric acid in stomach/ Help digest and absorb in intestinal",
+      "Promote inflammation and increase the levels of cytokines that reduce inflammation",
+      "Boosting white blood cells, Antimicrobial, Antiviral",
+      "Reduce LDL and triglycerides",
+      "Regulates blood sugar level"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "Immunity",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "พีโอนิโฟลริน (Paeoniflorin)",
+    "important_health_benefits": [
+      "Inhibiting blood coagulation (clotting)",
+      "Normal synthesis female sex hormone and reduces testosterone synthesis.",
+      "Stimulates immunity",
+      "Reduce expression of serotonin transporter (anti anxiety and depression)"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Hormone",
+      "Immunity",
+      "MentalHealth"
+    ]
+  },
+  {
+    "functional_ingredient": "ฟลาโวน (Flavones)",
+    "important_health_benefits": [
+      "Scavenge reactive oxygen species (ROS)",
+      "Promotes apoptosis of cancer cells",
+      "Able to regulate the Toll receptor (TLR)/NFκB"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "ฟลาโวนอยด์ (Flavonoids)",
+    "important_health_benefits": [
+      "Enhance antioxidant enzymes or  inhibit enzymes that employ a pro-oxidant effect on oxidative stress (excess  reactive oxygen species (ROS))  causing lipid peroxidation and  oxidative damage  of biological molecule constitutes the molecular basis of several diseases",
+      "Inhibit proangiogenic factors, regulate metastasis proteins, and induce apoptosis",
+      "Protect against atherosclerosis, coronary artery disease, and coagulation disorders",
+      "Anti Type II Diabetes by Increasing insulin secretion, promoting the proliferation of pancreatic β cells, improving glycemia by regulating glucose metabolism",
+      "act on adipocytes (reducing viability and proliferation)"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Cardiovascular",
+      "Diabetes",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "ฟอสฟอรัส (Phosphorus)",
+    "important_health_benefits": [
+      "Essential for constituent of anatomical structure"
+    ],
+    "health_system_disease": [
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "ฟีนอลิกไกลโคไซด์ (Phenolic glycosides)",
+    "important_health_benefits": [
+      "Scavengers of reactive oxygen species (ROS) and behave as pro-oxidants"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "ฟีนิลเอทานอยด์ ไกลโคไซด์ (Phenylethanoid glycoside)",
+    "important_health_benefits": [
+      "Antimicrobial, Antiviral",
+      "Decrease inflammation and inhibit bacterial adhesion and coaggregation",
+      "Protect parkinson’s disease"
+    ],
+    "health_system_disease": [
+      "Immunity",
+      "Nerve"
+    ]
+  },
+  {
+    "functional_ingredient": "มอรินดิน (Morindin)",
+    "important_health_benefits": [
+      "Regulate blood pressure level",
+      "Potent anti-cancer",
+      "Anti-inflammatory, Antimicrobial,Antimicrobial, Antifungal",
+      "Stimulates immunity"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Cancer",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "ยูจีนอล (Eugenol)",
+    "important_health_benefits": [
+      "Scavenge free radical and reduce lipid peroxidation (LPO) thus, eugenol can be used as an anti-inflammatory agent, as well as protecting the damage caused by oxidative stress"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "ลูทีโอลิน 7 ไกลโคไซด์ (Luteolin-7-glucoside)",
+    "important_health_benefits": [
+      "Inflammatory disorders",
+      "Support brain health",
+      "Reduce blood sugars",
+      "Prevent diabetes"
+    ],
+    "health_system_disease": [
+      "Immunity",
+      "Nerve",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "ลูทีน (Lutein)",
+    "important_health_benefits": [
+      "Protect cells from damage/ Support the clearance of free radicals in eyes",
+      "Prevent heart disease",
+      "Protect age related macular degeneration",
+      "Decrease sunburn/ Protect skin"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cardiovascular",
+      "Eye",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามิน ซี (Vitamin C; Ascorbic acid)",
+    "important_health_benefits": [
+      "Scavenge reactive oxygen species (ROS) and react with membrane-bound oxidized vitamin E"
+    ],
+    "health_system_disease": [
+      "Antioxidant"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินเค (Vitamin K)",
+    "important_health_benefits": [
+      "Prevent and revers arterial calcifications and reduce the risk of coronary heart disease (CHD)",
+      "Help improve insulin sensitivity",
+      "Prevent liver cancer and death in patients with liver cirrhosis and hepatocellular carcinoma (HCC)",
+      "Prevent fractures due to osteopenia and osteoporosis"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Diabetes",
+      "Liver",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินบี (Vitamin B)",
+    "important_health_benefits": [
+      "Act as co-enzymes in a vast array of catabolic and anabolic enzymatic reactions",
+      "Regulate cytokine/chemokine generation invloved in pathophysiological pathways and inflamtory",
+      "Synthesize/repair DNA or RNA"
+    ],
+    "health_system_disease": [
+      "Coenzymes",
+      "Immunity",
+      "Nervous"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินบี 1 (Vitamin B1) Thiamine",
+    "important_health_benefits": [
+      "Treat of heart failure",
+      "Prevent cardiovascular disease",
+      "Help converting carbohydrates into energy",
+      "Require for brain oxidative metabolism"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Energy",
+      "Nervous"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินบี 2 (Vitamin B2) Riboflavin",
+    "important_health_benefits": [
+      "\"Activate the activity of antioxidant enzymes \"\"glutathione reductase\"\"/reduces reactive oxygen species (ROS)\"",
+      "Prevent cardiovascular diseases",
+      "Act as a cofactor in oxidation-reduction reactions",
+      "Decrease risk of cataract formation",
+      "Activate phagocytic activity of neutrophils and macrophages and stimulate the multiplication of neutrophils and monocytes",
+      "Control maralia infection by reduced the level of methaemoglobin content and inhibite asexual parasite growth",
+      "Maintain the integrity of mucous membranes",
+      "Prevent  cognitive impairment",
+      "Prevent pregnancy complications",
+      "Lower risk of developing premenstrual syndrome",
+      "Reduce osteoporosis"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cardiovascular",
+      "Energy",
+      "Eye",
+      "Immunity",
+      "Integumentary",
+      "Nervous",
+      "Pregnancy",
+      "Reproductive",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินบี 5 (Vitamin B5) Pantothenic acid",
+    "important_health_benefits": [
+      "Enhance of athletic performance",
+      "Normal energy-yielding metabolism",
+      "Reduce  tiredness and fatigue",
+      "Normal synthesis and metabolism of steroid hormones",
+      "Accelerate the closure of skin wounds",
+      "Lower total serum Lipid levels and triacylglycerol",
+      "Importat for growth and development of bone and cartilage"
+    ],
+    "health_system_disease": [
+      "Energy",
+      "Hormone",
+      "Integumentary",
+      "LipidLevels",
+      "Skeletal"
+    ]
+  },
+  {
+    "functional_ingredient": "วิตามินบี 6 (Vitamin B6) Pyridoxine",
+    "important_health_benefits": [
+      "Involve in hemoglobin formation",
+      "Has a role in cognitive development through neurotransmitter synthesis",
+      "Suppress in colon epithelium cell proliferation",
+      "Protective roles in cardiovascular disease",
+      "Involve as a co-factor in over 100 enzymatic reactions",
+      "Involve in interleukin-2 (IL-2) production",
+      "Essential for skin development and maintenance"
+    ],
+    "health_system_disease": [
+      "Blood",
+      "Brain",
+      "Cancer",
+      "Cardiovascular",
+      "Coenzymes",
+      "Immunity",
+      "Integumentary"
+    ]
+  },
+  {
+    "functional_ingredient": "สารประกอบฟีนอลิก (Phenolic compounds)",
+    "important_health_benefits": [
+      "Antioxidant",
+      "Antihypertensive",
+      "Anti-carcinogenic",
+      "Cardioprotective",
+      "Anti-arthritic",
+      "Anti-inflammatory",
+      "Anti-allergic"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "BloodPressure",
+      "Cancer",
+      "Cardiovascular",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "อ็อกตาโคซานอล (Octacosanol)",
+    "important_health_benefits": [
+      "Protect hardening of the arteries",
+      "Protect Skin diseases",
+      "Reduce LDL and triglycerides",
+      "Reduce blood sugar levels"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "Integumentary",
+      "LipidLevels",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "อะดีโนซีน (Adenosine)",
+    "important_health_benefits": [
+      "Increase oxygen supply in cells, anti-inflamatory"
+    ],
+    "health_system_disease": [
+      "Energy"
+    ]
+  },
+  {
+    "functional_ingredient": "อัลบูมิน (Albumin)",
+    "important_health_benefits": [
+      "Regulate blood pressure level",
+      "Improves digestive health",
+      "Reduce inflammation in the body"
+    ],
+    "health_system_disease": [
+      "BloodPressure",
+      "Digestive",
+      "Immunity"
+    ]
+  },
+  {
+    "functional_ingredient": "อิชินาโคไซด์ (Echinacoside)",
+    "important_health_benefits": [
+      "Keep free radical levels in balance/ Protect body against oxidative stress",
+      "Decrease inflammation and inhibit infections and viruses",
+      "Repair/Protective skin",
+      "Reduce feelings of anxiety",
+      "Reduce blood sugars"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Immunity",
+      "Integumentary",
+      "MentalHealth",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "อินูลิน (Inulin)",
+    "important_health_benefits": [
+      "Improves digestive health",
+      "Relieves constipation",
+      "Reduce body fat mass",
+      "Improve blood sugar control"
+    ],
+    "health_system_disease": [
+      "Digestive",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "อีพิแกลโลคาเทชิน 3 แกลเลต (Epigallocatechin-3-gallate (EGCG))",
+    "important_health_benefits": [
+      "Scavenge superoxide anion radical",
+      "Inhibit cervical cancer cell growth in vitro through the regulation of gene expression, cell cycle progression, and apoptosis",
+      "Protect the skin from the damage caused by ionizing radiation",
+      "Increased energy expenditure, fat oxidation, and Enhance weight loss"
+    ],
+    "health_system_disease": [
+      "Antioxidant",
+      "Cancer",
+      "Integumentary",
+      "Obesity"
+    ]
+  },
+  {
+    "functional_ingredient": "อีพีเอ (EPA; Eicosapentaenoic acid)",
+    "important_health_benefits": [
+      "Clog heart arteries",
+      "Treat depression",
+      "Prevent menopause symptoms"
+    ],
+    "health_system_disease": [
+      "Cardiovascular",
+      "MentalHealth",
+      "Reproductive"
+    ]
+  },
+  {
+    "functional_ingredient": "อีลิวทีโอไซด์ (Eleutheroside)",
+    "important_health_benefits": [
+      "Natural Adaptogen"
+    ],
+    "health_system_disease": [
+      "Diabetes"
+    ]
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "health_system_disease": "Antioxidant",
+    "description": "Propoties antioxidant ซึ่งคุณสมบัติ antioxidant มี effect กับหลายโรค ระบบ และ actions ต่างๆ ของร่างกาย เช่น  anti-inflammatory actions"
+  },
+  {
+    "health_system_disease": "Blood",
+    "description": "เกี่ยวกับการสังเคราะห์เม็ดเลือดขาวแดง เกล็ดเลือด Plasma"
+  },
+  {
+    "health_system_disease": "BloodPressure",
+    "description": "เกี่ยวกับการเพิ่ม ลด ความดันเลือด"
+  },
+  {
+    "health_system_disease": "Brain",
+    "description": "การเพิ่มความจำ โรคอัลไซเมอร์  Neuroprotection (preservation of brain function and structure)"
+  },
+  {
+    "health_system_disease": "Cancer",
+    "description": "มีการศึกษาเกี่ยวกับการหยุดยั้ง ป้องกันการเกิด เจริญของเซลล์มะเร็ง"
+  },
+  {
+    "health_system_disease": "Cardiovascular",
+    "description": "การทำงานของหัวใจ  เส้นเลือด และโรคที่เกี่ยวข้อง เช่น stroke"
+  },
+  {
+    "health_system_disease": "Coenzyme",
+    "description": "สารนั้นๆ ทำงานร่วมกับ enzyme ต่างๆ ใน metabolic pathway"
+  },
+  {
+    "health_system_disease": "Diabetes",
+    "description": "Blood sugar + insulin level"
+  },
+  {
+    "health_system_disease": "Digestive",
+    "description": "ระบบทางเดินอาหาร ไม่รวม Oral"
+  },
+  {
+    "health_system_disease": "Energy",
+    "description": "กระบวนการเผาผลาญ การเพิ่ม metablism ของร่างกาย  hyperthyroids"
+  },
+  {
+    "health_system_disease": "Eye",
+    "description": "สุขภาพดวงตา โรคที่เกิดกับตา การมองเห็น"
+  },
+  {
+    "health_system_disease": "Hormone",
+    "description": "เกี่ยวกับฮอร์โมนทุกชนิดในร่างกาย"
+  },
+  {
+    "health_system_disease": "Immunity",
+    "description": "antimicroorganism anti-inflammation properties การทำงานของเซลล์ต่างๆในระบบภูมิคุ้มกันของร่างกาย"
+  },
+  {
+    "health_system_disease": "Integumentary",
+    "description": "ผม เล็บ ผิว +  cellular membrane"
+  },
+  {
+    "health_system_disease": "LipidLevels",
+    "description": "ระดับไขมันทุกชนิดในเลือด"
+  },
+  {
+    "health_system_disease": "Liver",
+    "description": "เกี่ยวกับสุขภาพของตับ Hepatoprotective"
+  },
+  {
+    "health_system_disease": "MentalHealth",
+    "description": "นอนไม่หลับ depression เครียด การผ่อนคลาย"
+  },
+  {
+    "health_system_disease": "MetabolicSyndrome",
+    "description": "เกี่ยวกับโรค Metabolic Syndrome"
+  },
+  {
+    "health_system_disease": "Muscular",
+    "description": "กล้ามเนื้อ"
+  },
+  {
+    "health_system_disease": "Nerve",
+    "description": "เกี่ยวกับระบบประสาท เซลล์ประสาทในสมองหรือทั่วร่างกาย  neuroprotection"
+  },
+  {
+    "health_system_disease": "Obesity",
+    "description": "เกี่ยวกับโรคอ้วน + weigh loss/gain"
+  },
+  {
+    "health_system_disease": "OralHealth",
+    "description": "เกี่ยวกับอวัยวะและสุขภาพภายในช่องปาก"
+  },
+  {
+    "health_system_disease": "Pregnancy",
+    "description": "เกี่ยวกับการตั้งครรภ์ และพัฒนาการของทารกในครรภ์"
+  },
+  {
+    "health_system_disease": "Reproductive",
+    "description": "เรื่องระบบสืบพันธุ์ทั้งชายและหญิง + อาการก่อนมีประจำเดือน"
+  },
+  {
+    "health_system_disease": "Respiratory",
+    "description": "ระบบทางเดินหายใจ และโรคทางเดินหายใจ เช่น asthma  ไข้หวัด"
+  },
+  {
+    "health_system_disease": "Skeletal",
+    "description": "เอ็น กระดูก ข้อ"
+  },
+  {
+    "health_system_disease": "UrinarySystem",
+    "description": "โรคและสุขภาพของ Kidney  Urinary"
+  }
+]

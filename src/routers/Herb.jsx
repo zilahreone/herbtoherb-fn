@@ -1,4 +1,3 @@
-import React from 'react'
 import HerbCard from '../components/HerbCard'
 import { Link } from 'react-router-dom'
 
