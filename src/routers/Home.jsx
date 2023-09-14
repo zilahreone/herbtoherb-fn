@@ -13,6 +13,7 @@ function Home () {
     // <div>
     // </div>
     <>
+    <HerbSearch></HerbSearch>
     <div>
       <div className='text-2xl font-semibold py-2'>Top Function / Feature Function</div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
@@ -24,7 +25,6 @@ function Home () {
       </div>
       <div className='text-2xl font-semibold py-2'>Top Ingredient</div>
     </div>
-      {/* <HerbSearch></HerbSearch> */}
     </>
   )
 }
