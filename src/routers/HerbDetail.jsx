@@ -40,7 +40,8 @@ const ingredient = {
   ],
   raw_material: {
     planting_source: [
-      'กรดจิมเนมิกเป็นสารพฤกษเคมีที่ได้จากธรรมชาติ โดยแหล่งของสารชนิดนี้ในธรรมชาติ ได้แก่ ผักเชียงดา (Gymnema inodorum (Lour.) Decne) ซึ่งเป็นผักพื้นบ้านของภาคเหนือของประเทศไทย นอกจากนี้ยังสามารถพบกรดจิมานมิกได้ในผักเชียงดาอินเดีย ซึ่งเป็นพืชชนิดหนึ่งในประเทศอินเดียซึ่งเป็นพืชสกุล (genus) เดียวกันกับผักเชียงดา แต่ต่างชนิดกัน (species) คือ Gymnema sylvestre อีกด้วย'
+      'บ้านเลขที่ 259 หมู่ 9 หมู่บ้าน ร่องครกใต้ ถ.จำป่าหวาย-แม่กา ต.จำป่าหวาย อ.เมืองพะเยา จ.พะเยา',
+      'บ้านเลขที่ 59/5 หมู่ 4 บ้านท่าต้นกวาว ถนนสันกอละหก ตำบลชมภู อำเภอสารภี จังหวัดเชียงใหม่'
     ],
     processing_plant: [
       'วิสาหกิจชุมชนชีววิถีตำบลน้ำเกี๋ยน – บริษัทชีววิถีเฮิร์บ จำกัด 192 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน - 130 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน 55000'
@@ -84,10 +85,10 @@ const tabs = [
       }
       body={ingredient.plants.map((plant, index) => (
         <tr key={index} className='hover:bg-gray-100 text-left'>
-          <th className='px-4 text-std py-1'>{ plant.common_name }</th>
-          <th className='px-4 text-std py-1'>{ plant.part_of_studied.join(', ') }</th>
-          <th className='px-4 text-std py-1'>{ plant.process.join(', ') }</th>
-          <th rowSpan={ingredient.plants.length} className='w-[50%] px-4 text-std py-1'>{ ingredient.condition }</th>
+          <td className='px-4 text-std py-1'>{ plant.common_name }</td>
+          <td className='px-4 text-std py-1'>{ plant.part_of_studied.join(', ') }</td>
+          <td className='px-4 text-std py-1'>{ plant.process.join(', ') }</td>
+          <td rowSpan={ingredient.plants.length} className='w-[50%] px-4 text-std py-1'>{ ingredient.condition }</td>
         </tr>
       ))}
     />
@@ -117,6 +118,7 @@ function HerbDetail() {
   return (
     <>
       <div className='flex md:flex-row flex-col gap-2'>
+        {/* { herbId } */}
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
           <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{ ingredient.functional_ingredient }</p>
           <CardDetail title='ข้อมูลทั่วไป' desc={ingredient.desc}></CardDetail>
@@ -126,17 +128,28 @@ function HerbDetail() {
           <div className=''>
             <InputIcon />
           </div>
-          {/* <div className=''>zxcvx</div> */}
           <div className=''>
-            {/* <Table
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+          </div>
+          <div className=''>
+            <Table
               head={
-                <tr><th>สารออกฤทธิ์</th></tr>               
+                <tr><th className='py-1'>สารออกฤทธิ์ที่ใช้ร่วมกัน</th></tr>
               }
-              body={ingredient.map((ing, index) => (
-                <tr key={index} className='hover:bg-gray-100 text-left'>
-                  <th className='px-4 text-std py-1'>{ ing }</th>
+              body={
+                <>
+                <tr className='hover:bg-gray-100 text-left'>
+                  <td className='px-4 text-std py-1'>Gymnema sylvestre</td>
                 </tr>
-              ))} /> */}
+                <tr className='hover:bg-gray-100 text-left'>
+                  <td className='px-4 text-std py-1'>Oleic acid</td>
+                </tr>
+                <tr className='hover:bg-gray-100 text-left'>
+                  <td className='px-4 text-std py-1'>Triterpene glycosides</td>
+                </tr>
+                </>
+              }
+            />
           </div>
           <div className='mt-2'>  
             <CardDetail
