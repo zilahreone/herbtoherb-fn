@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import Dropdown from './Dropdown'
 import { Link } from 'react-router-dom'
 
@@ -66,6 +66,7 @@ const menuC = [
 ]
 
 function HerbSearch() {
+  const [searchText, setSearchText] = useState('')
   return (
     <>
       <div className='flex flex-col justify-center items-center'>
@@ -75,10 +76,12 @@ function HerbSearch() {
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
             </svg>
           </div>
-          <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-          <button type="submit" className="tw-button-submit absolute right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">ค้นหา</button>
+          <input onInput={(e) => setSearchText(e.target.value)} type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required />
+          <Link to={{pathname: `/herb`, search: `?searchText=${searchText}`}} >
+            <button type="submit" className="tw-button-submit absolute right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">ค้นหา</button>
+          </Link>
         </div>
-        <div className='flex flex-col items-center w-[80vw] h-[30vh] rounded-xl shadow-xl bg-gray-100'>
+        <div className='flex flex-col items-center'>
           <div className='mt-20 flex gap-6'>
             <div className='min-w-fit'>
               <Dropdown
@@ -120,9 +123,6 @@ function HerbSearch() {
           </div>
         </div>
         <div className='-mt-8'>
-          <Link to={'/herb'} >
-            <button type="submit" className="tw-button-submit font-medium rounded-full text-std px-12 py-4">ค้นหา</button>
-          </Link>
         </div>
       </div>
     </>
