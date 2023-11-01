@@ -5,7 +5,7 @@ function Table({ head, body, foot }) {
     <>
       <div className="relative overflow-x-auto rounded-t-md border">
         <table className="w-full text-sm text-gray-900 dark:text-gray-400">
-          <thead className="text-std text-gray-900 uppercase text-center bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-std text-left text-gray-900 bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
             { head }
             {/* <tr>
               <th scope="col" className="px-6 py-3 rounded-l-lg">

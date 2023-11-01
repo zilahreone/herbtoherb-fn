@@ -32,10 +32,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
-        // serif: ['IBM Plex Sans Thai'],
-        // mono: ['IBM Plex Sans Thai'],
-        // display : ['IBM Plex Sans Thai'],
-        // body : ['IBM Plex Sans Thai'],
+        serif: ['IBM Plex Sans Thai'],
+        mono: ['IBM Plex Sans Thai'],
+        display : ['IBM Plex Sans Thai'],
+        body : ['IBM Plex Sans Thai'],
       }
     },
   },

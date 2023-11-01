@@ -77,7 +77,7 @@ function HerbSearch() {
             </svg>
           </div>
           <input onInput={(e) => setSearchText(e.target.value)} type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required />
-          <Link to={{pathname: `/herb`, search: `?searchText=${searchText}`}} >
+          <Link to={{pathname: `/herb`, search: `?q=${searchText}`}} >
             <button type="submit" className="tw-button-submit absolute right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">ค้นหา</button>
           </Link>
         </div>
