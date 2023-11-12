@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import CardDetail from '../components/CardDetail'
 import Table from '../components/Table'
 import InputIcon from '../components/InputIcon'
-import { ScrollRestoration, useParams } from 'react-router-dom'
+import { Link, ScrollRestoration, useParams } from 'react-router-dom'
 import Tab from '../components/Tab'
 import Bagdes from '../components/Bagdes'
 import Lists from '../components/Lists'
 import IngredientDetail from '../components/IngredientDetail'
 import api from '../middleware/api'
+import ReactEcharts from "echarts-for-react"
 
 const ingredient = {
   functional_ingredient: null,
@@ -34,10 +35,11 @@ const ingredient = {
 function HerbDetail() {
   const { herbId } = useParams()
   const [result, setResult] = useState(ingredient)
+  const [option, setOption] = useState({})
   
   useEffect(() => {
     // console.log(herbId);
-    api.post(`/api/as/v1/engines/ingredients-demo/search`, {
+    api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
       query: '',
       filters: {
         id: [herbId]
@@ -45,10 +47,21 @@ function HerbDetail() {
     }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
       resp.json().then((json) => {
         // console.log((json.results[0]))
+        api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
+          query: '',
+          filters: {
+            health_system_disease: json.results[0].health_system_disease.raw
+          }
+        }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
+          resp.json().then((json) => {
+            console.log(json.results.map(r => r.health_system_disease.raw))
+          })
+        })
         transform(json.results[0])
+        // setOption
       })
     })
-  }, [])
+  }, [herbId])
   const transform = (result) => {
     setResult({
       functional_ingredient: result.functional_ingredient.raw,
@@ -70,6 +83,43 @@ function HerbDetail() {
       fda: [],
       raw_material: JSON.parse(result.source.raw),
       research: JSON.parse(result.research.raw)
+    })
+    setOption({
+      tooltip: {},
+      legend: [
+        {
+          data: graph.categories.map(function (a) {
+            return a.name;
+          })
+        }
+      ],
+      series: [
+        {
+          name: 'Les Miserables',
+          type: 'graph',
+          layout: 'none',
+          data: graph.nodes,
+          links: graph.links,
+          categories: graph.categories,
+          roam: true,
+          label: {
+            show: true,
+            position: 'right',
+            formatter: '{b}'
+          },
+          labelLayout: {
+            hideOverlap: true
+          },
+          scaleLimit: {
+            min: 0.4,
+            max: 2
+          },
+          lineStyle: {
+            color: 'source',
+            curveness: 0.3
+          }
+        }
+      ]
     })
   }
   return (
@@ -130,14 +180,14 @@ function HerbDetail() {
           } />
         </div>
         <div className='flex flex-col gap-4 md:w-1/4 p-4'>
-          <div className=''>
+          {/* <div className=''>
             <InputIcon />
-          </div>
+          </div> */}
           <div className=''>
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
           </div>
-          <div className=''>
-            <Table
+          <div className='mt-4'>
+            {/* <Table
               head={
                 <tr><th className='py-1'>สารออกฤทธิ์ที่ใช้ร่วมกัน</th></tr>
               }
@@ -154,16 +204,40 @@ function HerbDetail() {
                 </tr>
                 </>
               }
+            /> */}
+            <CardDetail
+              title="สารออกฤทธิ์ที่ใช้ร่วมกัน"
+              desc={
+                <div className='flex flex-col gap-2'>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c`}} >
+                    {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
+                    <p className=''>Gymnema sylvestre</p>
+                  </Link>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
+                    <p className=''>Oleic acid</p>
+                  </Link>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63945` }} >
+                    <p className=''>Triterpene glycosides</p>
+                  </Link>
+                </div>
+              }
             />
           </div>
-          <div className='mt-2'>  
+          <div className=''>  
             <CardDetail
               title="ที่คล้ายกัน"
               desc={
                 <div className='flex flex-col gap-2'>
-                  <p className=''>Flavonoids</p>
-                  <p className=''>Oleic acid</p>
-                  <p className=''>Palmitoleic acid</p>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930`}} >
+                    {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
+                    <p className=''>Flavonoids</p>
+                  </Link>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
+                    <p className=''>Oleic acid</p>
+                  </Link>
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} >
+                    <p className=''>Palmitoleic acid</p>
+                  </Link>
                 </div>
               }
             />

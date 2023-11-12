@@ -5,6 +5,8 @@ import HerbSearch from '../components/HerbSearch'
 import CardBox from '../components/CardBox'
 import health_system from '@/assets/mockup_data/health_system.json'
 import ReactEcharts from "echarts-for-react";
+import { useEffect } from 'react'
+import api from '../middleware/api'
 
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
@@ -98,11 +100,13 @@ function Home() {
                       }
                     ]
                   }} />
-
                 </td>
               </tr>))}
             </tbody>
           </table>
+        </div>
+        <div>
+          {/* <ReactEcharts option={} /> */}
         </div>
       </div>
     </>

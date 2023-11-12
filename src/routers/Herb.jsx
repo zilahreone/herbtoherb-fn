@@ -130,7 +130,7 @@ function Herb() {
                                       <Link to={{ pathname: `/herb/${result.id.raw}` }} >
                                         <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button>
                                       </Link>
-                                      <p className="mt-2 text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: (result.description.raw) }} ></p>
+                                      <p className="mt-2 text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: (result.description.snippet) }} ></p>
                                     </div>
                                   </div>
                                 }

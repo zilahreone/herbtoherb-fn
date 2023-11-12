@@ -100,14 +100,15 @@ const es_config = {
   // }
   searchQuery: {
     result_fields: {
-      functional_ingredient: { raw: {} },
-      description: { raw: {} },
+      functional_ingredient: { raw: {}, snippet: { size: 1000, fallback: true }},
+      description: { raw: {}, snippet: { size: 1000, fallback: true } },
       important_health_benefits: { raw: {}, snippet: { fallback: true } },
       health_system_disease: { raw: {}, snippet: { fallback: true } },
       note: { raw: {} },
       ref: { raw: {} },
     },
     facets: {
+      group_of_functional_ingredient: { type: "value", size: 30 },
       group_of_functional_ingredient: { type: "value", size: 30 }
     }
   },
