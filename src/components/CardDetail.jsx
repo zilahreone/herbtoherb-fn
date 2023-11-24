@@ -10,7 +10,8 @@ function CardDetail({ desc, title }) {
           </div>
         }
         <div className={title && 'mt-2'}>
-          <div className="text-md font-normal">{desc}</div>
+          {desc}
+          {/* <div className="text-md font-normal">{desc}</div> */}
         </div>
       </div>
     </>

@@ -35,8 +35,8 @@ const ingredient = {
 function HerbDetail() {
   const { herbId } = useParams()
   const [result, setResult] = useState(ingredient)
-  const [option, setOption] = useState({})
-  
+  const [chartOption, setChartOption] = useState({})
+
   useEffect(() => {
     // console.log(herbId);
     api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
@@ -47,17 +47,8 @@ function HerbDetail() {
     }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
       resp.json().then((json) => {
         // console.log((json.results[0]))
-        api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
-          query: '',
-          filters: {
-            health_system_disease: json.results[0].health_system_disease.raw
-          }
-        }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
-          resp.json().then((json) => {
-            console.log(json.results.map(r => r.health_system_disease.raw))
-          })
-        })
         transform(json.results[0])
+        graphGenerate(json.results[0].health_system_disease.raw)
         // setOption
       })
     })
@@ -84,54 +75,135 @@ function HerbDetail() {
       raw_material: JSON.parse(result.source.raw),
       research: JSON.parse(result.research.raw)
     })
-    setOption({
-      tooltip: {},
-      legend: [
-        {
-          data: graph.categories.map(function (a) {
-            return a.name;
+  }
+  const graphGenerate = (health_system_disease) => {
+    api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
+      query: '',
+      filters: {
+        health_system_disease: health_system_disease
+      }
+    }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
+      resp.json().then((json) => {
+        // console.log(json.results.map((r, i) => r))
+        let linkArr = []
+        json.results.forEach((r, i) => {
+          r.health_system_disease.raw.forEach((hsd) => {
+            // console.log(hsd);
+            // console.log(health_system_disease.includes(hsd));
+            // console.log(health_system_disease.indexOf(hsd))
+            if (health_system_disease.includes(hsd)) {
+              linkArr.push({
+                source: health_system_disease.length + i,
+                target: health_system_disease.indexOf(hsd)
+              })
+            }
           })
+          // console.log('===========');
+        })
+        // console.log(linkArr)
+        const series = {
+          nodes: [
+            ...health_system_disease.map((hsd, i) => {
+              return {
+                label: { show: true },
+                id: i,
+                name: hsd,
+                symbolSize: (linkArr.filter(l => l.target === i).length / linkArr.length) * 100,
+                x: -1000,
+                y: 100 + (i * 150),
+                value: linkArr.filter(l => l.target === i).length,
+                category: i
+              }
+            }),
+            ...json.results.map((r, i) => {
+            return {
+              label: { show: true },
+              id: health_system_disease.length + i,
+              name: r.functional_ingredient.raw,
+              symbolSize: 20,
+              x: 200,
+              y: 0 + (i * 100),
+              value: '',
+              category: health_system_disease.length + i
+            }
+          })],
+          links: linkArr,
+          categories: [
+            ...health_system_disease.map(hsd => { return { name: hsd } }),
+            ...json.results.map((r) => { return { name: r.functional_ingredient.raw }})
+          ]
         }
-      ],
-      series: [
-        {
-          name: 'Les Miserables',
-          type: 'graph',
-          layout: 'none',
-          data: graph.nodes,
-          links: graph.links,
-          categories: graph.categories,
-          roam: true,
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{b}'
+        // console.log(series);
+        setChartOption({
+          title: {
+            text: null,
+            subtext: null,
+            top: 'bottom',
+            left: 'right'
           },
-          labelLayout: {
-            hideOverlap: true
-          },
-          scaleLimit: {
-            min: 0.4,
-            max: 2
-          },
-          lineStyle: {
-            color: 'source',
-            curveness: 0.3
-          }
-        }
-      ]
+          tooltip: {},
+          legend: [
+            {
+              // selectedMode: 'single',
+              data: [
+                ...health_system_disease,
+                ...json.results.map(r => r.functional_ingredient.raw)
+              ]
+            }
+          ],
+          animationDuration: 1500,
+          animationEasingUpdate: 'quinticInOut',
+          series: [
+            {
+              name: null,
+              type: 'graph',
+              layout: 'none',
+              data: series.nodes,
+              links: series.links,
+              categories: series.categories,
+              roam: true,
+              label: {
+                position: 'right',
+                formatter: '{b}'
+              },
+              labelLayout: {
+                hideOverlap: true
+              },
+              scaleLimit: {
+                min: 0.4,
+                max: 2
+              },
+              lineStyle: {
+                color: 'source',
+                curveness: 0.3
+              },
+              emphasis: {
+                focus: 'adjacency',
+                lineStyle: {
+                  width: 10
+                }
+              }
+            }
+          ]
+        })
+      })
     })
   }
   return (
     <>
-    {/* {
+      {/* {
       JSON.stringify(result)
     } */}
       {/* <IngredientDetail /> */}
       <div className='flex md:flex-row flex-col gap-2'>
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
-          <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{ result.functional_ingredient }</p>
-          <CardDetail title='ข้อมูลทั่วไป' desc={result.desc}></CardDetail>
+          <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{result.functional_ingredient}</p>
+          <CardDetail title='ข้อมูลทั่วไป' desc={result.desc} />
+          <CardDetail title='ที่เกี่ยวข้อง'
+            desc={
+              <ReactEcharts style={{ height: '600px', borderStyle: 'solid' }} option={chartOption} />
+            }
+          />
           <Tab tabs={[
             {
               name: 'คุณประโยชน์',
@@ -148,12 +220,12 @@ function HerbDetail() {
                 }
                 body={result.plants?.map((plant, index) => (
                   <tr key={index} className='hover:bg-gray-100 text-left'>
-                    <td className='px-4 text-std py-1'>{ plant.common_name.th }</td>
-                    <td className='px-4 text-std py-1'>{ plant.part_of_studied }</td>
-                    <td className='px-4 text-std py-1'>{ plant.process || '-' }</td>
+                    <td className='px-4 text-std py-1'>{plant.common_name.th}</td>
+                    <td className='px-4 text-std py-1'>{plant.part_of_studied}</td>
+                    <td className='px-4 text-std py-1'>{plant.process || '-'}</td>
                     {
-                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{ result.condition || '-' }</td>
-                    } 
+                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                    }
                   </tr>
                 ))}
               />
@@ -209,7 +281,7 @@ function HerbDetail() {
               title="สารออกฤทธิ์ที่ใช้ร่วมกัน"
               desc={
                 <div className='flex flex-col gap-2'>
-                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c`}} >
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c` }} >
                     {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
                     <p className=''>Gymnema sylvestre</p>
                   </Link>
@@ -223,12 +295,12 @@ function HerbDetail() {
               }
             />
           </div>
-          <div className=''>  
+          <div className=''>
             <CardDetail
               title="ที่คล้ายกัน"
               desc={
                 <div className='flex flex-col gap-2'>
-                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930`}} >
+                  <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} >
                     {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
                     <p className=''>Flavonoids</p>
                   </Link>
