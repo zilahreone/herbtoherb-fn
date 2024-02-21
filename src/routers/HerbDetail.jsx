@@ -9,6 +9,10 @@ import Lists from '../components/Lists'
 import IngredientDetail from '../components/IngredientDetail'
 import api from '../middleware/api'
 import ReactEcharts from "echarts-for-react"
+import homeBg from '@/assets/bg/Home-bg.png'
+import testPic from '@/assets/test-pic2.png'
+
+
 
 const ingredient = {
   functional_ingredient: null,
@@ -195,7 +199,7 @@ function HerbDetail() {
       JSON.stringify(result)
     } */}
       {/* <IngredientDetail /> */}
-      <div className='flex md:flex-row flex-col gap-2'>
+      <div className='flex md:flex-row flex-col gap-2 hide'>
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
           <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{result.functional_ingredient}</p>
           <CardDetail title='ข้อมูลทั่วไป' desc={result.desc} />
@@ -316,6 +320,251 @@ function HerbDetail() {
           </div>
         </div>
       </div>
+
+
+      <div className="search-result-container detail">
+        <div className="detail-container">
+
+          <div className="path">
+            <span>Home</span>
+            <span>-</span>
+            <span>เกล็ดเลือดต่ำ</span>
+            <span>-</span>
+            <span className='path-now'>โปรตีน</span>
+          </div>
+        </div>
+
+        <div className="name">
+          <img src={homeBg} alt="" />
+          <div className="title"><h1>โปรตีน (Protein)</h1></div>
+        </div>
+
+        <div className="detail-container content">
+          <div className="max-width">
+            <div className="box-a detail">
+              <div className="sidebar-menu">
+                <button>รูปส่วนผสมฟังค์ชัน</button>
+                <button className='menu-active'>ข้อมูลทั่วไป</button>
+                <button>คุณประโยชน์</button>
+                <button>พืช</button>
+                <button>การรับรอง</button>
+                <button>แหล่งวัตถุดิบ</button>
+                <button>งานวิจัย</button>
+              </div>
+            </div>
+            <div className="box-b">
+
+              <div className="result-card detail-page first">
+                <div className="top-info">
+                  <h2>รูปส่วนผสมฟังค์ชัน</h2>
+                </div>
+                <div className="info-info">
+                  <div className="pic-choice">
+                    <span>เลือกการแสดงผล :</span>
+                    <div className='btn'>
+                      <button className='active'>รูปที่ 1</button>
+                      <button>รูปที่ 2</button>
+                      <button>รูปที่ 3</button>
+                    </div>
+                  </div>
+                  <div className="img-show">
+                    <img src={testPic} alt="" />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>ข้อมูลทั่วไป</h2>
+                </div>
+                <div className="info-info">
+                <p className='general-info'>Carbohydrate & Specialty carbohydrates, Trigonella-foenumgraecum L., ลูกซัด, Fenugreek, Digestive, LipidLevels, Blood, ปริมาณใยอาหาร ไม่เกิน 25 กรัมต่อวัน</p>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>คุณประโยชน์</h2>
+                </div>
+                <div className="info-info">
+                  <ul>
+                    <li>Improves digestive health (Reflux)</li>
+                    <li>Reduce LDL and triglycerides</li>
+                    <li>Regulates blood sugar level</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>พืช</h2>
+                </div>
+                <div className="info-info">
+                  <table className='plant-table'>
+                    <tr>
+                      <th>ชื่อ</th>
+                      <th>ส่วนที่ใช้</th>
+                      <th>กรรมวิธี</th>
+                      <th>เงื่อนไข</th>
+                    </tr>
+                    <tr>
+                      <td>ข้าว</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
+                    </tr>
+                    <tr>
+                      <td>อ้อย</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
+                    </tr>
+                    <tr>
+                      <td>ข้าว</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>การรับรอง</h2>
+                </div>
+                <div className="info-info">
+                <p className='general-info'>ไม่มีข้อมูล</p>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>แหล่งวัตถุดิบ</h2>
+                </div>
+                <div className="plant-base">
+                  <div className="info-info colum">
+                    <span className='header'>แหล่งเพาะปลูก :</span>
+                    <ul>
+                      <li>บ้านเลขที่ 259 หมู่ 9 หมู่บ้าน ร่องครกใต้ ถ.จำป่าหวาย-แม่กา ต.จำป่าหวาย อ.เมืองพะเยา จ.พะเยา</li>
+                      <li>บ้านเลขที่ 59/5 หมู่ 4 บ้านท่าต้นกวาว ถนนสันกอละหก ตำบลชมภู อำเภอสารภี จังหวัดเชียงใหม่</li>
+                    </ul>
+                  </div>
+                  <div className="info-info colum">
+                    <span className='header'>โรงงานแปรรูป :</span>
+                    <ul>
+                      <li>วิสาหกิจชุมชนชีววิถีตำบลน้ำเกี๋ยน – บริษัทชีววิถีเฮิร์บ จำกัด 192 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน - 130 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน 55000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>งานวิจัย</h2>
+                </div>
+                <div className="plant-base">
+                  <div className="info-info colum">
+                    <span className='header'>ผู้เชี่ยวชาญ :</span>
+                    <ul>
+                      <li>ผศ.ปริญญาวดี ศรีลานทิพย์และคณะ.ผักเชียงดาราชินีผักล้านนา. สถาบันถ่านทอดเทคโนโลยีสู่ชุมชน มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา 40 หน้า</li>
+                      <li>กนกพร อะทะวงมา.ฤทธิ์ลดน้ำตาลในเลือดของผักเชียงดา.บทความเผยแพร่ความรู้สู่ประชาชน.คณะเภสัชศาสตร์มหาวิทยาลัยมหิดล.</li>
+                      <li>ประทุมพร ยิ่งธงชัย และคณะ.การเปรียบเทียบคุณค่าทางโภชนาการและปริมาณสารออกฤทธิ์ชีวภาพในใบเชียงดา.วารสารเกษตรปีที่ 34. ฉบับที่ 3กันยายน-ธันวาคม 2561. หน้า 363-372</li>
+                    </ul>
+                  </div>
+                  <div className="info-info colum">
+                    <span className='header'>ผลการวิจัย :</span>
+                    <ul>
+                      <li>Shin-ichi Y, Toshiaki I, Michio M, Takeshi K, Ryuzo K, Yasutake H. Anti-diabetic effects of the extracts from the leaves of Gymnema sylvestre. Inhibitory effect of gymnemic acids on glucose absorption in the small intestine. Wakan Iyakugaku Zasshi (1996);13(4):300-3.</li>
+                      <li>Persaud, S.J., Al-Majed, H., Raman, A. and P.M. Jones. 1999. Gymnema sylvestre stimulates insulin release in vitro by increased membrane permeability. Journal of Endocrinology, 163: 207–212.</li>
+                      <li>Stoecklin W. Chemistry and physiological properties of gymnemic acid, the antisaccharine principle of the leaves of Gymnema sylvestre. J Agric Food Chem 1969;17(4):704-8.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="result-card detail-page">
+                <div className="top-info">
+                  <h2>สารออกฤทธิ์ที่ใช้ร่วมกัน</h2>
+                </div>
+                <div className="info-info">
+                  <ul>
+                    <li>Gymnema sylvestre</li>
+                    <li>Oleic acid</li>
+                    <li>Triterpene glycosides</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>          
+        </div>
+        
+      </div>
+      <div className="white-bg-cont">
+        <div className="test">
+          <div className="slide-container white-bg">
+              <div className="header">
+                <span>ผลลัพธ์ที่คล้ายกัน</span>
+                <a href="">แสดงทั้งหมด</a>
+              </div>
+              <div className="slide-card">
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+
     </>
   )
 }

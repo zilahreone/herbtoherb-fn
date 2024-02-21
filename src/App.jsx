@@ -22,24 +22,27 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen w-full justify-between">
-        <div className="absolute w-full flex flex-row justify-center py-4">
-          <Header />
-        </div>
+    <div className="navbar-container"><Header /></div>
+      <div>
         {/* style={{ 'backgroundImage': `url(${bg})` }} */}
-        <div className='flex flex-col mt-[12vh] items-center py-10 bg-slate-100'>
+        <div className='content-container'>
         {/* <div className='py-10 mt-[12vh] w-[1250px] h-[90px] items-center bg-slate-400'> */}
+
+        
           {location.pathname === '/' ? <Home /> : <Outlet />}
+
+
+          
           {/* <div className='px-4 md:px-8 lg:px-12 xl:px-16 bg-red-100 w-full'>
             <ElasticSearch />
           </div> */}
           {/* <ElasticSearchDemo /> */}
           <ScrollRestoration />
         </div>
+      </div>
         <div>
           <Footer />
         </div>
-      </div>
     </>
   )
 }
