@@ -159,6 +159,8 @@ function Herb() {
       </SearchProvider>
     </div>
 
+
+
     <div className='content-container'>
       <img className="home-bg result-page" src={homeBg} alt="" />
       <div className="search-flex result-page">
@@ -428,6 +430,9 @@ function Herb() {
           </div>
 
           <div className="result-card-conntainer">
+
+
+
 
             <div className="result-card">
               <div className="top-info">

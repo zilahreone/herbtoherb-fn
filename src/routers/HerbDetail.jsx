@@ -4,13 +4,13 @@ import Table from '../components/Table'
 import InputIcon from '../components/InputIcon'
 import { Link, ScrollRestoration, useParams } from 'react-router-dom'
 import Tab from '../components/Tab'
+import Pic from '../components/Pic'
 import Bagdes from '../components/Bagdes'
 import Lists from '../components/Lists'
 import IngredientDetail from '../components/IngredientDetail'
 import api from '../middleware/api'
 import ReactEcharts from "echarts-for-react"
 import homeBg from '@/assets/bg/Home-bg.png'
-import testPic from '@/assets/test-pic2.png'
 
 
 
@@ -201,8 +201,8 @@ function HerbDetail() {
       {/* <IngredientDetail /> */}
       <div className='flex md:flex-row flex-col gap-2 hide'>
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
-          <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{result.functional_ingredient}</p>
-          <CardDetail title='ข้อมูลทั่วไป' desc={result.desc} />
+          <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4 hide">{result.functional_ingredient}</p>
+
           <CardDetail title='ที่เกี่ยวข้อง'
             desc={
               <ReactEcharts style={{ height: '600px', borderStyle: 'solid' }} option={chartOption} />
@@ -236,6 +236,7 @@ function HerbDetail() {
             },
             {
               name: 'การรับรอง',
+              href:'#five',
               content: <Lists link={true} list={result.fda} />
             },
             {
@@ -328,78 +329,108 @@ function HerbDetail() {
           <div className="path">
             <span>Home</span>
             <span>-</span>
-            <span>เกล็ดเลือดต่ำ</span>
-            <span>-</span>
-            <span className='path-now'>โปรตีน</span>
+            <span className='path-now'>{result.functional_ingredient}</span>
           </div>
         </div>
 
         <div className="name">
           <img src={homeBg} alt="" />
-          <div className="title"><h1>โปรตีน (Protein)</h1></div>
+          <div className="title"><h1>{result.functional_ingredient}</h1></div>
         </div>
 
         <div className="detail-container content">
           <div className="max-width">
             <div className="box-a detail">
-              <div className="sidebar-menu">
-                <button>รูปส่วนผสมฟังค์ชัน</button>
-                <button className='menu-active'>ข้อมูลทั่วไป</button>
-                <button>คุณประโยชน์</button>
-                <button>พืช</button>
-                <button>การรับรอง</button>
-                <button>แหล่งวัตถุดิบ</button>
-                <button>งานวิจัย</button>
-              </div>
+            <Tab tabs={[
+            {
+              name: 'รูปส่วนผสมฟังค์ชัน'
+            },
+            {
+              name: 'ข้อมูลทั่วไป'
+            },
+            {
+              name: 'คุณประโยชน์'
+            },
+            {
+              name: 'พืช'
+            },
+            {
+              name: 'การรับรอง'
+            },
+            {
+              name: 'แหล่งวัตถุดิบ'
+            },
+            {
+              name: 'งานวิจัย'
+            },
+            {
+              name: 'สารออกฤทธิ์ที่ใช้ร่วมกัน'
+            }
+          ]
+          } />
+            
             </div>
-            <div className="box-b">
+            <div className="box-b" id='one'>
 
-              <div className="result-card detail-page first">
+              <div className="result-card detail-page first" >
                 <div className="top-info">
                   <h2>รูปส่วนผสมฟังค์ชัน</h2>
                 </div>
-                <div className="info-info">
-                  <div className="pic-choice">
-                    <span>เลือกการแสดงผล :</span>
-                    <div className='btn'>
-                      <button className='active'>รูปที่ 1</button>
-                      <button>รูปที่ 2</button>
-                      <button>รูปที่ 3</button>
-                    </div>
-                  </div>
-                  <div className="img-show">
-                    <img src={testPic} alt="" />
-                  </div>
+                <div>
+                  <Pic pics={[
+                        {
+                          name: 'รูปส่วนผสมฟังค์ชัน',
+                          content: <div className="img-show">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                        </div>
+                        },
+                        {
+                          name: 'รูปความสัมพันธ์',
+                          content: <CardDetail desc={<ReactEcharts option={chartOption} />}/>
+                        },
+                        {
+                          name: 'รูปส่วนผสมฟังค์ชัน',
+                          content: <div className="img-show">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                        </div>
+                        }
+                      ]
+                      } />
+
                 </div>
               </div>
               
-              <div className="result-card detail-page">
+              
+              <div className="result-card detail-page" id='two'>
                 <div className="top-info">
                   <h2>ข้อมูลทั่วไป</h2>
                 </div>
                 <div className="info-info">
-                <p className='general-info'>Carbohydrate & Specialty carbohydrates, Trigonella-foenumgraecum L., ลูกซัด, Fenugreek, Digestive, LipidLevels, Blood, ปริมาณใยอาหาร ไม่เกิน 25 กรัมต่อวัน</p>
+                <p className='general-info'>{result.desc}</p>
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='three'>
                 <div className="top-info">
                   <h2>คุณประโยชน์</h2>
                 </div>
+                <div className="test-2">
+                <Bagdes list={result.health_system_disease} />
+
+                </div>
+
                 <div className="info-info">
-                  <ul>
-                    <li>Improves digestive health (Reflux)</li>
-                    <li>Reduce LDL and triglycerides</li>
-                    <li>Regulates blood sugar level</li>
-                  </ul>
+                
+                <Lists list={result.important_health_benefits} />
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='four'>
                 <div className="top-info">
                   <h2>พืช</h2>
                 </div>
                 <div className="info-info">
+
                   <table className='plant-table'>
                     <tr>
                       <th>ชื่อ</th>
@@ -407,98 +438,93 @@ function HerbDetail() {
                       <th>กรรมวิธี</th>
                       <th>เงื่อนไข</th>
                     </tr>
-                    <tr>
-                      <td>ข้าว</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
-                    </tr>
-                    <tr>
-                      <td>อ้อย</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
-                    </tr>
-                    <tr>
-                      <td>ข้าว</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>ปริมาณโพลิโคซานอล ไม่เกิน 5 มิลลิกรัมต่อวัน</td>
-                    </tr>
+                    {result.plants?.map((plant, index) => (
+                  <tr key={index} className='hover:bg-gray-100 text-left'>
+                    <td>{plant.common_name.th}</td>
+                    <td>{plant.part_of_studied}</td>
+                    <td>{plant.process || '-'}</td>
+                    {
+                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                    }
+                  </tr>
+                ))}
                   </table>
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='five'>
                 <div className="top-info">
                   <h2>การรับรอง</h2>
                 </div>
                 <div className="info-info">
-                <p className='general-info'>ไม่มีข้อมูล</p>
+                
+                <Lists link={true} list={result.fda} />
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='six'>
                 <div className="top-info">
                   <h2>แหล่งวัตถุดิบ</h2>
                 </div>
                 <div className="plant-base">
                   <div className="info-info colum">
                     <span className='header'>แหล่งเพาะปลูก :</span>
-                    <ul>
-                      <li>บ้านเลขที่ 259 หมู่ 9 หมู่บ้าน ร่องครกใต้ ถ.จำป่าหวาย-แม่กา ต.จำป่าหวาย อ.เมืองพะเยา จ.พะเยา</li>
-                      <li>บ้านเลขที่ 59/5 หมู่ 4 บ้านท่าต้นกวาว ถนนสันกอละหก ตำบลชมภู อำเภอสารภี จังหวัดเชียงใหม่</li>
-                    </ul>
+                    <Lists list={result.raw_material.planting} />
                   </div>
                   <div className="info-info colum">
                     <span className='header'>โรงงานแปรรูป :</span>
-                    <ul>
-                      <li>วิสาหกิจชุมชนชีววิถีตำบลน้ำเกี๋ยน – บริษัทชีววิถีเฮิร์บ จำกัด 192 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน - 130 ม. 4 ต.น้ำเกี๋ยน อ.ภูเพียง จ.น่าน 55000</li>
-                    </ul>
+                    <Lists list={result.raw_material.factory} />
                   </div>
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='seven'>
                 <div className="top-info">
                   <h2>งานวิจัย</h2>
                 </div>
                 <div className="plant-base">
                   <div className="info-info colum">
+                    
                     <span className='header'>ผู้เชี่ยวชาญ :</span>
-                    <ul>
-                      <li>ผศ.ปริญญาวดี ศรีลานทิพย์และคณะ.ผักเชียงดาราชินีผักล้านนา. สถาบันถ่านทอดเทคโนโลยีสู่ชุมชน มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา 40 หน้า</li>
-                      <li>กนกพร อะทะวงมา.ฤทธิ์ลดน้ำตาลในเลือดของผักเชียงดา.บทความเผยแพร่ความรู้สู่ประชาชน.คณะเภสัชศาสตร์มหาวิทยาลัยมหิดล.</li>
-                      <li>ประทุมพร ยิ่งธงชัย และคณะ.การเปรียบเทียบคุณค่าทางโภชนาการและปริมาณสารออกฤทธิ์ชีวภาพในใบเชียงดา.วารสารเกษตรปีที่ 34. ฉบับที่ 3กันยายน-ธันวาคม 2561. หน้า 363-372</li>
-                    </ul>
+                    <Lists list={result.research.expert} />
                   </div>
                   <div className="info-info colum">
                     <span className='header'>ผลการวิจัย :</span>
-                    <ul>
-                      <li>Shin-ichi Y, Toshiaki I, Michio M, Takeshi K, Ryuzo K, Yasutake H. Anti-diabetic effects of the extracts from the leaves of Gymnema sylvestre. Inhibitory effect of gymnemic acids on glucose absorption in the small intestine. Wakan Iyakugaku Zasshi (1996);13(4):300-3.</li>
-                      <li>Persaud, S.J., Al-Majed, H., Raman, A. and P.M. Jones. 1999. Gymnema sylvestre stimulates insulin release in vitro by increased membrane permeability. Journal of Endocrinology, 163: 207–212.</li>
-                      <li>Stoecklin W. Chemistry and physiological properties of gymnemic acid, the antisaccharine principle of the leaves of Gymnema sylvestre. J Agric Food Chem 1969;17(4):704-8.</li>
-                    </ul>
+                    <Lists list={result.research.research} />
                   </div>
                 </div>
               </div>
 
-              <div className="result-card detail-page">
+              <div className="result-card detail-page" id='eight'>
                 <div className="top-info">
                   <h2>สารออกฤทธิ์ที่ใช้ร่วมกัน</h2>
                 </div>
-                <div className="info-info">
+                <div className="info-info link">
                   <ul>
-                    <li>Gymnema sylvestre</li>
-                    <li>Oleic acid</li>
-                    <li>Triterpene glycosides</li>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c` }} >
+                        {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
+                        <span>Gymnema sylvestre</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
+                        <span>Oleic acid</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63945` }} >
+                        <span>Triterpene glycosides</span>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
 
             </div>
 
-
+            
+                  
 
           </div>          
         </div>
@@ -509,51 +535,34 @@ function HerbDetail() {
           <div className="slide-container white-bg">
               <div className="header">
                 <span>ผลลัพธ์ที่คล้ายกัน</span>
-                <a href="">แสดงทั้งหมด</a>
+                <a href="/">แสดงทั้งหมด</a>
               </div>
+              
               <div className="slide-card">
 
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
                   <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
+                </Link>
 
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} className="item-card">
+                  <span className='title'>Oleic acid</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
                   <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
+                </Link>
+           
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} className="item-card">
+                  <span className='title'>Palmitoleic acid</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </Link>
 
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-
-                <div className="item-card">
-                  <span className='title'>อัลบูมิน (Albumin)</span>
-                  <img src={testPic} alt="" />
-                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
+              
 
 
 

@@ -41,7 +41,7 @@ function Header() {
       //   </div>
       // </div>
       <div className='navbar'>
-        <img src={logo} alt="logo" />
+        <a href="/"><img src={logo} alt="logo" /></a>
         <nav className='nav-menu'>
           {menus.map((menu, index) => (
             <NavLink key={ index } to={ menu.path } className='menu-item'>{ menu.name }</NavLink>

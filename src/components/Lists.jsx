@@ -15,9 +15,9 @@ function Lists({ link, title, list }) {
         {
           list?.length ?
             list?.map((value, index) => {
-              return link ? <li key={index} className="hover:text-blue-500"><a href={value.url} target="_blank">{value.title}</a></li> : <li key={index}>{ value }</li>
+              return link ? <li key={index} className=""><a href={value.url} target="_blank">{value.title}</a></li> : <li key={index}>{ value }</li>
             })
-          : <div className="text-center p-8">ไม่มีข้อมูล</div>
+          : <span className="empty-data">ไม่มีข้อมูล</span>
         }
       </ul>
     </div>
