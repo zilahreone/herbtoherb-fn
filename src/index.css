@@ -235,6 +235,8 @@ p, span {
   padding: 6px;
   border-radius: 3px;
   margin-top: 30px;
+  width: 100%;
+  /* display: none; */
 }
 
 
@@ -264,6 +266,7 @@ p, span {
   flex-direction: column;
   gap: 14px;
   border-radius: 3px;
+  /* display: none; */
 }
 
 
@@ -1185,7 +1188,7 @@ p, span {
 
 
 
-/* RESPOSIVE DISPLAY */
+/* RESPONSIVE DISPLAY */
 
 
 @media (max-width: 420px) {
@@ -1221,6 +1224,10 @@ p, span {
 
   .checkbox-box {
     flex-direction: column;
+  }
+
+  .search-box-content .box-input.two {
+    width: 100%;
   }
 
   .search-flex {
