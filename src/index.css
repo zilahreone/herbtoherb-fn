@@ -1003,6 +1003,11 @@ p, span {
   padding: 6px 16px;
 }
 
+.info-info.table {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .pic-bcontainer {
   display: flex;
   padding: 10px 20px;
@@ -1122,8 +1127,10 @@ p, span {
 }
 
 .plant-table {
-  border-collapse: collapse;
-  width: 100%;
+  /* border-collapse: collapse; */
+  /* width: 100%; */
+  
+
 }
 
 .plant-table th,.plant-table td {
@@ -1168,3 +1175,121 @@ p, span {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+/* RESPOSIVE DISPLAY */
+
+
+@media (max-width: 960px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar .nav-menu {
+    display: none;
+  }
+
+  .search-content img {
+    display: none;
+  }
+
+  .search-content h3 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .search-content h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .search-box {
+    margin-top: 20px;
+  }
+
+  .search-box-content {
+    padding: 10px;
+  }
+
+  .checkbox-box {
+    flex-direction: column;
+  }
+
+  .search-flex {
+    height: 630px;
+  }
+
+  .most-view-container {
+    padding: 20px 10px 30px 10px;
+  }
+
+  .most-view-card .card .title {
+    font-size: 14px;
+  }
+
+  .most-view-card .card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .view-count {
+    font-size: 12px;
+  }
+
+  .slide-container .slide-card {
+    flex-wrap: wrap;
+  }
+
+  .slide-container .slide-card .item-card {
+    width: 48%;
+  }
+  .slide-card {
+    justify-content: center;
+  }
+
+  .footer-menu {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .contact-detail{
+    padding: 20px;
+  }
+
+  .text-std-year {
+    text-align: center;
+    font-size: 10px;
+  }
+
+
+
+  .max-width {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .result-card.detail-page .plant-table {
+        /* overflow-x: auto; */
+        
+  }
+
+  .pic-bcontainer {
+    flex-direction: column;
+  }
+
+  .pic-bcontainer .menu-left {
+    width: 100%;
+  }
+}

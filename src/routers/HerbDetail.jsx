@@ -429,7 +429,7 @@ function HerbDetail() {
                 <div className="top-info">
                   <h2>พืช</h2>
                 </div>
-                <div className="info-info">
+                <div className="info-info table">
 
                   <table className='plant-table'>
                     <tr>
