@@ -1188,7 +1188,7 @@ p, span {
 /* RESPOSIVE DISPLAY */
 
 
-@media (max-width: 960px) {
+@media (max-width: 420px) {
   .navbar {
     flex-direction: column;
   }
