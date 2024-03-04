@@ -7,6 +7,11 @@ import health_system from '@/assets/mockup_data/health_system.json'
 import ReactEcharts from "echarts-for-react";
 import { useEffect } from 'react'
 import api from '../middleware/api'
+import homeBg from '@/assets/bg/Home-bg.png'
+import logo from '@/assets/FoodInno-Logo2.png'
+import testPic from '@/assets/test-pic2.png'
+
+
 
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
@@ -24,9 +29,9 @@ function Home() {
   ]
   return (
     // <div>
-    // </div>ฤ
+    // </div>
     <>
-      <div className='container'>
+      <div className='container hide'>
         <div style={{ position: 'sticky', top: 0, zIndex: 100 }} className=' w-[100%] h-[30vh] rounded-b-xl shadow-xl bg-gray-100'>
           <HerbSearch ></HerbSearch>
         </div>
@@ -109,7 +114,420 @@ function Home() {
           {/* <ReactEcharts option={} /> */}
         </div>
       </div>
+
+
+      <div className="content-container">
+        <img className="home-bg" src={homeBg} alt="" />
+        <div className="search-flex">
+          <div className="search-content">
+            <img src={logo} alt="" />
+            <h3>Thailand Most Influential Food Innovation Platform</h3>
+            <h1>แพลตฟอร์มบริการผลิตอาหารและส่วนผสมฟังก์ชัน</h1>
+            <div className="search-box">
+              <div className="search-header">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h2>สืบค้นข้อมูลส่วนผสมฟังค์ชัน</h2>
+              </div>
+              <div className="search-box-content">
+                <div className="search-input">
+                  <div className="title">คำค้นหา :</div>
+                  <input type="text" placeholder='พิมพ์ข้อความ เช่น ชื่อพืช ชื่ออาหาร ชื่อส่วนผสม...' />
+                </div>
+                <div className="checkbox-flex">
+                  <div className="checkbox-box">
+
+
+
+                    <div className="box-input">
+                      <div className="title checkbox">หมวดหมู่ :</div>
+                      <div className="box">
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="Antioxidant" id="Antioxidant" type="checkbox"/>
+                            <label class="cbx" for="Antioxidant">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Antioxidant</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="blood" id="blood" type="checkbox"/>
+                            <label class="cbx" for="blood">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Blood</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="bloodPressure" id="bloodPressure" type="checkbox"/>
+                            <label class="cbx" for="bloodPressure">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Blood Pressure</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="brain" id="brain" type="checkbox"/>
+                            <label class="cbx" for="brain">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Brain</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="Cancer" id="Cancer" type="checkbox"/>
+                            <label class="cbx" for="Cancer">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Cancer</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="Cardiovascular" id="Cardiovascular" type="checkbox"/>
+                            <label class="cbx" for="Cardiovascular">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Cardiovascular</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="Coenzyme" id="Coenzyme" type="checkbox"/>
+                            <label class="cbx" for="Coenzyme">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>Coenzyme</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="box-input two">
+                      <div className="title checkbox">ส่วนผสมของฟังค์ชัน :</div>
+                      <div className="box">
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="FunctionalIngredient1" id="FunctionalIngredient1" type="checkbox"/>
+                            <label class="cbx" for="FunctionalIngredient1">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>7 Carbohydrate & Specialty cabohydrate</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="FunctionalIngredient2" id="FunctionalIngredient2" type="checkbox"/>
+                            <label class="cbx" for="FunctionalIngredient2">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>2 Protein & Amino acids</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="FunctionalIngredient3" id="FunctionalIngredient3" type="checkbox"/>
+                            <label class="cbx" for="FunctionalIngredient3">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>3 Dietary fiber</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="FunctionalIngredient4" id="FunctionalIngredient4" type="checkbox"/>
+                            <label class="cbx" for="FunctionalIngredient4">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>18 Healthy fats</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="FunctionalIngredient5" id="FunctionalIngredient5" type="checkbox"/>
+                            <label class="cbx" for="FunctionalIngredient5">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>7 Minerals</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="box-input">
+                      <div className="title checkbox">พื้นที่เพาะปลูก :</div>
+                      <div className="box">
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="area1" id="area1" type="checkbox"/>
+                            <label class="cbx" for="area1">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>ต่างประเทศ 94 ชนิด</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+
+                        <div class="checkbox-wrapper-4">
+                          <input class="inp-cbx" name="functionType" value="area2" id="area2" type="checkbox"/>
+                            <label class="cbx" for="area2">
+                                <span>
+                                    <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                                </span>
+                                <span>ในประเทศไทย 144 ชนิด</span>
+                            </label>
+                            <svg class="inline-svg">
+                                <symbol id="check-4" viewbox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+                        </div>
+
+                    </div>
+                      
+
+
+                  </div>
+                </div>
+                <button className='search-btn'>ค้นหา</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="most-view-container">
+          <div className="most-view">
+            <h2>รายการข้อมูลที่ถูกเข้าถึงมากที่สุด</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+            <div className="card-container">
+              <div className="most-view-card top">
+                <div className="card">
+                  <div className='title'>โปรตีน (Protein)</div>
+                  <img src={testPic} alt="" />
+                  <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className='title'>โปรตีน (Protein)</div>
+                  <img src={testPic} alt="" />
+                  <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+                </div>
+              </div>
+                <div className="most-view-card bottom">
+                <div className="card">
+                  <div className='title'>โปรตีน (Protein)</div>
+                  <img src={testPic} alt="" />
+                  <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className='title'>โปรตีน (Protein)</div>
+                  <img src={testPic} alt="" />
+                  <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className='title'>โปรตีน (Protein)</div>
+                  <img src={testPic} alt="" />
+                  <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="most-view-container two">
+          <div className="most-view">
+            <h2>รายการส่วนผสมฟังค์ชัน</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+            <div className="menu-btn-container">
+              <button className='menu-btn'>Antioxidant</button>
+              <button className='menu-btn'>Blood</button>
+              <button className='menu-btn'>Blood Pressure</button>
+              <button className='menu-btn'>Brain</button>
+              <button className='menu-btn'>Cancer</button>
+              <button className='menu-btn'>Cardiovascular</button>
+              <button className='menu-btn'>Coenzyme</button>
+              <button className='menu-btn'>Diabetes</button>
+              <button className='menu-btn'>Energy</button>
+              <button className='menu-btn'>Cancer</button>
+              <button className='menu-btn'>Cardiovascular</button>
+              <button className='menu-btn'>Coenzyme</button>
+              <button className='menu-btn'>Eye</button>
+              <button className='menu-btn'>Hormone</button>
+              <button className='menu-btn active'>Antioxidant</button>
+              <button className='menu-btn'>Blood</button>
+              <button className='menu-btn'>Blood Pressure</button>
+              <button className='menu-btn'>Brain</button>
+              <button className='menu-btn'>Cancer</button>
+              <button className='menu-btn'>Cardiovascular</button>
+              <button className='menu-btn'>Coenzyme</button>
+            </div>
+
+            <div className="slide-container">
+              <div className="header">
+                <span>ผลการค้นหา : “Blood Pressure”</span>
+                <a href="">แสดงทั้งหมด</a>
+              </div>
+              <div className="slide-card">
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+                <div className="item-card">
+                  <span className='title'>อัลบูมิน (Albumin)</span>
+                  <img src={testPic} alt="" />
+                  <p>Protein & Amino acids, Irvingia gabonensis, เมล็ดมะม่วงแอฟริกัน, African mango, BloodPressure, Digestive, Immunity, ปริมาณสารสกัดไม่เกิน 300 มิลลิกรัมต่อวัน2. ต้องแสดงข้อความค้าเตือนบนฉลากดังนี้ “ข้อมูลส้าหรับผู้แพ้อาหาร : มีอัลบูมินจากสารสกัดเมล็ดมะม่วงแอฟริกัน”</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
     </>
   )
 }
 export default Home
+
+

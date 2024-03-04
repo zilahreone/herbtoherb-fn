@@ -4,12 +4,14 @@ import Table from '../components/Table'
 import InputIcon from '../components/InputIcon'
 import { Link, ScrollRestoration, useParams } from 'react-router-dom'
 import Tab from '../components/Tab'
+import Pic from '../components/Pic'
 import Bagdes from '../components/Bagdes'
 import Lists from '../components/Lists'
 import IngredientDetail from '../components/IngredientDetail'
 import api from '../middleware/api'
 import ReactEcharts from "echarts-for-react"
 import SmileDrawer from '../components/SmileDrawer'
+import homeBg from '@/assets/bg/Home-bg.png'
 
 const ingredient = {
   functional_ingredient: null,
@@ -449,11 +451,14 @@ function HerbDetail() {
       JSON.stringify(result)
     } */}
       {/* <IngredientDetail /> */}
-      <div className='flex md:flex-row flex-col gap-2'>
+      <div className='flex md:flex-row flex-col gap-2 hide'>
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
           <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{result.functional_ingredient}</p>
           <CardDetail title='ข้อมูลทั่วไป' desc={result.desc} />
           {/* <CardDetail title='ที่เกี่ยวข้อง'
+          <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4 hide">{result.functional_ingredient}</p>
+
+          <CardDetail title='ที่เกี่ยวข้อง'
             desc={
               <ReactEcharts style={{ height: '600px', borderStyle: 'solid' }} option={chartOption} />
             }
@@ -502,6 +507,7 @@ function HerbDetail() {
             },
             {
               name: 'การรับรอง',
+              href:'#five',
               content: <Lists link={true} list={result.fda} />
             },
             {
@@ -587,6 +593,259 @@ function HerbDetail() {
           </div>
         </div>
       </div>
+
+
+      <div className="search-result-container detail">
+        <div className="detail-container">
+
+          <div className="path">
+            <span>Home</span>
+            <span>-</span>
+            <span className='path-now'>{result.functional_ingredient}</span>
+          </div>
+        </div>
+
+        <div className="name">
+          <img src={homeBg} alt="" />
+          <div className="title"><h1>{result.functional_ingredient}</h1></div>
+        </div>
+
+        <div className="detail-container content">
+          <div className="max-width">
+            <div className="box-a detail">
+            <Tab tabs={[
+            {
+              name: 'รูปส่วนผสมฟังค์ชัน'
+            },
+            {
+              name: 'ข้อมูลทั่วไป'
+            },
+            {
+              name: 'คุณประโยชน์'
+            },
+            {
+              name: 'พืช'
+            },
+            {
+              name: 'การรับรอง'
+            },
+            {
+              name: 'แหล่งวัตถุดิบ'
+            },
+            {
+              name: 'งานวิจัย'
+            },
+            {
+              name: 'สารออกฤทธิ์ที่ใช้ร่วมกัน'
+            }
+          ]
+          } />
+            
+            </div>
+            <div className="box-b" id='one'>
+
+              <div className="result-card detail-page first" >
+                <div className="top-info">
+                  <h2>รูปส่วนผสมฟังค์ชัน</h2>
+                </div>
+                <div>
+                  <Pic pics={[
+                        {
+                          name: 'รูปส่วนผสมฟังค์ชัน',
+                          content: <div className="img-show">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                        </div>
+                        },
+                        {
+                          name: 'รูปความสัมพันธ์',
+                          content: <CardDetail desc={<ReactEcharts option={chartOption} />}/>
+                        },
+                        {
+                          name: 'รูปส่วนผสมฟังค์ชัน',
+                          content: <div className="img-show">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                        </div>
+                        }
+                      ]
+                      } />
+
+                </div>
+              </div>
+              
+              
+              <div className="result-card detail-page" id='two'>
+                <div className="top-info">
+                  <h2>ข้อมูลทั่วไป</h2>
+                </div>
+                <div className="info-info">
+                <p className='general-info'>{result.desc}</p>
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='three'>
+                <div className="top-info">
+                  <h2>คุณประโยชน์</h2>
+                </div>
+                <div className="test-2">
+                <Bagdes list={result.health_system_disease} />
+
+                </div>
+
+                <div className="info-info">
+                
+                <Lists list={result.important_health_benefits} />
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='four'>
+                <div className="top-info">
+                  <h2>พืช</h2>
+                </div>
+                <div className="info-info table">
+
+                  <table className='plant-table'>
+                    <tr>
+                      <th>ชื่อ</th>
+                      <th>ส่วนที่ใช้</th>
+                      <th>กรรมวิธี</th>
+                      <th>เงื่อนไข</th>
+                    </tr>
+                    {result.plants?.map((plant, index) => (
+                  <tr key={index} className='hover:bg-gray-100 text-left'>
+                    <td>{plant.common_name.th}</td>
+                    <td>{plant.part_of_studied}</td>
+                    <td>{plant.process || '-'}</td>
+                    {
+                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                    }
+                  </tr>
+                ))}
+                  </table>
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='five'>
+                <div className="top-info">
+                  <h2>การรับรอง</h2>
+                </div>
+                <div className="info-info">
+                
+                <Lists link={true} list={result.fda} />
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='six'>
+                <div className="top-info">
+                  <h2>แหล่งวัตถุดิบ</h2>
+                </div>
+                <div className="plant-base">
+                  <div className="info-info colum">
+                    <span className='header'>แหล่งเพาะปลูก :</span>
+                    <Lists list={result.raw_material.planting} />
+                  </div>
+                  <div className="info-info colum">
+                    <span className='header'>โรงงานแปรรูป :</span>
+                    <Lists list={result.raw_material.factory} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='seven'>
+                <div className="top-info">
+                  <h2>งานวิจัย</h2>
+                </div>
+                <div className="plant-base">
+                  <div className="info-info colum">
+                    
+                    <span className='header'>ผู้เชี่ยวชาญ :</span>
+                    <Lists list={result.research.expert} />
+                  </div>
+                  <div className="info-info colum">
+                    <span className='header'>ผลการวิจัย :</span>
+                    <Lists list={result.research.research} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="result-card detail-page" id='eight'>
+                <div className="top-info">
+                  <h2>สารออกฤทธิ์ที่ใช้ร่วมกัน</h2>
+                </div>
+                <div className="info-info link">
+                  <ul>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c` }} >
+                        {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
+                        <span>Gymnema sylvestre</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
+                        <span>Oleic acid</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63945` }} >
+                        <span>Triterpene glycosides</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            
+                  
+
+          </div>          
+        </div>
+        
+      </div>
+      <div className="white-bg-cont">
+        <div className="test">
+          <div className="slide-container white-bg">
+              <div className="header">
+                <span>ผลลัพธ์ที่คล้ายกัน</span>
+                <a href="/">แสดงทั้งหมด</a>
+              </div>
+              
+              <div className="slide-card">
+
+                
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </Link>
+
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} className="item-card">
+                  <span className='title'>Oleic acid</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </Link>
+           
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} className="item-card">
+                  <span className='title'>Palmitoleic acid</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+                </Link>
+
+              
+
+
+
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+
     </>
   )
 }

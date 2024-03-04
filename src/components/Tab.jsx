@@ -1,3 +1,4 @@
+import { color } from 'echarts'
 import React, { useEffect, useState } from 'react'
 
 function Tab({ tabs }) {
@@ -7,7 +8,7 @@ function Tab({ tabs }) {
   // }, 0)
   return (
     <>
-      <div className='flex flex-col gap-0'>
+      {/* <div className='flex flex-col gap-0'>
         <div className="dark:border-gray-700">
           <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
             {tabs.map((tab, index) => (
@@ -24,7 +25,18 @@ function Tab({ tabs }) {
           </ul>
         </div>
         <div className='rounded-b-lg border rounded-tr-lg py-4 px-4 shadow-xl bg-white'>{ tabs[tabActive].content}</div>
-      </div>
+      </div> */}
+
+
+      <ul className="sidebar"><h3>รายการข้อมูล</h3>
+        {tabs.map((tab, index) => (
+          <li key={index} className="" >
+            <div onClick={() => setTabActive(index)} className={`menu-list ${index === tabActive && 'active'}`}>                  
+              {tab.name}
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }

@@ -8,6 +8,10 @@ import { Facet, Paging, PagingInfo, Results, ResultsPerPage, SearchBox, SearchPr
 import { ErrorBoundary } from '@elastic/react-search-ui-views'
 import es_config from '../middleware/elasticsearch_demo'
 import { Layout } from '@elastic/react-search-ui-views'
+import homeBg from '@/assets/bg/Home-bg.png'
+import testPic from '@/assets/test-pic2.png'
+
+
 
 const herbs = [
   {
@@ -56,7 +60,8 @@ function Herb() {
   const { search } = useLocation()
   const queryString = new URLSearchParams(search).get('q')
   return (
-    <div className='flex flex-col gap-4 sm:px-2 md:px-4 lg:px-8 xl:px-12'>
+    <>
+    <div className='flex flex-col gap-4 sm:px-2 md:px-4 lg:px-8 xl:px-12 hide'>
       <SearchKeyword keyword={queryString} />
       {/* {herbs.map((herb, index) => (
         <Link to={`${location.pathname}/${herb.title.name}`} key={index}>
@@ -153,6 +158,400 @@ function Herb() {
         </WithSearch>
       </SearchProvider>
     </div>
+
+
+
+    <div className='content-container'>
+      <img className="home-bg result-page" src={homeBg} alt="" />
+      <div className="search-flex result-page">
+        <div className="search-content result-page">
+          <div>Thailand Most Influential Food Innovation Platform</div>
+          <h2>แพลตฟอร์มบริการผลิตอาหารและส่วนผสมฟังก์ชัน</h2>
+        </div>
+      </div> 
+    </div>
+    <div className="search-result-container">
+      <div className="max-width">
+        <div className="box-a">
+          <div className="search-box result">
+            <div className="search-header">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h2>สืบค้นข้อมูลส่วนผสมฟังค์ชัน</h2>
+            </div>
+          <div className="search-box-content result-page">
+            <div className="search-input">
+              <div className="title">คำค้นหา :</div>
+              <input type="text" placeholder='พิมพ์ข้อความ เช่น ชื่อพืช ชื่ออาหาร ชื่อส่วนผสม...' />
+            </div>
+            <div className="checkbox-flex">
+              <div className="checkbox-box result-page">
+
+
+
+                <div className="box-input">
+                  <div className="title checkbox">หมวดหมู่ :</div>
+                  <div className="box">
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="Antioxidant" id="Antioxidant" type="checkbox"/>
+                        <label class="cbx" for="Antioxidant">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Antioxidant</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="blood" id="blood" type="checkbox"/>
+                        <label class="cbx" for="blood">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Blood</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="bloodPressure" id="bloodPressure" type="checkbox"/>
+                        <label class="cbx" for="bloodPressure">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Blood Pressure</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="brain" id="brain" type="checkbox"/>
+                        <label class="cbx" for="brain">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Brain</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="Cancer" id="Cancer" type="checkbox"/>
+                        <label class="cbx" for="Cancer">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Cancer</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="Cardiovascular" id="Cardiovascular" type="checkbox"/>
+                        <label class="cbx" for="Cardiovascular">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Cardiovascular</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="Coenzyme" id="Coenzyme" type="checkbox"/>
+                        <label class="cbx" for="Coenzyme">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>Coenzyme</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="box-input two">
+                  <div className="title checkbox">ส่วนผสมของฟังค์ชัน :</div>
+                  <div className="box">
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="FunctionalIngredient1" id="FunctionalIngredient1" type="checkbox"/>
+                        <label class="cbx" for="FunctionalIngredient1">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>7 Carbohydrate & Specialty cabohydrate</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="FunctionalIngredient2" id="FunctionalIngredient2" type="checkbox"/>
+                        <label class="cbx" for="FunctionalIngredient2">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>2 Protein & Amino acids</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="FunctionalIngredient3" id="FunctionalIngredient3" type="checkbox"/>
+                        <label class="cbx" for="FunctionalIngredient3">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>3 Dietary fiber</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="FunctionalIngredient4" id="FunctionalIngredient4" type="checkbox"/>
+                        <label class="cbx" for="FunctionalIngredient4">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>18 Healthy fats</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="FunctionalIngredient5" id="FunctionalIngredient5" type="checkbox"/>
+                        <label class="cbx" for="FunctionalIngredient5">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>7 Minerals</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="box-input">
+                  <div className="title checkbox">พื้นที่เพาะปลูก :</div>
+                  <div className="box">
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="area1" id="area1" type="checkbox"/>
+                        <label class="cbx" for="area1">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>ต่างประเทศ 94 ชนิด</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+
+                    <div class="checkbox-wrapper-4">
+                      <input class="inp-cbx" name="functionType" value="area2" id="area2" type="checkbox"/>
+                        <label class="cbx" for="area2">
+                            <span>
+                                <svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg>
+                            </span>
+                            <span>ในประเทศไทย 144 ชนิด</span>
+                        </label>
+                        <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                        </svg>
+                    </div>
+                    </div>
+                </div>
+                  
+
+
+              </div>
+            </div>
+            <button className='search-btn'>ค้นหา</button>
+          </div>
+          </div>
+        </div>
+
+
+        <div className="box-b">
+          <div className="search-word-box">
+            <div className='search-word'>เกล็ดเลือดต่ำ</div>
+            <div className='search-word-num'> : พบข้อมูล 30 รายการ</div>            
+          </div>
+
+          <div className="result-card-conntainer">
+
+
+
+
+            <div className="result-card">
+              <div className="top-info">
+                <h2>โปรตีน (Protein)</h2>
+                <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+              </div>
+              <div className="middle-info">
+                <div className="left">
+                  <p className='general-info'>Phytochemical & Plant extract, Cordyceps sinensis (Berk.) Sacc., ถั่งเฉ้า,ถั่งเช่า, Cordyceps, Cancer, null</p>
+                  <div>
+                    <div className="header">คุณประโยชน์ :</div>
+                    <ul>
+                      <li>potent anti-cancer</li>
+                      <li>anti-oxidant and anti-inflammatory activities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="header">พบในพืช :</div>
+                    <ul>
+                      <li>ถั่งเฉ้า</li>
+                      <li>ถั่งเช่า</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="right">
+                  <img src={testPic} alt="" />
+                </div>
+              </div>
+              <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+            </div>
+
+            <div className="result-card">
+              <div className="top-info">
+                <h2>โปรตีน (Protein)</h2>
+                <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+              </div>
+              <div className="middle-info">
+                <div className="left">
+                  <p className='general-info'>Phytochemical & Plant extract, Cordyceps sinensis (Berk.) Sacc., ถั่งเฉ้า,ถั่งเช่า, Cordyceps, Cancer, null</p>
+                  <div>
+                    <div className="header">คุณประโยชน์ :</div>
+                    <ul>
+                      <li>potent anti-cancer</li>
+                      <li>anti-oxidant and anti-inflammatory activities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="header">พบในพืช :</div>
+                    <ul>
+                      <li>ถั่งเฉ้า</li>
+                      <li>ถั่งเช่า</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="right">
+                  <img src={testPic} alt="" />
+                </div>
+              </div>
+              <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+            </div>
+
+            <div className="result-card">
+              <div className="top-info">
+                <h2>โปรตีน (Protein)</h2>
+                <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
+              </div>
+              <div className="middle-info">
+                <div className="left">
+                  <p className='general-info'>Phytochemical & Plant extract, Cordyceps sinensis (Berk.) Sacc., ถั่งเฉ้า,ถั่งเช่า, Cordyceps, Cancer, null</p>
+                  <div>
+                    <div className="header">คุณประโยชน์ :</div>
+                    <ul>
+                      <li>potent anti-cancer</li>
+                      <li>anti-oxidant and anti-inflammatory activities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="header">พบในพืช :</div>
+                    <ul>
+                      <li>ถั่งเฉ้า</li>
+                      <li>ถั่งเช่า</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="right">
+                  <img src={testPic} alt="" />
+                </div>
+              </div>
+              <div className="view-count">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>00,000</span>
+                    <span> views</span>
+                  </div>
+            </div>
+
+            <div className="pagination-box">
+              <span>กำลังแสดงรายการที่ 1 - 10 จากทั้งหมด 30 รายการ</span>
+              <div className="pagination">
+                <span>" 1 2 3 4 5 "</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          
+        </div>
+      </div>
+    </div>
+
+    </>
   )
 }
 
