@@ -9,6 +9,7 @@ import Lists from '../components/Lists'
 import IngredientDetail from '../components/IngredientDetail'
 import api from '../middleware/api'
 import ReactEcharts from "echarts-for-react"
+import SmileDrawer from '../components/SmileDrawer'
 
 const ingredient = {
   functional_ingredient: null,
@@ -32,10 +33,61 @@ const ingredient = {
     research: []
   }
 }
+const graphTemplateOption = (legend, data, links, categories) => {
+  return {
+      title: {
+        text: null,
+        subtext: null,
+        top: 'bottom',
+        left: 'right'
+      },
+      tooltip: {},
+      legend: legend,
+      animationDuration: 1500,
+      animationEasingUpdate: 'quinticInOut',
+      series: [
+        {
+          name: null,
+          type: 'graph',
+          layout: 'circular',
+          circular: {
+            rotateLabel: true
+          },
+          data: data,
+          links: links,
+          categories: categories,
+          roam: true,
+          label: {
+            position: 'right',
+            formatter: '{b}'
+          },
+          labelLayout: {
+            hideOverlap: true
+          },
+          scaleLimit: {
+            min: 0.4,
+            // max: 4
+          },
+          lineStyle: {
+            color: 'source',
+            curveness: 0.3
+          },
+          emphasis: {
+            focus: 'adjacency',
+            lineStyle: {
+              width: 10
+            }
+          }
+        }
+      ]
+    }
+  }
 function HerbDetail() {
   const { herbId } = useParams()
   const [result, setResult] = useState(ingredient)
   const [chartOption, setChartOption] = useState({})
+  const [graphOption, setGraphOption] = useState({})
+  const [graphPlantOption, setGraphPlantOption] = useState({})
 
   useEffect(() => {
     // console.log(herbId);
@@ -48,7 +100,8 @@ function HerbDetail() {
       resp.json().then((json) => {
         // console.log((json.results[0]))
         transform(json.results[0])
-        graphGenerate(json.results[0].health_system_disease.raw)
+        // graphGenerate(json.results[0].health_system_disease.raw)
+        handleGenGraph(json.results[0])
         // setOption
       })
     })
@@ -60,15 +113,16 @@ function HerbDetail() {
       important_health_benefits: result.important_health_benefits.raw,
       health_system_disease: result.health_system_disease.raw,
       plants: result.plants.raw.map(p => {
-        const plantObj = JSON.parse(p)
-        return {
-          common_name: {
-            th: plantObj.common_name.th.join(', '),
-            en: plantObj.common_name.en.join(', ')
-          },
-          part_of_studied: plantObj.production_process.part_of_studied.join(', '),
-          process: plantObj.production_process.process.join(', ')
-        }
+        return JSON.parse(p)
+        // const plantObj = JSON.parse(p)
+        // return {
+        //   common_name: {
+        //     th: plantObj.common_name.th.join(', '),
+        //     en: plantObj.common_name.en.join(', ')
+        //   },
+        //   part_of_studied: plantObj.production_process.part_of_studied.join(', '),
+        //   process: plantObj.production_process.process.join(', ')
+        // }
       }),
       condition: result.note.raw,
       fda: [],
@@ -81,9 +135,14 @@ function HerbDetail() {
       query: '',
       filters: {
         health_system_disease: health_system_disease
-      }
+      },
+      page: { size: 300 }
+      // sort: [
+      //   { health_system_disease: 'asc' }
+      // ]
     }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
       resp.json().then((json) => {
+        // console.log(json.results.map(r => r.health_system_disease.raw));
         // console.log(json.results.map((r, i) => r))
         let linkArr = []
         json.results.forEach((r, i) => {
@@ -105,32 +164,48 @@ function HerbDetail() {
           nodes: [
             ...health_system_disease.map((hsd, i) => {
               return {
-                label: { show: true },
+                label: { show: true }, 
                 id: i,
                 name: hsd,
                 symbolSize: (linkArr.filter(l => l.target === i).length / linkArr.length) * 100,
-                x: -1000,
-                y: 100 + (i * 150),
+                // x: -1000,
+                // y: 100 + (i * 250),
                 value: linkArr.filter(l => l.target === i).length,
                 category: i
               }
             }),
             ...json.results.map((r, i) => {
-            return {
-              label: { show: true },
-              id: health_system_disease.length + i,
-              name: r.functional_ingredient.raw,
-              symbolSize: 20,
-              x: 200,
-              y: 0 + (i * 100),
-              value: '',
-              category: health_system_disease.length + i
-            }
-          })],
+              // return r.health_system_disease.raw.map((hsd_s) => {
+              //   if (health_system_disease.indexOf(hsd_s) >= 0) {
+              //     return {
+              //       label: { show: false },
+              //       id: health_system_disease.length + i,
+              //       name: r.functional_ingredient.raw,
+              //       symbolSize: 5,
+              //       // x: 200,
+              //       // y: 0 + (i * 100),
+              //       value: null,
+              //       category: health_system_disease.indexOf(hsd_s)
+              //     }
+              //   }
+              // })
+              return {
+                label: { show: false },
+                id: health_system_disease.length + i,
+                name: r.functional_ingredient.raw,
+                symbolSize: 5,
+                // x: 200,
+                // y: 0 + (i * 100),
+                value: null,
+                category: r.health_system_disease.raw.findIndex((hsd) => health_system_disease.includes(hsd))
+                // category: 2
+              }
+            })
+          ],
           links: linkArr,
           categories: [
             ...health_system_disease.map(hsd => { return { name: hsd } }),
-            ...json.results.map((r) => { return { name: r.functional_ingredient.raw }})
+            // ...json.results.map((r) => { return { name: r.functional_ingredient.raw }})
           ]
         }
         // console.log(series);
@@ -147,7 +222,7 @@ function HerbDetail() {
               // selectedMode: 'single',
               data: [
                 ...health_system_disease,
-                ...json.results.map(r => r.functional_ingredient.raw)
+                // ...json.results.map(r => r.functional_ingredient.raw)
               ]
             }
           ],
@@ -157,7 +232,10 @@ function HerbDetail() {
             {
               name: null,
               type: 'graph',
-              layout: 'none',
+              layout: 'circular',
+              circular: {
+                rotateLabel: true
+              },
               data: series.nodes,
               links: series.links,
               categories: series.categories,
@@ -170,8 +248,8 @@ function HerbDetail() {
                 hideOverlap: true
               },
               scaleLimit: {
-                min: 0.4,
-                max: 2
+                min: 0.6,
+                // max: 4
               },
               lineStyle: {
                 color: 'source',
@@ -189,6 +267,182 @@ function HerbDetail() {
       })
     })
   }
+  const handleFetchHealthSystemDesease = (health_system_disease) => {
+    api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
+      query: '',
+      filters: {
+        health_system_disease: health_system_disease
+      },
+      page: { size: 300 }
+      // sort: [
+      //   { health_system_disease: 'asc' }
+      // ]
+    }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
+      resp.json().then((json) => {
+        // console.log(json.results)
+        const results = json.results
+        const leg = {
+          // selectedMode: 'single',
+          data: [health_system_disease],
+        }
+        const data = [
+          {
+            label: { show: true },
+            id: 0,
+            name: health_system_disease,
+            symbolSize: 50,
+            value: results.length,
+            category: 0
+          },
+          ...results.map((result, i) => {
+            return {
+              label: { show: true },
+              id: i + 1,
+              name: result.functional_ingredient.raw,
+              symbolSize: 5,
+              value: null,
+              category: 0
+            }
+          })
+        ]
+        const links = results.map((result, i) => {
+          return {
+            source: i + 1,
+            target: 0
+          }
+        })
+        const categories = [{name: health_system_disease}]
+        setGraphOption(graphTemplateOption(leg, data, links, categories))
+      })
+    })
+  }
+  const handleFetchPlant = (plant) => {
+    api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
+      query: '',
+      filters: {
+        plants: plant
+      },
+      page: { size: 300 }
+      // sort: [
+      //   { health_system_disease: 'asc' }
+      // ]
+    }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
+      resp.json().then((json) => {
+        // console.log(json);
+        const results = json.results
+        const leg = {
+          // selectedMode: 'single',
+          data: [JSON.parse(plant).common_name.th.join(', ')],
+        }
+        const data = [
+          {
+            label: { show: true },
+            id: 0,
+            name: JSON.parse(plant).common_name.th.join(', '),
+            symbolSize: 50,
+            value: results.length,
+            category: 0
+          },
+          ...results.map((result, i) => {
+            return {
+              label: { show: true },
+              id: i + 1,
+              name: result.functional_ingredient.raw,
+              symbolSize: 5,
+              value: null,
+              category: 0
+            }
+          })
+        ]
+        const links = results.map((result, i) => {
+          return {
+            source: i + 1,
+            target: 0
+          }
+        })
+        const categories = [{name: JSON.parse(plant).common_name.th.join(', ')}]
+        setGraphPlantOption(graphTemplateOption(leg, data, links, categories))
+      })
+    })
+  }
+  const handleGenGraph = (result) => {
+    const benefit = {
+      legend: {
+        data: [result.functional_ingredient.raw]
+      },
+      data: [
+        {
+          label: { show: true },
+          id: 0,
+          name: result.functional_ingredient.raw,
+          symbolSize: 50,
+          value: result.health_system_disease.raw.length,
+          category: 0
+        },
+        ...result.health_system_disease.raw.map((hsd, i) => {
+          return {
+            label: { show: true },
+            id: i + 1,
+            name: hsd,
+            symbolSize: 10,
+            value: null,
+            category: 0
+          }
+        })
+      ],
+      links: result.health_system_disease.raw.map((hsd, i) => {
+        return {
+          source: i + 1,
+          target: 0
+        }
+      }),
+      categories: [{name: result.functional_ingredient.raw}]
+    }
+    const plant = {
+      legend: {
+        data: [result.functional_ingredient.raw]
+      },
+      data: [
+        {
+          label: { show: true },
+          id: 0,
+          name: result.functional_ingredient.raw,
+          symbolSize: 50,
+          value: result.plants.raw.length,
+          category: 0
+        },
+        ...result.plants.raw.map((plant, i) => {
+          return {
+            label: { show: true },
+            id: i + 1,
+            name: JSON.parse(plant).common_name.th.join(', '),
+            symbolSize: 10,
+            value: null,
+            category: 0
+          }
+        })
+      ],
+      links: result.plants.raw.map((plant, i) => {
+        return {
+          source: i + 1,
+          target: 0
+        }
+      }),
+      categories: [{name: result.functional_ingredient.raw}]
+
+    }
+    
+    setGraphOption(graphTemplateOption(benefit.legend, benefit.data, benefit.links, benefit.categories))
+    setGraphPlantOption(graphTemplateOption(plant.legend, plant.data, plant.links, plant.categories))
+  }
+  const handleGenGraphFromDesease = (value) => {
+    // console.log(value)
+    handleFetchHealthSystemDesease(value)
+  }
+  const handleGenGraphFromPlant = (value) => {
+    // console.log(value)
+    handleFetchPlant(JSON.stringify(value))
+  }
   return (
     <>
       {/* {
@@ -199,36 +453,52 @@ function HerbDetail() {
         <div className='md:w-3/4  flex flex-col gap-2 mx-4'>
           <p className="text-3xl font-bold text-gray-900 dark:text-white pl-4 mb-4">{result.functional_ingredient}</p>
           <CardDetail title='ข้อมูลทั่วไป' desc={result.desc} />
-          <CardDetail title='ที่เกี่ยวข้อง'
+          {/* <CardDetail title='ที่เกี่ยวข้อง'
             desc={
               <ReactEcharts style={{ height: '600px', borderStyle: 'solid' }} option={chartOption} />
             }
-          />
+          /> */}
           <Tab tabs={[
             {
               name: 'คุณประโยชน์',
-              content: <div className='flex flex-col gap-4'>
-                <Bagdes list={result.health_system_disease} />
-                <Lists list={result.important_health_benefits} />
+              content:
+              <div className='lg:flex flex-row lg:divide-x-2'>
+                <div className='flex-1 pb-4'>
+                  <div className='flex flex-col gap-4'>
+                    <Bagdes list={result.health_system_disease} handleClick={handleGenGraphFromDesease} />
+                    <Lists list={result.important_health_benefits} />
+                  </div>
+                </div>
+                <div className='flex-1'>
+                  <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphOption} />
+                </div>
               </div>
             },
             {
               name: 'พืช',
-              content: <Table
-                head={
-                  <tr><th className='px-4'>ชื่อ</th><th className='px-4'>ส่วนที่ใช้</th><th className='px-4'>กรรมวิธี</th><th className='px-4'>เงื่อนไข</th></tr>
-                }
-                body={result.plants?.map((plant, index) => (
-                  <tr key={index} className='hover:bg-gray-100 text-left'>
-                    <td className='px-4 text-std py-1'>{plant.common_name.th}</td>
-                    <td className='px-4 text-std py-1'>{plant.part_of_studied}</td>
-                    <td className='px-4 text-std py-1'>{plant.process || '-'}</td>
-                    {
-                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+              content: 
+              <div className='lg:flex flex-row lg:divide-x-2 gap-2'>
+                <div className='flex-1 pb-4'>
+                  <Table
+                    head={
+                      <tr><th className='px-4'>ชื่อ</th><th className='px-4'>ส่วนที่ใช้</th><th className='px-4'>กรรมวิธี</th><th className='px-4'>เงื่อนไข</th></tr>
                     }
-                  </tr>
-                ))}
-              />
+                    body={result.plants?.map((plant, index) => (
+                      <tr key={index} className='hover:bg-gray-100 text-left'>
+                        <td className='px-4 text-std py-1'><button onClick={() => handleGenGraphFromPlant(plant)}>{plant.common_name.th.join(', ')}</button></td>
+                        <td className='px-4 text-std py-1'>{plant.part_of_studied}</td>
+                        <td className='px-4 text-std py-1'>{plant.process || '-'}</td>
+                        {
+                          index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                        }
+                      </tr>
+                    ))}
+                  />
+                </div>
+                <div className='flex-1'>
+                  <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphPlantOption} />
+                </div>
+              </div>
             },
             {
               name: 'การรับรอง',
@@ -255,10 +525,11 @@ function HerbDetail() {
           {/* <div className=''>
             <InputIcon />
           </div> */}
-          <div className=''>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+          <div className='-mb-4'>
+            <SmileDrawer smilesStr='OC(C(=O)O[C@H]1C[N+]2(CCCOC3=CC=CC=C3)CCC1CC2)(C1=CC=CS1)C1=CC=CS1' />
+            {/* <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" /> */}
           </div>
-          <div className='mt-4'>
+          <div className='mt-0'>
             {/* <Table
               head={
                 <tr><th className='py-1'>สารออกฤทธิ์ที่ใช้ร่วมกัน</th></tr>
