@@ -77,7 +77,7 @@ const es_config = {
         documents: {  fields: ["functional_ingredient"] }
       },
       // Limit the number of suggestions returned from the server
-      size: 4
+      size: 10
     }
   },
   searchQuery: {

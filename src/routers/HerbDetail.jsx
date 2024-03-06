@@ -37,53 +37,53 @@ const ingredient = {
 }
 const graphTemplateOption = (legend, data, links, categories) => {
   return {
-      title: {
-        text: null,
-        subtext: null,
-        top: 'bottom',
-        left: 'right'
-      },
-      tooltip: {},
-      legend: legend,
-      animationDuration: 1500,
-      animationEasingUpdate: 'quinticInOut',
-      series: [
-        {
-          name: null,
-          type: 'graph',
-          layout: 'circular',
-          circular: {
-            rotateLabel: true
-          },
-          data: data,
-          links: links,
-          categories: categories,
-          roam: true,
-          label: {
-            position: 'right',
-            formatter: '{b}'
-          },
-          labelLayout: {
-            hideOverlap: true
-          },
-          scaleLimit: {
-            min: 0.4,
-            // max: 4
-          },
+    title: {
+      text: null,
+      subtext: null,
+      top: 'bottom',
+      left: 'right'
+    },
+    tooltip: {},
+    legend: legend,
+    animationDuration: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    series: [
+      {
+        name: null,
+        type: 'graph',
+        layout: 'circular',
+        circular: {
+          rotateLabel: true
+        },
+        data: data,
+        links: links,
+        categories: categories,
+        roam: true,
+        label: {
+          position: 'right',
+          formatter: '{b}'
+        },
+        labelLayout: {
+          hideOverlap: true
+        },
+        scaleLimit: {
+          min: 0.4,
+          // max: 4
+        },
+        lineStyle: {
+          color: 'source',
+          curveness: 0.3
+        },
+        emphasis: {
+          focus: 'adjacency',
           lineStyle: {
-            color: 'source',
-            curveness: 0.3
-          },
-          emphasis: {
-            focus: 'adjacency',
-            lineStyle: {
-              width: 10
-            }
+            width: 10
           }
         }
-      ]
-    }
+      }
+    ]
   }
+}
 function HerbDetail() {
   const { herbId } = useParams()
   const [result, setResult] = useState(ingredient)
@@ -166,7 +166,7 @@ function HerbDetail() {
           nodes: [
             ...health_system_disease.map((hsd, i) => {
               return {
-                label: { show: true }, 
+                label: { show: true },
                 id: i,
                 name: hsd,
                 symbolSize: (linkArr.filter(l => l.target === i).length / linkArr.length) * 100,
@@ -313,7 +313,7 @@ function HerbDetail() {
             target: 0
           }
         })
-        const categories = [{name: health_system_disease}]
+        const categories = [{ name: health_system_disease }]
         setGraphOption(graphTemplateOption(leg, data, links, categories))
       })
     })
@@ -362,7 +362,7 @@ function HerbDetail() {
             target: 0
           }
         })
-        const categories = [{name: JSON.parse(plant).common_name.th.join(', ')}]
+        const categories = [{ name: JSON.parse(plant).common_name.th.join(', ') }]
         setGraphPlantOption(graphTemplateOption(leg, data, links, categories))
       })
     })
@@ -398,7 +398,7 @@ function HerbDetail() {
           target: 0
         }
       }),
-      categories: [{name: result.functional_ingredient.raw}]
+      categories: [{ name: result.functional_ingredient.raw }]
     }
     const plant = {
       legend: {
@@ -430,10 +430,10 @@ function HerbDetail() {
           target: 0
         }
       }),
-      categories: [{name: result.functional_ingredient.raw}]
+      categories: [{ name: result.functional_ingredient.raw }]
 
     }
-    
+
     setGraphOption(graphTemplateOption(benefit.legend, benefit.data, benefit.links, benefit.categories))
     setGraphPlantOption(graphTemplateOption(plant.legend, plant.data, plant.links, plant.categories))
   }
@@ -467,47 +467,47 @@ function HerbDetail() {
             {
               name: 'คุณประโยชน์',
               content:
-              <div className='lg:flex flex-row lg:divide-x-2'>
-                <div className='flex-1 pb-4'>
-                  <div className='flex flex-col gap-4'>
-                    <Bagdes list={result.health_system_disease} handleClick={handleGenGraphFromDesease} />
-                    <Lists list={result.important_health_benefits} />
+                <div className='lg:flex flex-row lg:divide-x-2'>
+                  <div className='flex-1 pb-4'>
+                    <div className='flex flex-col gap-4'>
+                      <Bagdes list={result.health_system_disease} handleClick={handleGenGraphFromDesease} />
+                      <Lists list={result.important_health_benefits} />
+                    </div>
+                  </div>
+                  <div className='flex-1'>
+                    <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphOption} />
                   </div>
                 </div>
-                <div className='flex-1'>
-                  <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphOption} />
-                </div>
-              </div>
             },
             {
               name: 'พืช',
-              content: 
-              <div className='lg:flex flex-row lg:divide-x-2 gap-2'>
-                <div className='flex-1 pb-4'>
-                  <Table
-                    head={
-                      <tr><th className='px-4'>ชื่อ</th><th className='px-4'>ส่วนที่ใช้</th><th className='px-4'>กรรมวิธี</th><th className='px-4'>เงื่อนไข</th></tr>
-                    }
-                    body={result.plants?.map((plant, index) => (
-                      <tr key={index} className='hover:bg-gray-100 text-left'>
-                        <td className='px-4 text-std py-1'><button onClick={() => handleGenGraphFromPlant(plant)}>{plant.common_name.th.join(', ')}</button></td>
-                        <td className='px-4 text-std py-1'>{plant.part_of_studied}</td>
-                        <td className='px-4 text-std py-1'>{plant.process || '-'}</td>
-                        {
-                          index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
-                        }
-                      </tr>
-                    ))}
-                  />
+              content:
+                <div className='lg:flex flex-row lg:divide-x-2 gap-2'>
+                  <div className='flex-1 pb-4'>
+                    {/* <Table
+                      head={
+                        <tr><th className='px-4'>ชื่อ</th><th className='px-4'>ส่วนที่ใช้</th><th className='px-4'>กรรมวิธี</th><th className='px-4'>เงื่อนไข</th></tr>
+                      }
+                      body={result.plants?.map((plant, index) => (
+                        <tr key={index} className='hover:bg-gray-100 text-left'>
+                          <td className='px-4 text-std py-1'><button onClick={() => handleGenGraphFromPlant(plant)}>{plant.common_name.th.join(', ')}</button></td>
+                          <td className='px-4 text-std py-1'>{plant.part_of_studied}</td>
+                          <td className='px-4 text-std py-1'>{plant.process || '-'}</td>
+                          {
+                            index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                          }
+                        </tr>
+                      ))}
+                    /> */}
+                  </div>
+                  <div className='flex-1'>
+                    <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphPlantOption} />
+                  </div>
                 </div>
-                <div className='flex-1'>
-                  <ReactEcharts style={{ borderStyle: 'solid', height: '500px' }} option={graphPlantOption} />
-                </div>
-              </div>
             },
             {
               name: 'การรับรอง',
-              href:'#five',
+              href: '#five',
               content: <Lists link={true} list={result.fda} />
             },
             {
@@ -594,12 +594,13 @@ function HerbDetail() {
         </div>
       </div>
 
-
       <div className="search-result-container detail">
         <div className="detail-container">
 
           <div className="path">
-            <span>Home</span>
+            <Link to={'/'}>
+              <span>Home</span>
+            </Link>
             <span>-</span>
             <span className='path-now'>{result.functional_ingredient}</span>
           </div>
@@ -613,236 +614,244 @@ function HerbDetail() {
         <div className="detail-container content">
           <div className="max-width">
             <div className="box-a detail">
-            <Tab tabs={[
-            {
-              name: 'รูปส่วนผสมฟังค์ชัน'
-            },
-            {
-              name: 'ข้อมูลทั่วไป'
-            },
-            {
-              name: 'คุณประโยชน์'
-            },
-            {
-              name: 'พืช'
-            },
-            {
-              name: 'การรับรอง'
-            },
-            {
-              name: 'แหล่งวัตถุดิบ'
-            },
-            {
-              name: 'งานวิจัย'
-            },
-            {
-              name: 'สารออกฤทธิ์ที่ใช้ร่วมกัน'
-            }
-          ]
-          } />
-            
+              <Tab tabs={[
+                {
+                  name: 'รูปส่วนผสมฟังค์ชัน'
+                },
+                {
+                  name: 'ข้อมูลทั่วไป'
+                },
+                {
+                  name: 'คุณประโยชน์'
+                },
+                {
+                  name: 'พืช'
+                },
+                {
+                  name: 'การรับรอง'
+                },
+                {
+                  name: 'แหล่งวัตถุดิบ'
+                },
+                {
+                  name: 'งานวิจัย'
+                },
+                {
+                  name: 'สารออกฤทธิ์ที่ใช้ร่วมกัน'
+                }
+              ]
+              } />
+
             </div>
             <div className="box-b" id='one'>
-
-              <div className="result-card detail-page first" >
-                <div className="top-info">
-                  <h2>รูปส่วนผสมฟังค์ชัน</h2>
-                </div>
-                <div>
-                  <Pic pics={[
-                        {
-                          name: 'รูปส่วนผสมฟังค์ชัน',
-                          content: <div className="img-show">
+              <section id='รูปส่วนผสมฟังค์ชัน'>
+                <div className="result-card detail-page first" >
+                  <div className="top-info">
+                    <h2>รูปส่วนผสมฟังค์ชัน</h2>
+                  </div>
+                  <div>
+                    <Pic pics={[
+                      {
+                        name: 'รูปส่วนผสมฟังค์ชัน',
+                        content: <div className="img-show">
                           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
                         </div>
-                        },
-                        {
-                          name: 'รูปความสัมพันธ์',
-                          content: <CardDetail desc={<ReactEcharts option={chartOption} />}/>
-                        },
-                        {
-                          name: 'รูปส่วนผสมฟังค์ชัน',
-                          content: <div className="img-show">
+                      },
+                      {
+                        name: 'รูปความสัมพันธ์',
+                        content: <CardDetail desc={<ReactEcharts option={chartOption} />} />
+                      },
+                      {
+                        name: 'รูปส่วนผสมฟังค์ชัน',
+                        content: <div className="img-show">
                           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
                         </div>
-                        }
-                      ]
-                      } />
+                      }
+                    ]
+                    } />
 
-                </div>
-              </div>
-              
-              
-              <div className="result-card detail-page" id='two'>
-                <div className="top-info">
-                  <h2>ข้อมูลทั่วไป</h2>
-                </div>
-                <div className="info-info">
-                <p className='general-info'>{result.desc}</p>
-                </div>
-              </div>
-
-              <div className="result-card detail-page" id='three'>
-                <div className="top-info">
-                  <h2>คุณประโยชน์</h2>
-                </div>
-                <div className="test-2">
-                <Bagdes list={result.health_system_disease} />
-
-                </div>
-
-                <div className="info-info">
-                
-                <Lists list={result.important_health_benefits} />
-                </div>
-              </div>
-
-              <div className="result-card detail-page" id='four'>
-                <div className="top-info">
-                  <h2>พืช</h2>
-                </div>
-                <div className="info-info table">
-
-                  <table className='plant-table'>
-                    <tr>
-                      <th>ชื่อ</th>
-                      <th>ส่วนที่ใช้</th>
-                      <th>กรรมวิธี</th>
-                      <th>เงื่อนไข</th>
-                    </tr>
-                    {result.plants?.map((plant, index) => (
-                  <tr key={index} className='hover:bg-gray-100 text-left'>
-                    <td>{plant.common_name.th}</td>
-                    <td>{plant.part_of_studied}</td>
-                    <td>{plant.process || '-'}</td>
-                    {
-                      index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
-                    }
-                  </tr>
-                ))}
-                  </table>
-                </div>
-              </div>
-
-              <div className="result-card detail-page" id='five'>
-                <div className="top-info">
-                  <h2>การรับรอง</h2>
-                </div>
-                <div className="info-info">
-                
-                <Lists link={true} list={result.fda} />
-                </div>
-              </div>
-
-              <div className="result-card detail-page" id='six'>
-                <div className="top-info">
-                  <h2>แหล่งวัตถุดิบ</h2>
-                </div>
-                <div className="plant-base">
-                  <div className="info-info colum">
-                    <span className='header'>แหล่งเพาะปลูก :</span>
-                    <Lists list={result.raw_material.planting} />
-                  </div>
-                  <div className="info-info colum">
-                    <span className='header'>โรงงานแปรรูป :</span>
-                    <Lists list={result.raw_material.factory} />
                   </div>
                 </div>
-              </div>
+              </section>
 
-              <div className="result-card detail-page" id='seven'>
-                <div className="top-info">
-                  <h2>งานวิจัย</h2>
-                </div>
-                <div className="plant-base">
-                  <div className="info-info colum">
-                    
-                    <span className='header'>ผู้เชี่ยวชาญ :</span>
-                    <Lists list={result.research.expert} />
+
+              <section id='ข้อมูลทั่วไป'>
+                <div className="result-card detail-page" id='two'>
+                  <div className="top-info">
+                    <h2>ข้อมูลทั่วไป</h2>
                   </div>
-                  <div className="info-info colum">
-                    <span className='header'>ผลการวิจัย :</span>
-                    <Lists list={result.research.research} />
+                  <div className="info-info">
+                    <p className='general-info'>{result.desc}</p>
                   </div>
                 </div>
-              </div>
+              </section>
 
-              <div className="result-card detail-page" id='eight'>
-                <div className="top-info">
-                  <h2>สารออกฤทธิ์ที่ใช้ร่วมกัน</h2>
+              <section id='คุณประโยชน์'>
+                <div className="result-card detail-page" id='three'>
+                  <div className="top-info">
+                    <h2>คุณประโยชน์</h2>
+                  </div>
+                  <div className="test-2">
+                    <Bagdes list={result.health_system_disease} />
+                  </div>
+
+                  <div className="info-info">
+
+                    <Lists list={result.important_health_benefits} />
+                  </div>
                 </div>
-                <div className="info-info link">
-                  <ul>
-                    <li>
-                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c` }} >
-                        {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
-                        <span>Gymnema sylvestre</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
-                        <span>Oleic acid</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63945` }} >
-                        <span>Triterpene glycosides</span>
-                      </Link>
-                    </li>
-                  </ul>
+              </section>
+
+              <section id='พืช'>
+                <div className="result-card detail-page" id='four'>
+                  <div className="top-info">
+                    <h2>พืช</h2>
+                  </div>
+                  <div className="info-info table">
+
+                    <table className='plant-table'>
+                      <tr>
+                        <th>ชื่อ</th>
+                        <th>ส่วนที่ใช้</th>
+                        <th>กรรมวิธี</th>
+                        <th>เงื่อนไข</th>
+                      </tr>
+                      {result.plants?.map((plant, index) => (
+                        <tr key={index} className='hover:bg-gray-100 text-left'>
+                          <td>{plant.common_name.th}</td>
+                          <td>{plant.part_of_studied}</td>
+                          <td>{plant.process || '-'}</td>
+                          {
+                            index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                          }
+                        </tr>
+                      ))}
+                    </table>
+                  </div>
                 </div>
-              </div>
+              </section>
+
+              <section id='การรับรอง'>
+                <div className="result-card detail-page" id='five'>
+                  <div className="top-info">
+                    <h2>การรับรอง</h2>
+                  </div>
+                  <div className="info-info">
+
+                    <Lists link={true} list={result.fda} />
+                  </div>
+                </div>
+              </section>
+
+              <section id='แหล่งวัตถุดิบ'>
+                <div className="result-card detail-page" id='six'>
+                  <div className="top-info">
+                    <h2>แหล่งวัตถุดิบ</h2>
+                  </div>
+                  <div className="plant-base">
+                    <div className="info-info colum">
+                      <span className='header'>แหล่งเพาะปลูก :</span>
+                      <Lists list={result.raw_material.planting} />
+                    </div>
+                    <div className="info-info colum">
+                      <span className='header'>โรงงานแปรรูป :</span>
+                      <Lists list={result.raw_material.factory} />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id='งานวิจัย'>
+                <div className="result-card detail-page" id='seven'>
+                  <div className="top-info">
+                    <h2>งานวิจัย</h2>
+                  </div>
+                  <div className="plant-base">
+                    <div className="info-info colum">
+
+                      <span className='header'>ผู้เชี่ยวชาญ :</span>
+                      <Lists list={result.research.expert} />
+                    </div>
+                    <div className="info-info colum">
+                      <span className='header'>ผลการวิจัย :</span>
+                      <Lists list={result.research.research} />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id='สารออกฤทธิ์ที่ใช้ร่วมกัน'>
+                <div className="result-card detail-page" id='eight'>
+                  <div className="top-info">
+                    <h2>สารออกฤทธิ์ที่ใช้ร่วมกัน</h2>
+                  </div>
+                  <div className="info-info link">
+                    <ul>
+                      <li>
+                        <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397c` }} >
+                          {/* <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button> */}
+                          <span>Gymnema sylvestre</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} >
+                          <span>Oleic acid</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63945` }} >
+                          <span>Triterpene glycosides</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
 
             </div>
 
-            
-                  
-
-          </div>          
+          </div>
         </div>
-        
+
       </div>
       <div className="white-bg-cont">
         <div className="test">
           <div className="slide-container white-bg">
-              <div className="header">
-                <span>ผลลัพธ์ที่คล้ายกัน</span>
-                <a href="/">แสดงทั้งหมด</a>
-              </div>
-              
-              <div className="slide-card">
+            <div className="header">
+              <span>ผลลัพธ์ที่คล้ายกัน</span>
+              <a href="/">แสดงทั้งหมด</a>
+            </div>
 
-                
-                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} className="item-card">
-                  <span className='title'>Flavonoids</span>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </Link>
-
-                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} className="item-card">
-                  <span className='title'>Oleic acid</span>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </Link>
-           
-                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} className="item-card">
-                  <span className='title'>Palmitoleic acid</span>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                  <div className='icon'><i class="fa-solid fa-magnifying-glass"></i></div>
-                </Link>
-
-              
+            <div className="slide-card">
 
 
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} className="item-card">
+                <span className='title'>Flavonoids</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              </Link>
 
-              </div>
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} className="item-card">
+                <span className='title'>Oleic acid</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              </Link>
+
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} className="item-card">
+                <span className='title'>Palmitoleic acid</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              </Link>
+
+
             </div>
           </div>
+        </div>
 
-          </div>
+      </div>
 
 
 

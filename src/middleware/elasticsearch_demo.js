@@ -104,12 +104,13 @@ const es_config = {
       description: { raw: {}, snippet: { size: 1000, fallback: true } },
       important_health_benefits: { raw: {}, snippet: { fallback: true } },
       health_system_disease: { raw: {}, snippet: { fallback: true } },
+      plants: { raw: {}},
       note: { raw: {} },
       ref: { raw: {} },
     },
     facets: {
       group_of_functional_ingredient: { type: "value", size: 30 },
-      group_of_functional_ingredient: { type: "value", size: 30 }
+      health_system_disease: { type: "value", size: 30 }
     }
   },
   search_fields: {

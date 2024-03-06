@@ -47,7 +47,7 @@ function ElasticSearch() {
                             </div>
                             <input
                               {...getInputProps({
-                                placeholder: ''
+                                placeholder: 'custom placeholder'
                               })}
                               className="pr-20 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                             />
