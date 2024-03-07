@@ -58,7 +58,7 @@ export default function IngredientSearch({ classProp, placeholder }) {
                 {/* { JSON.stringify(getItemProps) } */}
                 <ul>
                   {autocompletedSuggestions.documents.map((result, i) => (
-                    <li key={i} onClick={(e) => onSelectAutocomplete(e.target.innerText)}>
+                    <li {...getItemProps({ key: result.suggestion, item: result })}>
                       <span className="text-sm text-gray-700">
                         {result.suggestion}
                       </span>
@@ -72,9 +72,9 @@ export default function IngredientSearch({ classProp, placeholder }) {
             navigate("/herb?q=" + searchTerm);
           }}
           onSelectAutocomplete={(selection, { }, defaultOnSelectAutocomplete) => {
-            console.log(selection);
-            if (selection) {
-              navigate("/herb?q=" + selection);
+            // console.log(selection);
+            if (selection.suggestion) {
+              navigate("/herb?q=" + selection.suggestion);
             } else {
               defaultOnSelectAutocomplete(selection);
             }

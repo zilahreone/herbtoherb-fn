@@ -108,6 +108,7 @@ function HerbDetail() {
       })
     })
   }, [herbId])
+  
   const transform = (result) => {
     setResult({
       functional_ingredient: result.functional_ingredient.raw,
@@ -710,22 +711,26 @@ function HerbDetail() {
                   <div className="info-info table">
 
                     <table className='plant-table'>
-                      <tr>
-                        <th>ชื่อ</th>
-                        <th>ส่วนที่ใช้</th>
-                        <th>กรรมวิธี</th>
-                        <th>เงื่อนไข</th>
-                      </tr>
-                      {result.plants?.map((plant, index) => (
-                        <tr key={index} className='hover:bg-gray-100 text-left'>
-                          <td>{plant.common_name.th}</td>
-                          <td>{plant.part_of_studied}</td>
-                          <td>{plant.process || '-'}</td>
-                          {
-                            index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
-                          }
+                      <thead>
+                        <tr>
+                          <th>ชื่อ</th>
+                          <th>ส่วนที่ใช้</th>
+                          <th>กรรมวิธี</th>
+                          <th>เงื่อนไข</th>
                         </tr>
-                      ))}
+                      </thead>
+                      <tbody>
+                        {result.plants?.map((plant, index) => (
+                          <tr key={index} className='hover:bg-gray-100 text-left'>
+                            <td>{plant.common_name.th}</td>
+                            <td>{plant.part_of_studied}</td>
+                            <td>{plant.process || '-'}</td>
+                            {
+                              index === 0 && <td rowSpan={result.plants?.length} className='px-4 text-std py-1'>{result.condition || '-'}</td>
+                            }
+                          </tr>
+                        ))}
+                      </tbody>
                     </table>
                   </div>
                 </div>

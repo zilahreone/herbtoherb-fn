@@ -79,7 +79,7 @@ function Herb() {
                                                           checked={option.selected}
                                                           onChange={() => (option.selected ? onRemove(option.value) : onSelect(option.value))}
                                                         />
-                                                        <label className="cbx"htmlFor={`${facet.label}${index}`}>
+                                                        <label className="cbx" htmlFor={`${facet.label}${index}`}>
                                                           <span>
                                                             <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
                                                           </span>
@@ -108,7 +108,7 @@ function Herb() {
                                   <div className="box">
                                     <div className="checkbox-wrapper-4">
                                       <input className="inp-cbx" name="functionType" value="area1" id="area1" type="checkbox" />
-                                      <label className="cbx"htmlFor="area1">
+                                      <label className="cbx" htmlFor="area1">
                                         <span>
                                           <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
                                         </span>
@@ -123,7 +123,7 @@ function Herb() {
 
                                     <div className="checkbox-wrapper-4">
                                       <input className="inp-cbx" name="functionType" value="area2" id="area2" type="checkbox" />
-                                      <label className="cbx"htmlFor="area2">
+                                      <label className="cbx" htmlFor="area2">
                                         <span>
                                           <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
                                         </span>
@@ -161,20 +161,15 @@ function Herb() {
 
                         <div className="result-card-conntainer">
                           <Results
-                            resultView={({ result, onClickLink }) => (
-                              <>
-                                {/* { JSON.stringify(result) } */}
-                                {/* {result.id?.raw &&
-                                <div className='w-full mb-4 p-4 flex lg:flex-row flex-col gap-8 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
-                                  <div className="flex-1 flex flex-col">
-                                    <Link to={{ pathname: `/herb/${result.id.raw}` }} >
-                                      <button type="submit" className="tw-button-submit  right-2 bottom-2 font-medium rounded-full text-sm px-4 py-2">{result.functional_ingredient.raw}</button>
-                                    </Link>
-                                    <p className="mt-2 text-gray-700 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: (result.description.snippet) }} ></p>
-                                  </div>
-                                </div>
-                              } */}
-                                {result.id?.raw &&
+                            resultView={({ result, onClickLink }) => {
+                              if (result.id?.raw) {
+                                result = Object.assign({}, result, {
+                                  plants: {
+                                    raw: result.plants.raw.map((plant) => JSON.parse(plant))
+                                  }
+                                })
+                                // console.log(result);
+                                return (
                                   <Link to={{ pathname: `/herb/${result.id.raw}` }} >
                                     <div className="result-card">
                                       <div className="top-info">
@@ -196,14 +191,11 @@ function Herb() {
                                             <div className="header">พบในพืช :</div>
                                             <ul>
                                               {
-                                                // console.log(JSON.parse(result.plants.raw))
-                                                result.plants.raw.map((plant, i) => {
-                                                  // if (false) {
-                                                  return <li key={i}>{plant}</li>
-                                                  // }
-                                                  // console.log(i);
-                                                  // const parse = JSON.parse(JSON.stringify(plant))
-                                                })
+                                                result.plants.raw.map((plant, i) => (
+                                                  plant.common_name.th.map((com_th, com_index) => (
+                                                    <li key={com_index}>{ com_th }</li>
+                                                  ))
+                                                ))
                                               }
                                             </ul>
                                           </div>
@@ -219,9 +211,9 @@ function Herb() {
                                       </div>
                                     </div>
                                   </Link>
-                                }
-                              </>
-                            )}
+                                )
+                              }
+                            }}
                           />
                         </div>
 
