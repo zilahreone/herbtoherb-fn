@@ -1,19 +1,31 @@
 import HerbCard from '../components/HerbCard'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import Pagination from '../components/Pagination'
 import SearchKeyword from '../components/SearchKeyword'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 // import { Result, Results, SearchBox, SearchProvider, WithSearch } from '@elastic/react-search-ui'
 import { Facet, Paging, PagingInfo, Results, ResultsPerPage, SearchBox, SearchProvider, WithSearch } from '@elastic/react-search-ui'
 import { ErrorBoundary, MultiCheckboxFacet } from '@elastic/react-search-ui-views'
-import es_config from '../middleware/elasticsearch_demo'
+import es_config from '../middleware/elasticsearch'
 import { Layout } from '@elastic/react-search-ui-views'
 import homeBg from '@/assets/bg/Home-bg.png'
 import testPic from '@/assets/test-pic2.png'
+import IngredientSearch from '../components/IngredientSearch'
+import { useEffect } from 'react'
+import SmileDrawer from '../components/SmileDrawer'
+import { SmiDrawer } from 'smiles-drawer'
+import { useRef } from 'react'
 
 function Herb() {
-  const { search } = useLocation()
-  const queryString = new URLSearchParams(search).get('q')
+  const searchInputRef = useRef(null)
+  const navigate = useNavigate()
+  // const location = useLocation();
+  // const { search } = useLocation()
+  const [searchParams] = useSearchParams();
+  // const queryString = new URLSearchParams(search).get('q')
+  // const [search, setSearch] = useState(searchParams.get('q'))
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('q'))
+
   const facets = [
     {
       label: 'หมวดหมู่',
@@ -25,11 +37,20 @@ function Herb() {
     },
     {
       label: 'พื้นที่เพาะปลูก',
-      field: 'group_of_functional_ingredient'
+      field: 'planting_zone'
     },
   ]
+
+  useEffect(() => {
+    // console.log(searchParams);
+    // console.log(searchParams);
+    // setSearch(searchParams.get('q'))
+  }, [])
+
   return (
     <>
+      {/* <SearchBox setSearchTerm={setSearchTerm} searchTerm={searchTerm} /> */}
+      {/* { searchTerm } */}
       <SearchProvider config={es_config}>
         <WithSearch mapContextToProps={({ isLoading }) => ({ isLoading })}>
           {({ isLoading }) => (
@@ -45,11 +66,29 @@ function Herb() {
                             <i className="fa-solid fa-magnifying-glass"></i>
                             <h2>สืบค้นข้อมูลส่วนผสมฟังค์ชัน</h2>
                           </div>
-
                           <div className="search-box-content result-page">
                             <div className="search-input">
                               <div className="title">คำค้นหา :</div>
-                              <input type="text" placeholder='พิมพ์ข้อความ เช่น ชื่อพืช ชื่ออาหาร ชื่อส่วนผสม...' />
+                              <IngredientSearch
+                                classProp={'es-input'}
+                                placeholder='พิมพ์ข้อความ เช่น ชื่อพืช ชื่ออาหาร ชื่อส่วนผสม...'
+                              // setSearchTerm={setSearchTerm}
+                              // searchTerm={searchTerm}
+                              // onSubmit={(searchTerm) => {
+                              //   setSearchTerm(searchTerm)
+                              //   navigate("/herb?q=" + searchTerm, { replace: true });
+                              // }}
+                              // onSelectAutocomplete={(selection, { }, defaultOnSelectAutocomplete) => {
+                              //   console.log(selection);
+                              //   if (selection.suggestion) {
+                              //     setSearch(selection.suggestion)
+                              //     // navigate("/herb?q=" + selection.suggestion, { replace: true });
+                              //   } else {
+                              //     defaultOnSelectAutocomplete(selection);
+                              //   }
+                              // }}
+                              />
+                              {/* <input type="text" placeholder='พิมพ์ข้อความ เช่น ชื่อพืช ชื่ออาหาร ชื่อส่วนผสม...' /> */}
                             </div>
                             <div className="checkbox-flex">
                               <div className="checkbox-box result-page">
@@ -64,7 +103,7 @@ function Herb() {
                                           // isFilterable={true}
                                           // show={5}
                                           // view={MultiCheckboxFacet}
-                                          view={({ options, onRemove, onSelect }) => {
+                                          view={({ options, onRemove, onSelect, showMore, onMoreClick }) => {
                                             return (
                                               <div className="box">
                                                 {/* { JSON.stringify(options) } */}
@@ -94,6 +133,9 @@ function Herb() {
                                                     )
                                                   })
                                                 }
+                                                {
+                                                  showMore && <button onClick={onMoreClick}>+ More</button>
+                                                }
                                               </div>
                                             )
                                           }}
@@ -103,59 +145,28 @@ function Herb() {
                                   })
                                 }
 
-                                <div className="box-input">
-                                  <div className="title checkbox">พื้นที่เพาะปลูก :</div>
-                                  <div className="box">
-                                    <div className="checkbox-wrapper-4">
-                                      <input className="inp-cbx" name="functionType" value="area1" id="area1" type="checkbox" />
-                                      <label className="cbx" htmlFor="area1">
-                                        <span>
-                                          <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
-                                        </span>
-                                        <span>ต่างประเทศ 94 ชนิด</span>
-                                      </label>
-                                      <svg className="inline-svg">
-                                        <symbol id="check-4" viewBox="0 0 12 10">
-                                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                        </symbol>
-                                      </svg>
-                                    </div>
-
-                                    <div className="checkbox-wrapper-4">
-                                      <input className="inp-cbx" name="functionType" value="area2" id="area2" type="checkbox" />
-                                      <label className="cbx" htmlFor="area2">
-                                        <span>
-                                          <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
-                                        </span>
-                                        <span>ในประเทศไทย 144 ชนิด</span>
-                                      </label>
-                                      <svg className="inline-svg">
-                                        <symbol id="check-4" viewBox="0 0 12 10">
-                                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                        </symbol>
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-
-
-
                               </div>
                             </div>
-                            <button className='search-btn'>ค้นหา</button>
+                            <SearchBox
+                              view={({ value, onChange, onSubmit }) => (
+                                <form onSubmit={onSubmit}>
+                                  <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                    <button className='search-btn' type="submit">ค้นหา</button>
+                                  </div>
+                                </form>
+                              )}
+                            />
                           </div>
                         </div>
                       </div>
 
-
                       <div className="box-b">
                         <div className="search-word-box">
-                          <div className='search-word'>
-                            <div className='search-word'>"{queryString}"</div>
-                          </div>
-                          <PagingInfo view={({ start, end, totalResults }) => (
-                            <div className='search-word-num'> : พบข้อมูล {totalResults} รายการ</div>
-                            // <p className='text-sm'>Showing <strong>{start} - {end}</strong> out of <strong>{totalResults}</strong></p>
+                          <PagingInfo view={({ start, end, totalResults, searchTerm }) => (
+                            <>
+                              <div className='search-word'>"{searchTerm}"</div>
+                              <div className='search-word-num'> : พบข้อมูล {totalResults} รายการ</div>
+                            </>
                           )} />
                         </div>
 
@@ -193,7 +204,7 @@ function Herb() {
                                               {
                                                 result.plants.raw.map((plant, i) => (
                                                   plant.common_name.th.map((com_th, com_index) => (
-                                                    <li key={com_index}>{ com_th }</li>
+                                                    <li key={com_index}>{com_th}</li>
                                                   ))
                                                 ))
                                               }
@@ -201,7 +212,12 @@ function Herb() {
                                           </div>
                                         </div>
                                         <div className="right">
-                                          <img src={testPic} alt="" />
+                                          {/* <SmileDrawer smilesStr={result?.chem_formula?.raw} /> */}
+                                          {/* { JSON.stringify(result.chem_formula.raw) } */}
+                                          {/* <img src={testPic} alt="" /> */}
+                                          <div style={{ width: '250px' }}>
+                                            <SmileDrawer smilesStr={result.chem_formula.raw} uniqueKey={result.id.raw} />
+                                          </div>
                                         </div>
                                       </div>
                                       <div className="view-count">
