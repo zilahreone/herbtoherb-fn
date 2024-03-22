@@ -18,6 +18,7 @@ import es_config from '../middleware/elasticsearch'
 import { SmiDrawer } from 'smiles-drawer'
 import { useRef } from 'react'
 import SmileDrawer from '../components/SmileDrawer'
+import FacetView from '../components/FacetView'
 
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
@@ -110,45 +111,7 @@ function Home() {
                                       <div key={index} className="box-input">
                                         <div className="title checkbox">{facet.label} :</div>
                                         <div className="box">
-                                          <Facet
-                                            field={facet.field}
-                                            // label="Group of Functional Ingredient"
-                                            // isFilterable={true}
-                                            // show={10}
-                                            // filterType={'any'}
-                                            // view={MultiCheckboxFacet}
-                                            view={({ options, onRemove, onSelect, onMoreClick, showSearch, showMore }) => (
-                                              <>
-                                                {
-                                                  options.map((option, index) => (
-                                                    <div key={index} className="checkbox-wrapper-4">
-                                                      <input
-                                                        className="inp-cbx"
-                                                        id={`${facet.label}${index}`}
-                                                        type="checkbox"
-                                                        checked={option.selected}
-                                                        onChange={() => (option.selected ? onRemove(option.value) : onSelect(option.value))}
-                                                      />
-                                                      <label className="cbx" htmlFor={`${facet.label}${index}`}>
-                                                        <span>
-                                                          <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
-                                                        </span>
-                                                        <span>{option.value}</span>
-                                                      </label>
-                                                      <svg className="inline-svg">
-                                                        <symbol id="check-4" viewBox="0 0 12 10">
-                                                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                                        </symbol>
-                                                      </svg>
-                                                    </div>
-                                                  ))
-                                                }
-                                                {
-                                                  showMore && <button onClick={onMoreClick}>+ More</button>
-                                                }
-                                              </>
-                                            )}
-                                          />
+                                          <Facet field={facet.field} view={FacetView} />
                                         </div>
 
                                       </div>
@@ -224,80 +187,73 @@ function Home() {
                         </div>
                       </div>
                     </div>
-
-                    <div className="most-view-container two">
-                      <div className="most-view">
-                        <h2>รายการส่วนผสมฟังค์ชัน</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                        <div className="menu-btn-container">
-                          <Facet
-                            field='group_of_functional_ingredient'
-                            // label="Group of Functional Ingredient"
-                            // isFilterable={true}
-                            show={50}
-                            // view={MultiCheckboxFacet}
-                            view={({ options, onRemove, onSelect }) => {
-                              return (
-                                options.map((option, index) => (
-                                  <button onClick={() => handleSearchFilter(option)} key={index} className={`menu-btn ${option.value && 'active'}`}>{option.value}</button>
-                                ))
-                              )
-                            }}
-                          />
-                        </div>
-
-                        <div className="slide-container">
-                          <div className="header">
-                            <span>ผลการค้นหา : "Blood Pressure"</span>
-                            <a href="">แสดงทั้งหมด</a>
-                          </div>
-
-                          <Results
-                            className='slide-card'
-                            resultView={({ result }) => {
-                              if (result.id?.raw) {
-                                result = Object.assign({}, result, {
-                                  plants: {
-                                    raw: result.plants.raw.map((plant) => JSON.parse(plant))
-                                  }
-                                })
-                              }
-                              return (
-                                <Link to={{ pathname: `/herb/${result.id.raw}` }} >
-                                  <div className="item-card">
-                                    <span className='title'>{result.functional_ingredient.raw}</span>
-                                    {
-                                      result.chem_formula.raw && (
-                                        <>
-                                        {
-                                          !isLoading && (
-                                            <SmileDrawer key={result.id.raw} smilesStr={result.chem_formula.raw} uniqueKey={result.id.raw} />
-                                          )
-                                        }
-                                        </>
-                                        // <div>{result.chem_formula.raw}</div>
-                                      )
-                                    }
-                                    <p>{result.description.raw}</p>
-                                    <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
-                                  </div>
-                                </Link>
-                              )
-                            }}
-                          />
-                        </div>
-
-                      </div>
-                    </div>
                   </div>
                 )}
               </>
             )}
 
           </WithSearch>
+        </SearchProvider>
 
+        <SearchProvider config={es_config}>
 
+          <div className="most-view-container two">
+            <div className="most-view">
+              <h2>รายการส่วนผสมฟังค์ชัน</h2>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+              <div className="menu-btn-container">
+                <Facet
+                  field='group_of_functional_ingredient'
+                  // label="Group of Functional Ingredient"
+                  // isFilterable={true}
+                  show={50}
+                  // view={MultiCheckboxFacet}
+                  view={({ options, onRemove, onSelect }) => {
+                    return (
+                      options.map((option, index) => (
+                        <button onClick={() => (option.selected ? onRemove(option.value) : onSelect(option.value))} key={index} className={`menu-btn ${option.selected && 'active'}`}>{(option.value)}</button>
+                      ))
+                    )
+                  }}
+                />
+              </div>
 
+              <div className="slide-container">
+                <div className="header">
+                  <span>ผลการค้นหา : "Blood Pressure"</span>
+                  <Link to={{ pathname: `/herb`, search: 'size=n_20_n' }}>
+                    แสดงทั้งหมด
+                  </Link>
+                </div>
+
+                <Results
+                  className='slide-card'
+                  resultView={({ result }) => {
+                    if (result.id?.raw) {
+                      result = Object.assign({}, result, {
+                        plants: {
+                          raw: result.plants.raw.map((plant) => JSON.parse(plant))
+                        }
+                      })
+                    }
+                    return (
+                      <Link to={{ pathname: `/herb/${result.id.raw}` }} >
+                        <div className="item-card">
+                          <span className='title'>{result.functional_ingredient?.raw}</span>
+                          {
+                            result.chem_formula?.raw && (<SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} />)
+                          }
+                          <p>{result.description?.raw}</p>
+                          <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                        </div>
+                      </Link>
+                    )
+                  }}
+                />
+              </div>
+
+            </div>
+          </div>
         </SearchProvider>
 
       </div>

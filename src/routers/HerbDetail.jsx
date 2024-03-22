@@ -271,7 +271,7 @@ function HerbDetail() {
       {/* {
       JSON.stringify(result)
     } */}
-      {/* <IngredientDetail /> */}``
+      {/* <IngredientDetail /> */}
 
       {/* ====================================================================== */}
 

@@ -15,6 +15,7 @@ import { useEffect } from 'react'
 import SmileDrawer from '../components/SmileDrawer'
 import { SmiDrawer } from 'smiles-drawer'
 import { useRef } from 'react'
+import FacetView from '../components/FacetView'
 
 function Herb() {
   const searchInputRef = useRef(null)
@@ -97,49 +98,9 @@ function Herb() {
                                     return (
                                       <div key={index} className="box-input two">
                                         <div className="title checkbox">{facet.label} :</div>
-                                        <Facet
-                                          field={facet.field}
-                                          // label="Group of Functional Ingredient"
-                                          // isFilterable={true}
-                                          // show={5}
-                                          // view={MultiCheckboxFacet}
-                                          view={({ options, onRemove, onSelect, showMore, onMoreClick }) => {
-                                            return (
-                                              <div className="box">
-                                                {/* { JSON.stringify(options) } */}
-                                                {
-                                                  options.map((option, index) => {
-                                                    return (
-                                                      <div key={index} className="checkbox-wrapper-4">
-                                                        <input
-                                                          className="inp-cbx"
-                                                          id={`${facet.label}${index}`}
-                                                          type="checkbox"
-                                                          checked={option.selected}
-                                                          onChange={() => (option.selected ? onRemove(option.value) : onSelect(option.value))}
-                                                        />
-                                                        <label className="cbx" htmlFor={`${facet.label}${index}`}>
-                                                          <span>
-                                                            <svg width="12px" height="10px"><use xlinkHref="#check-4"></use></svg>
-                                                          </span>
-                                                          <span>{option.count} {option.value}</span>
-                                                        </label>
-                                                        <svg className="inline-svg">
-                                                          <symbol id="check-4" viewBox="0 0 12 10">
-                                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                                          </symbol>
-                                                        </svg>
-                                                      </div>
-                                                    )
-                                                  })
-                                                }
-                                                {
-                                                  showMore && <button onClick={onMoreClick}>+ More</button>
-                                                }
-                                              </div>
-                                            )
-                                          }}
-                                        />
+                                        <Facet field={facet.field} view={({ ...props }) => {
+                                          return <FacetView {...props} showCount={true} />
+                                        }} />
                                       </div>
                                     )
                                   })
