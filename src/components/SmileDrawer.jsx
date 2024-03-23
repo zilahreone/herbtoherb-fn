@@ -25,6 +25,8 @@ function SmileDrawer({ smilesStr, uniqueKey = null }) {
     <>
     {/* <img id={`${uniqueKey}`} data-smiles-options="{ 'width': 400, 'height': 400 }" /> */}
       <svg id={`${uniqueKey}`}  />
+
+      
     </>
 
   )

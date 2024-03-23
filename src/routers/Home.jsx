@@ -246,6 +246,8 @@ function Home() {
                             result.chem_formula?.raw && (<SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} />)
                             
                           }
+                          {/* Display this image when there is no data. */}
+                          <div className="no-image"><img src="src/assets/No-image.svg" alt="" /></div>
                           <p>{result.description?.raw}</p>
                           <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
                         </div>

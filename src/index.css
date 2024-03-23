@@ -445,6 +445,10 @@ h3 {
   color: var(--primary-color);
 }
 
+.no-image {
+  padding: 20px;
+}
+
 
 
 
