@@ -14,7 +14,7 @@ function SmileDrawer({ smilesStr, uniqueKey = null }) {
       let sd = new SmiDrawer(moleculeOptions, reactionOptions);
       sd.draw(smilesStr, `#${uniqueKey}`)
       // sd.draw(smilesStr, '#svgExample')
-    }
+    } 
     // sd.draw('C=CCBr.[Na+].[I-]>CC(=O)C>C=CCI.[Na+].[Br-]', '#svgExample', 'dark')
   }, [])
 

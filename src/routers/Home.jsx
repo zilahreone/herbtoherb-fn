@@ -67,7 +67,7 @@ function Home() {
           <WithSearch mapContextToProps={({ isLoading }) => ({ isLoading })}>
             {({ isLoading }) => (
               <>
-                {isLoading && <div>I'm loading now</div>}
+                {isLoading && <div className='loading'><span>I'm loading now</span></div>}
                 {!isLoading && (
                   <div>
                     <img className="home-bg" src={homeBg} alt="" />
@@ -226,6 +226,8 @@ function Home() {
                   </Link>
                 </div>
 
+                <div className="card-container">
+
                 <Results
                   className='slide-card'
                   resultView={({ result }) => {
@@ -242,6 +244,7 @@ function Home() {
                           <span className='title'>{result.functional_ingredient?.raw}</span>
                           {
                             result.chem_formula?.raw && (<SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} />)
+                            
                           }
                           <p>{result.description?.raw}</p>
                           <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
@@ -249,7 +252,8 @@ function Home() {
                       </Link>
                     )
                   }}
-                />
+                  />
+                  </div>
               </div>
 
             </div>

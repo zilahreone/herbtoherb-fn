@@ -319,7 +319,7 @@ function HerbDetail() {
                       {
                         name: 'รูปความสัมพันธ์',
                         content: <CardDetail desc={
-                          <ReactEcharts style={{ borderStyle: 'solid', height: '300px' }} option={graphPlantOption} />
+                          <ReactEcharts style={{ borderStyle: 'solid', width: '100%' }} option={graphPlantOption} />
                         } />
                       }
                     ]

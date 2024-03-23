@@ -56,7 +56,7 @@ function Herb() {
         <WithSearch mapContextToProps={({ isLoading }) => ({ isLoading })}>
           {({ isLoading }) => (
             <>
-              {isLoading && <div>I'm loading now</div>}
+              {isLoading && <div className='loading'><span>I'm loading now</span></div>}
               {!isLoading &&
                 <ErrorBoundary>
                   <div className="search-result-container">
@@ -131,7 +131,7 @@ function Herb() {
                           )} />
                         </div>
 
-                        <div className="result-card-conntainer">
+                        <div className="">
                           <Results
                             resultView={({ result, onClickLink }) => {
                               if (result.id?.raw) {
@@ -142,7 +142,9 @@ function Herb() {
                                 })
                                 // console.log(result);
                                 return (
-                                  <Link to={{ pathname: `/herb/${result.id.raw}` }} >
+                                  
+                                  
+                                  <Link to={{ pathname: `/herb/${result.id.raw}` }} className='result-card-conntainer'>
                                     <div className="result-card">
                                       <div className="top-info">
                                         <h2>{result.functional_ingredient.raw}</h2>

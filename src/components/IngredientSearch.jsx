@@ -67,7 +67,7 @@ export default forwardRef (function IngredientSearch(props, ref) {
         )}
         autocompleteView={({ autocompletedResults, autocompletedSuggestions, getItemProps, getMenuProps, onSelectAutocomplete }) => (
           <>
-            <div className="sui-search-box__autocomplete-container">
+            <div className="lists-item">
               {/* { JSON.stringify(getItemProps) } */}
               <ul>
                 {autocompletedSuggestions.documents.map((result, i) => (
