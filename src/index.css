@@ -430,7 +430,7 @@ h3 {
 }
 
 
-.box-input .box button {
+.box-input .box button, .checkbox-box.result-page button {
   padding: 3px 10px;
   background-color: var(--secondary-color);
   border: 1px solid var(--primary-color);
