@@ -668,9 +668,20 @@ h3 {
 }
 
 .slide-container.white-bg {
-  /* padding: 10px; */
-  /* align-items: center; */
   width: 100%;
+}
+
+.slide-container.white-bg .slide-card {
+  overflow-y: auto;
+  
+  
+}
+
+.slide-container.white-bg .slide-card .item-card.aa {
+  width: 192px;
+  height: ;
+  background-color: red;
+
 }
 
 .test {
@@ -961,8 +972,9 @@ h3 {
 .path {
   display: flex;
   gap: 10px;
-  padding: 5px 0;
+  /* padding: 5px 0; */
   cursor: pointer;
+  align-items: center;
 }
 
 .path span {
@@ -994,10 +1006,15 @@ h3 {
 
 .search-result-container.detail .name .title {
   position: absolute;
-  text-align: center;
-  top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100%;
 }
+
+
+
 
 .sidebar-menu {
   display: flex;
@@ -1318,14 +1335,28 @@ h3 {
 
 
 @media (max-width: 1020px) {
-
-  
-  .result-card .middle-info {
-    flex-direction: column;
-  }
   
   .result-card .middle-info .left {
     order: 2;
+  }
+
+  .result-card .middle-info {
+    flex-direction: column;
+  }
+
+  .result-card .middle-info .left {
+    order: 1;
+  }
+  .result-card .middle-info .right {
+    order: 1;
+  }
+
+  .pagination-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 }
 
@@ -1335,8 +1366,7 @@ h3 {
 
   }
   .box-a {
-    position: relative;
-    top: 0;
+    display: none;
 
   }
 
@@ -1347,16 +1377,39 @@ h3 {
   .result-card .middle-info {
     flex-direction: row;
   }
-
-  .result-card .middle-info .right {
-    order: 2;
+  
+  .search-result-container.detail .name .title h1 {
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 30px;
   }
 
 
 }
 
+@media (max-width: 660px) {
 
-@media (max-width: 420px) {
+  .nav-menu :nth-child(2), .nav-menu :nth-child(3), .nav-menu :nth-child(4) {
+    display: none;
+    
+  }
+
+  .search-box-content .checkbox-box.result-page {
+    flex-direction: column;
+  }
+
+  .result-card .middle-info {
+    flex-direction: column;
+  }
+
+  .result-card .middle-info .left {
+    order: 1;
+  }
+  
+}
+
+
+@media (max-width: 430px) {
   .navbar {
     flex-direction: column;
   }
@@ -1414,11 +1467,11 @@ h3 {
   }
 
   .slide-container .slide-card {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
 
   .slide-container .slide-card .item-card {
-    width: 48%;
+    /* width: 48%; */
   }
 
   .slide-card {
@@ -1459,18 +1512,5 @@ h3 {
     max-width: 100%;
   }
 
-  .search-box-content .checkbox-box.result-page {
-    flex-direction: column;
-  }
 
-  .result-card .middle-info {
-    flex-direction: column;
-  }
-
-  .result-card .middle-info .left {
-    order: 2;
-  }
-  .result-card .middle-info .right {
-    order: 1;
-  }
 }

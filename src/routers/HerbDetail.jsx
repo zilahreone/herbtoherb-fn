@@ -484,25 +484,49 @@ function HerbDetail() {
             <div className="slide-card">
 
 
-              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }} className="item-card">
-                <span className='title'>Flavonoids</span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }}>
+                <div className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                </div>
               </Link>
 
-              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }} className="item-card">
-                <span className='title'>Oleic acid</span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }}>
+                <div className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                </div>
               </Link>
 
-              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }} className="item-card">
-                <span className='title'>Palmitoleic acid</span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
-                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }}>
+                <div className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+              </Link>
+
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6393a` }}>
+                <div className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+              </Link>
+
+              <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b6397d` }}>
+                <div className="item-card">
+                  <span className='title'>Flavonoids</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                  <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                </div>
               </Link>
 
 
