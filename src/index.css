@@ -445,8 +445,16 @@ h3 {
   color: var(--primary-color);
 }
 
+<<<<<<< HEAD
 .no-image {
   padding: 40px 20px;
+=======
+.image-display {
+  /* padding: 40px 20px; */
+  display: flex;
+  justify-content: center;
+  height: 140px;
+>>>>>>> 8b5c64f (detail card update)
 }
 
 
@@ -490,6 +498,7 @@ h3 {
   border: 1px solid var(--gray);
   transition: all 0.2s ease;
   box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+  min-width: 18px;
 }
 
 .checkbox-wrapper-4 .cbx span:first-child svg {
@@ -570,7 +579,7 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1260px;
 }
 
 
@@ -581,7 +590,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: 10px;
 
 }
 
@@ -721,36 +730,60 @@ h3 {
   font-weight: 350;
 }
 
-.slide-container .card-container {
-  display: flex;
-  width: 100%;
-  max-width: 1260px;
-}
 
 .slide-container .slide-card {
   display: flex;
   width: 100%;
   overflow-y: auto;
   /* flex-wrap: wrap; */
-  gap: 14px;
-  padding: 5px;
+  gap: 10px;
+  padding: 5px 0 10px 0;
 }
 
 .slide-container .slide-card::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
+  /* overflow-y: scroll; */
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin-top: 20px;
 }
+
+.slide-container .slide-card::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  cursor: pointer;
+}
+
+.sui-results-container.slide-card {
+  gap: 10px;
+}
+
 
 .slide-container .slide-card .item-card {
   background-color: var(--secondary-color);
   padding: 5px 10px;
-  width: 192px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   border-radius: 8px;
   border: 1px solid var(--secondary-color);
-  height: 320px;
+
+  /* height: 320px; */
 }
+
+
+
+
+.slide-container .slide-card .item-card .head {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+
+
 
 .slide-container .slide-card .item-card::after {
   display: flex;
@@ -770,7 +803,7 @@ h3 {
 .slide-container .slide-card .item-card .title {
   font-weight: 600;
   color: var(--primary-color);
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   display: -webkit-box;
@@ -790,8 +823,8 @@ h3 {
 
 .icon {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 5px;
+  height: fit-content;
+  margin-top: 5px;
 }
 
 .icon i {
@@ -800,6 +833,10 @@ h3 {
   border-radius: 50%;
   color: var(--white);
   font-size: 12px;
+}
+
+.slide-container .slide-card .item-card img {
+  width: 140px;
 }
 
 
@@ -1321,6 +1358,107 @@ h3 {
 
 
 
+<<<<<<< HEAD
+=======
+.mySwiper {
+  padding: 10px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  /* padding-bottom: 40px; */
+  /* margin-bottom: 50px; */
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-box {
+  /* width: 120px; */
+  /* background-color: red; */
+  display: flex;
+  gap: 100px;
+}
+
+.swiper-card {
+  background-color: var(--secondary-color);
+  padding: 5px 10px;
+  /* width: 100%; */
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--secondary-color);
+  height: 320px;
+  /* width: 100px; */
+  
+}
+
+
+.mySwiper .swiper-card::after {
+  display: flex;
+  width: 120px;
+  height: 120px;
+}
+
+
+.mySwiper .swiper-card:hover {
+  border: var(--border);
+  transition: all 0.3s ease;
+  scale: 1.02;
+  cursor: pointer;
+
+}
+
+.mySwiper .swiper-card .title {
+  font-weight: 600;
+  display: -webkit-box;
+  color: var(--primary-color);
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 120px;
+}
+
+
+.mySwiper .swiper-card p {
+  font-size: 11px;
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-indent: 12px;
+  line-height: 1.7;
+  height: 100%;
+}
+
+.mySwiper .swiper-card img {
+  height: 100%;
+  /* max-width: 300px; */
+  
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  
+  bottom: 10px;
+  
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: var(--primary-color);
+  margin-top: 50px;
+}
+
+.test-two {
+  display: flex;
+  /* width: 100%; */
+  background-color: red;
+}
+
+
+
+>>>>>>> 8b5c64f (detail card update)
 
 
 
