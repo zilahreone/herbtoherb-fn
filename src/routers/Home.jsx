@@ -19,22 +19,7 @@ import { SmiDrawer } from 'smiles-drawer'
 import { useRef } from 'react'
 import SmileDrawer from '../components/SmileDrawer'
 import FacetView from '../components/FacetView'
-<<<<<<< HEAD
-=======
-import Swipper from '../components/SwipperCard'
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-
-
-// import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
->>>>>>> 8b5c64f (detail card update)
 
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
@@ -243,36 +228,7 @@ function Home() {
                 </div>
 
                 <div className="card-container">
-<<<<<<< HEAD
 
-                <Results
-                  className='slide-card'
-                  resultView={({ result }) => {
-                    if (result.id?.raw) {
-                      result = Object.assign({}, result, {
-                        plants: {
-                          raw: result.plants.raw.map((plant) => JSON.parse(plant))
-                        }
-                      })
-                    }
-                    return (
-                      <Link to={{ pathname: `/herb/${result.id.raw}` }} >
-                        <div className="item-card">
-                          <span className='title'>{result.functional_ingredient?.raw}</span>
-                          {
-                            result.chem_formula?.raw && (<SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} />)
-                            
-                          }
-                          {/* Display this image when there is no data. */}
-                          <div className="no-image"><img src="src/assets/No-image.svg" alt="" /></div>
-                          <p>{result.description?.raw}</p>
-                          <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
-                        </div>
-                      </Link>
-                    )
-                  }}
-                  />
-=======
                   <Results
                     className='slide-card'
                     resultView={({ result }) => {
@@ -303,7 +259,6 @@ function Home() {
                       )
                     }}
                     />
->>>>>>> 8b5c64f (detail card update)
                   </div>
                   {/* <Swipper/> */}
               </div>

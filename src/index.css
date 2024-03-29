@@ -445,16 +445,11 @@ h3 {
   color: var(--primary-color);
 }
 
-<<<<<<< HEAD
-.no-image {
-  padding: 40px 20px;
-=======
 .image-display {
   /* padding: 40px 20px; */
   display: flex;
   justify-content: center;
   height: 140px;
->>>>>>> 8b5c64f (detail card update)
 }
 
 
