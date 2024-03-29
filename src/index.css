@@ -445,6 +445,7 @@ h3 {
   color: var(--primary-color);
 }
 
+
 .image-display {
   /* padding: 40px 20px; */
   display: flex;
@@ -683,8 +684,7 @@ h3 {
 
 .slide-container.white-bg .slide-card .item-card.aa {
   width: 192px;
-  height: ;
-  background-color: red;
+
 
 }
 
@@ -814,6 +814,9 @@ h3 {
   overflow: hidden;
   text-indent: 12px;
   line-height: 1.7;
+  /* background-color: red; */
+  height: 72px;
+  /* text-justify: end; */
 }
 
 .icon {
