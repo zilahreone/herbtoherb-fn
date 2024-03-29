@@ -438,6 +438,7 @@ h3 {
   font-size: 12px;
   font-weight: 600;
   transition: all 0.2s ease;
+  margin-top: 5px;
 }
 
 .box-input .box button:hover {
@@ -469,10 +470,12 @@ h3 {
   user-select: none;
   cursor: pointer;
   padding: 3px 10px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   overflow: hidden;
   transition: all 0.2s ease;
-  display: inline-block;
+  display: flex;
+  margin-bottom: 5px;
+  
 }
 
 .checkbox-wrapper-4 .cbx:not(:last-child) {
