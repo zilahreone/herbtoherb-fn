@@ -20,6 +20,7 @@ import { useRef } from 'react'
 import SmileDrawer from '../components/SmileDrawer'
 import FacetView from '../components/FacetView'
 
+
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
   const bgImages = [
@@ -228,36 +229,39 @@ function Home() {
 
                 <div className="card-container">
 
-                <Results
-                  className='slide-card'
-                  resultView={({ result }) => {
-                    if (result.id?.raw) {
-                      result = Object.assign({}, result, {
-                        plants: {
-                          raw: result.plants.raw.map((plant) => JSON.parse(plant))
-                        }
-                      })
-                    }
-                    return (
-                      <Link to={{ pathname: `/herb/${result.id.raw}` }} >
-                        <div className="item-card">
-                          <span className='title'>{result.functional_ingredient?.raw}</span>
-                          {
-                            result.chem_formula?.raw && (<SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} />)
-                            
+                  <Results
+                    className='slide-card'
+                    resultView={({ result }) => {
+                      if (result.id?.raw) {
+                        result = Object.assign({}, result, {
+                          plants: {
+                            raw: result.plants.raw.map((plant) => JSON.parse(plant))
                           }
-                          {/* Display this image when there is no data. */}
-                          <div className="no-image"><img src="src/assets/No-image.svg" alt="" /></div>
-                          <p>{result.description?.raw}</p>
-                          <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
-                        </div>
-                      </Link>
-                    )
-                  }}
-                  />
+                        })
+                      }
+                      return (
+                        <Link to={{ pathname: `/herb/${result.id.raw}` }} >
+                          <div className="item-card">
+                            <div className="head">
+                              <span className='title'>{result.functional_ingredient?.raw}</span>
+                              <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                            </div>
+                            <div className="image-display">
+                              {
+                                result.chem_formula?.raw ? 
+                                <SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} /> :
+                                <img src="src/assets/No-image.svg" alt="" />
+                              }
+                            </div>
+                            <p>{result.description?.raw}</p>
+                          </div>
+                        </Link>
+                      )
+                    }}
+                    />
                   </div>
+                  {/* <Swipper/> */}
               </div>
-
             </div>
           </div>
         </SearchProvider>
