@@ -68,10 +68,47 @@ function Home() {
 
   const settings = {
     dots: true,
-    infinite: true,
+    
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToScroll: 2,
+    responsive: [
+      {
+      breakpoint: 1300,
+      settings: {
+      slidesToShow: 5,
+      slidesToScroll: 2
+      }
+      },
+      {
+        breakpoint: 1050,
+        settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 830,
+        settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+        }
+      }
+      ],
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />
   };
@@ -248,7 +285,8 @@ function Home() {
                     className='slide-card'
                     view={({ className, children }) => {
                       return (
-                        <Slider {...settings}>
+                        <Slider {...settings}
+                        >
                           {children}
                         </Slider>
                       )
@@ -262,9 +300,9 @@ function Home() {
                         })
                       }
                       return (
-                        <div>
+                        <>
                           <Link draggable={true} to={{ pathname: `/herb/${result.id.raw}` }} >
-                            <div className="item-card">
+                            <div className="item-card slick">
                               <div className="head">
                                 <span className='title'>{result.functional_ingredient?.raw}</span>
                                 <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
@@ -279,7 +317,7 @@ function Home() {
                               <p>{result.description?.raw}</p>
                             </div>
                           </Link>
-                        </div>
+                        </>
                       )
                     }}
                   />
