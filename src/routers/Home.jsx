@@ -19,7 +19,12 @@ import { SmiDrawer } from 'smiles-drawer'
 import { useRef } from 'react'
 import SmileDrawer from '../components/SmileDrawer'
 import FacetView from '../components/FacetView'
+import Slider from 'react-slick'
+import NextArrow from '../components/slick/NextArrow'
+import PrevArrow from '../components/slick/PrevArrow'
 
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 function Home() {
   const [hsNumber, setHsNumber] = useState(10)
@@ -60,6 +65,16 @@ function Home() {
     // }
     console.log(option);
   }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
 
   return (
     <>
@@ -231,6 +246,13 @@ function Home() {
 
                   <Results
                     className='slide-card'
+                    view={({ className, children }) => {
+                      return (
+                        <Slider {...settings}>
+                          {children}
+                        </Slider>
+                      )
+                    }}
                     resultView={({ result }) => {
                       if (result.id?.raw) {
                         result = Object.assign({}, result, {
@@ -240,27 +262,29 @@ function Home() {
                         })
                       }
                       return (
-                        <Link to={{ pathname: `/herb/${result.id.raw}` }} >
-                          <div className="item-card">
-                            <div className="head">
-                              <span className='title'>{result.functional_ingredient?.raw}</span>
-                              <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                        <div>
+                          <Link draggable={true} to={{ pathname: `/herb/${result.id.raw}` }} >
+                            <div className="item-card">
+                              <div className="head">
+                                <span className='title'>{result.functional_ingredient?.raw}</span>
+                                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                              </div>
+                              <div className="image-display">
+                                {
+                                  result.chem_formula?.raw ?
+                                    <SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} /> :
+                                    <img src="src/assets/No-image.svg" alt="" />
+                                }
+                              </div>
+                              <p>{result.description?.raw}</p>
                             </div>
-                            <div className="image-display">
-                              {
-                                result.chem_formula?.raw ? 
-                                <SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} /> :
-                                <img src="src/assets/No-image.svg" alt="" />
-                              }
-                            </div>
-                            <p>{result.description?.raw}</p>
-                          </div>
-                        </Link>
+                          </Link>
+                        </div>
                       )
                     }}
-                    />
-                  </div>
-                  {/* <Swipper/> */}
+                  />
+                </div>
+                {/* <Swipper/> */}
               </div>
             </div>
           </div>
