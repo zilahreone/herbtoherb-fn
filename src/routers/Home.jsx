@@ -8,8 +8,10 @@ import ReactEcharts from "echarts-for-react";
 import { useEffect } from 'react'
 import api from '../middleware/api'
 import homeBg from '@/assets/bg/Home-bg.png'
+import homeVideoBg from '@/assets/bg/videoBg2.mp4'
 import logo from '@/assets/FoodInno-Logo2.png'
 import testPic from '@/assets/test-pic2.png'
+import testPic2 from '@/assets/test-pic.jpg'
 import ElasticSearch from '../components/ElasticSearch'
 import IngredientSearch from '../components/IngredientSearch'
 import { Facet, Result, Results, SearchBox, SearchProvider, WithSearch } from '@elastic/react-search-ui'
@@ -123,12 +125,26 @@ function Home() {
                 {isLoading && <div className='loading'><span>I'm loading now</span></div>}
                 {!isLoading && (
                   <div>
-                    <img className="home-bg" src={homeBg} alt="" />
+                    
+                    <div className="header-container">
+                      <div className="video-bg">
+                      {/* <img src={homeBg} alt="" /> */}
+                      <video autoPlay muted loop playsInline>
+                      <source src={homeVideoBg} type='video/mp4'/>
+                    </video>
+                      </div>
+                    </div>
+                    
+                    {/* <img className="home-bg" src={homeBg} alt="" /> */}
+                    {/* <video autoPlay muted loop playsInline>
+                      <source src={homeVideoBg} type='video/mp4'/>
+                    </video> */}
+                      <div className="overlay-bg"></div>
                     <div className="search-flex">
                       <div className="search-content">
                         <img src={logo} alt="" />
-                        <h3>Thailand Most Influential Food Innovation Platform</h3>
-                        <h1>แพลตฟอร์มบริการผลิตอาหารและส่วนผสมฟังก์ชัน</h1>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odit.</h3>
+                        <h1>Lorem ipsum dolor sit amet.</h1>                    
                         <div className="search-box">
                           <div className="search-header">
                             <i className="fa-solid fa-magnifying-glass"></i>
@@ -178,6 +194,97 @@ function Home() {
 
                         </div>
                       </div>
+                    </div>
+
+                    <SearchProvider config={es_config}>
+
+                      <div className="most-view-container two">
+                        <div className="most-view">
+                          <h2>รายการส่วนผสมฟังค์ชัน</h2>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                          <div className="menu-btn-container">
+                            <Facet
+                              field='group_of_functional_ingredient'
+                              // label="Group of Functional Ingredient"
+                              // isFilterable={true}
+                              show={50}
+                              // view={MultiCheckboxFacet}
+                              view={({ options, onRemove, onSelect }) => {
+                                return (
+                                  options.map((option, index) => (
+                                    <button onClick={() => (option.selected ? onRemove(option.value) : onSelect(option.value))} key={index} className={`menu-btn ${option.selected && 'active'}`}>{(option.value)}</button>
+                                  ))
+                                )
+                              }}
+                            />
+                          </div>
+
+                          <div className="slide-container">
+                            <div className="header">
+                              <span>ผลการค้นหา : "Blood Pressure"</span>
+                              <Link to={{ pathname: `/herb`, search: 'size=n_20_n' }}>
+                                แสดงทั้งหมด
+                              </Link>
+                            </div>
+
+                            <div className="card-container">
+
+                              <Results
+                                className='slide-card'
+                                view={({ className, children }) => {
+                                  return (
+                                    <Slider {...settings}
+                                    >
+                                      {children}
+                                    </Slider>
+                                  )
+                                }}
+                                resultView={({ result }) => {
+                                  if (result.id?.raw) {
+                                    result = Object.assign({}, result, {
+                                      plants: {
+                                        raw: result.plants.raw.map((plant) => JSON.parse(plant))
+                                      }
+                                    })
+                                  }
+                                  return (
+                                    <>
+                                      <Link draggable={true} to={{ pathname: `/herb/${result.id.raw}` }} >
+                                        <div className="item-card slick">
+                                          <div className="head">
+                                            <span className='title'>{result.functional_ingredient?.raw}</span>
+                                            <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                                          </div>
+                                          <div className="image-display">
+                                            {
+                                              result.chem_formula?.raw ?
+                                                <SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} /> :
+                                                <img src="src/assets/No-image.svg" alt="" />
+                                            }
+                                          </div>
+                                          <p>{result.description?.raw}</p>
+                                        </div>
+                                      </Link>
+                                    </>
+                                  )
+                                }}
+                              />
+                            </div>
+                            {/* <Swipper/> */}
+                          </div>
+                        </div>
+                      </div>
+                    </SearchProvider>
+                    
+                    <div className="info-and-pic">
+                      <div className="info-left">
+                        <div className="child">
+
+                        <h2>Lorem Ipsum is simply dummy text of the printing industry. </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum is simply dummy text of the printing industry. </p>
+                        </div>
+                      </div>
+                      <div className="pic-right"><img src={testPic2} alt="" /></div>
                     </div>
 
                     <div className="most-view-container">
@@ -248,85 +355,7 @@ function Home() {
           </WithSearch>
         </SearchProvider>
 
-        <SearchProvider config={es_config}>
-
-          <div className="most-view-container two">
-            <div className="most-view">
-              <h2>รายการส่วนผสมฟังค์ชัน</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-              <div className="menu-btn-container">
-                <Facet
-                  field='group_of_functional_ingredient'
-                  // label="Group of Functional Ingredient"
-                  // isFilterable={true}
-                  show={50}
-                  // view={MultiCheckboxFacet}
-                  view={({ options, onRemove, onSelect }) => {
-                    return (
-                      options.map((option, index) => (
-                        <button onClick={() => (option.selected ? onRemove(option.value) : onSelect(option.value))} key={index} className={`menu-btn ${option.selected && 'active'}`}>{(option.value)}</button>
-                      ))
-                    )
-                  }}
-                />
-              </div>
-
-              <div className="slide-container">
-                <div className="header">
-                  <span>ผลการค้นหา : "Blood Pressure"</span>
-                  <Link to={{ pathname: `/herb`, search: 'size=n_20_n' }}>
-                    แสดงทั้งหมด
-                  </Link>
-                </div>
-
-                <div className="card-container">
-
-                  <Results
-                    className='slide-card'
-                    view={({ className, children }) => {
-                      return (
-                        <Slider {...settings}
-                        >
-                          {children}
-                        </Slider>
-                      )
-                    }}
-                    resultView={({ result }) => {
-                      if (result.id?.raw) {
-                        result = Object.assign({}, result, {
-                          plants: {
-                            raw: result.plants.raw.map((plant) => JSON.parse(plant))
-                          }
-                        })
-                      }
-                      return (
-                        <>
-                          <Link draggable={true} to={{ pathname: `/herb/${result.id.raw}` }} >
-                            <div className="item-card slick">
-                              <div className="head">
-                                <span className='title'>{result.functional_ingredient?.raw}</span>
-                                <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
-                              </div>
-                              <div className="image-display">
-                                {
-                                  result.chem_formula?.raw ?
-                                    <SmileDrawer key={result.id?.raw} smilesStr={result.chem_formula?.raw} uniqueKey={result.id?.raw} /> :
-                                    <img src="src/assets/No-image.svg" alt="" />
-                                }
-                              </div>
-                              <p>{result.description?.raw}</p>
-                            </div>
-                          </Link>
-                        </>
-                      )
-                    }}
-                  />
-                </div>
-                {/* <Swipper/> */}
-              </div>
-            </div>
-          </div>
-        </SearchProvider>
+        
 
       </div>
     </>
