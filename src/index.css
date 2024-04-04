@@ -431,6 +431,10 @@ h3 {
   margin-bottom: 10px;
 }
 
+.search-box-content .search-btn:hover {
+  background-color: #004a82e8;
+}
+
 .search-box-content .checkbox-box {
   display: flex;
 }
