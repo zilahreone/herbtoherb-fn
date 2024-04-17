@@ -5,7 +5,7 @@ export default function NextArrow(props) {
       <div
         className='next-btn'
         onClick={onClick}>
-        <i class="fa-solid fa-chevron-right"></i>
+        <i className="fa-solid fa-chevron-right"></i>
       </div>
     </>
   )

@@ -68,10 +68,9 @@ function Home() {
 
   const settings = {
     dots: true,
-    
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 2,
+    slidesToScroll: 6,
     responsive: [
       {
       breakpoint: 1300,
@@ -127,8 +126,8 @@ function Home() {
                     <div className="search-flex">
                       <div className="search-content">
                         <img src={logo} alt="" />
-                        <h3>Thailand Most Influential Food Innovation Platform</h3>
-                        <h1>แพลตฟอร์มบริการผลิตอาหารและส่วนผสมฟังก์ชัน</h1>
+                        <h3>ฐานข้อมูล (Database) พืชและการใช้ส่วนประกอบสำคัญในผลิตภัณฑ์เสริมอาหารที่ได้รับอนุญาตจากสำนักงานคณะกรรมการอาหารและยา (อย.) และระบบการสืบค้น วิเคราะห์ข้อมูล (Data analytics) ความสัมพันธ์ของสารในการใช้ประโยชน์เชิงสุขภาพ ความพร้อมต่อการพัฒนาไปเป็นผลิตภัณฑ์อาหารฟังชั่น และการจดทะเบียนอาหาร ตามระเบียบสำนักงานคณะกรรมการอาหารและยา (อย.)</h3>
+                        {/* <h1>XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h1> */}
                         <div className="search-box">
                           <div className="search-header">
                             <i className="fa-solid fa-magnifying-glass"></i>
@@ -285,8 +284,7 @@ function Home() {
                     className='slide-card'
                     view={({ className, children }) => {
                       return (
-                        <Slider {...settings}
-                        >
+                        <Slider {...settings}>
                           {children}
                         </Slider>
                       )

@@ -12,7 +12,10 @@ import api from '../middleware/api'
 import ReactEcharts from "echarts-for-react"
 import SmileDrawer from '../components/SmileDrawer'
 import homeBg from '@/assets/bg/Home-bg.png'
-import { SmiDrawer } from 'smiles-drawer'
+import NoImg from '@/assets/No-image.svg'
+import NextArrow from '../components/slick/NextArrow'
+import PrevArrow from '../components/slick/PrevArrow'
+import Slider from 'react-slick'
 
 const ingredient = {
   functional_ingredient: null,
@@ -102,6 +105,29 @@ function HerbDetail() {
   const [graphOption, setGraphOption] = useState({})
   const [graphPlantOption, setGraphPlantOption] = useState({})
 
+  const [fetchData, setFetchData] = useState({
+    nodes: [],
+    links: [],
+    categories: []
+  })
+  const [graphForceLayout, setGraphForceLayout] = useState({
+    title: {
+      text: null,
+      subtext: null,
+      top: 'bottom',
+      left: 'right'
+    },
+    tooltip: {
+      show: false
+    },
+    legend: [
+      {
+        data: []
+      }
+    ],
+    series: []
+  })
+
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -113,15 +139,95 @@ function HerbDetail() {
       }
     }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
       resp.json().then((json) => {
-        // console.log((json.results[0]))
-        transform(json.results[0])
+        console.log((json.results[0]))
+        api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
+          query: '',
+          filters: {
+            health_system_disease: json.results[0].health_system_disease.raw
+          },
+          page: { size: 300 }
+        }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
+          resp.json().then((hsd) => {
+            console.log(hsd.results);
+            const categories = [
+              ...json.results[0].health_system_disease.raw.map(hsd => ({
+                name: hsd,
+                // compulsorily set icon as a circle
+                icon: 'triangle',
+                // set up the text in red
+                // textStyle: {
+                //   color: 'red'
+                // }
+              })),
+              ...[...new Set(hsd.results.map(result => result.group_of_functional_ingredient.raw))].map(gfi => ({
+                name: gfi,
+                icon: 'circle'
+              }))
+            ]
+            const nodes = hsd.results.map((result, index) => ({
+              id: index,
+              name: result.functional_ingredient.raw,
+              hsd: result.health_system_disease.raw,
+              gfi: result.group_of_functional_ingredient.raw,
+              category: categories.findIndex(cat => cat.name === result.group_of_functional_ingredient.raw),
+              label: {
+                show: true,
+                align: 'center',
+                fontSize: 16,
+                fontFamily: 'monospace'
+              }
+            }))
+            // setFetchData({
+            //   ...fetchData,
+            //   categories: categories,
+            //   nodes: nodes
+            // })
+            setGraphForceLayout({
+              ...graphForceLayout,
+              legend: [
+                {
+                  data: categories
+                }
+              ],
+              series: [
+                {
+                  name: null,
+                  type: 'graph',
+                  layout: 'force',
+                  data: nodes,
+                  // links: graph.links,
+                  categories: categories,
+                  roam: true,
+                  label: {
+                    position: 'right'
+                  },
+                  force: {
+                    repulsion: 100
+                  },
+                  // zoom: 0.6,
+                  // center: [500, '10%'],
+                  labelLayout: {
+                    hideOverlap: true
+                  },
+                  scaleLimit: {
+                    min: 0.7,
+                    max: 3
+                  },
+                  symbolSize: 20
+                }
+              ]
+            })
+          })
+        })
+
+        // transform(json.results[0])
         // graphGenerate(json.results[0].health_system_disease.raw)
-        handleGenGraph(json.results[0])
+        // handleGenGraph(json.results[0])
         // setOption
-        setIsLoaded(true)
+        // setIsLoaded(true)
       })
     })
-  }, [herbId])
+  }, [])
 
   const transform = (result) => {
     setResult({
@@ -266,6 +372,53 @@ function HerbDetail() {
     setGraphOption(graphTemplateOption(benefit.legend, benefit.data, benefit.links, benefit.categories))
     setGraphPlantOption(graphTemplateOption(plant.legend, plant.data, plant.links, plant.categories))
   }
+
+  const settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 1050,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 830,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  }
+
   return (
     <>
       {/* {
@@ -292,6 +445,11 @@ function HerbDetail() {
           <div className="title"><h1>{result.functional_ingredient}</h1></div>
         </div>
 
+        <div className='w-[100%] bg-slate-200'>
+          {/* {JSON.stringify(fetchData)} */}
+          <ReactEcharts style={{ borderStyle: 'solid' }} option={graphForceLayout} />
+        </div>
+
         <div className="detail-container content">
           <div className="max-width">
             <div className="box-a detail">
@@ -312,7 +470,10 @@ function HerbDetail() {
                           {/* <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" /> */}
                           {/* {JSON.stringify(result.chem_formula.raw)} */}
                           {
-                            isLoaded && <SmileDrawer smilesStr={result.chem_formula?.raw} />
+                            result.chem_formula?.raw
+                              ? isLoaded && <SmileDrawer smilesStr={result.chem_formula?.raw} />
+                              : <img src={NoImg} alt="" />
+                            // isLoaded && <SmileDrawer smilesStr={result.chem_formula?.raw} />
                           }
                         </div>
                       },
@@ -481,8 +642,7 @@ function HerbDetail() {
               <a href="/">แสดงทั้งหมด</a>
             </div>
 
-            <div className="slide-card">
-
+            {/* <div className="slide-card">
 
               <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }}>
                 <div className="item-card">
@@ -530,7 +690,30 @@ function HerbDetail() {
               </Link>
 
 
-            </div>
+            </div> */}
+
+            <Slider {...settings}>
+              <div>
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }}>
+                  <div className="item-card slick">
+                    <span className='title'>Flavonoids</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                    <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                  </div>
+                </Link>
+              </div>
+              <div>
+                <Link to={{ pathname: `/herb/doc-65439aaaafdb52f7d0b63930` }}>
+                  <div className="item-card slick">
+                    <span className='title'>Flavonoids</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Gymnemic-acids.svg" alt="" />
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, rerum tempore ut cupiditate eum culpa facere totam voluptate minima sit ipsa corporis quod laboriosam nobis distinctio aspernatur voluptates assumenda consectetur?</p>
+                    <div className='icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                  </div>
+                </Link>
+              </div>
+            </Slider>
           </div>
         </div>
 
