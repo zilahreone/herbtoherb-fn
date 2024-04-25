@@ -11,7 +11,7 @@ const connector = new AppSearchAPIConnector({
 
 const es_config = {
   initialState: {
-    resultsPerPage: 6
+    resultsPerPage: 20
   },
   alwaysSearchOnInitialLoad: true,
   apiConnector: connector,

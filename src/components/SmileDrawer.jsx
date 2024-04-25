@@ -24,7 +24,7 @@ function SmileDrawer({ smilesStr, uniqueKey = null }) {
     // <img data-smiles={smilesStr} data-smiles-options="{ 'height': 300 }" />
     <>
     {/* <img id={`${uniqueKey}`} data-smiles-options="{ 'width': 400, 'height': 400 }" /> */}
-      <svg id={`${uniqueKey}`}  />
+      <svg style={{ width: '75%' }} id={`${uniqueKey}`}  />
       {/* <img src="src/assets/No-image.svg" alt="" /> */}
       
     </>

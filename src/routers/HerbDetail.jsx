@@ -139,7 +139,7 @@ function HerbDetail() {
       }
     }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
       resp.json().then((json) => {
-        console.log((json.results[0]))
+        // console.log((json.results[0]))
         api.post(`/api/as/v1/engines/${import.meta.env.VITE_ES_ENGINE}/search`, {
           query: '',
           filters: {
@@ -148,7 +148,7 @@ function HerbDetail() {
           page: { size: 300 }
         }, import.meta.env.VITE_ES_SEARCH_KEY).then((resp) => {
           resp.json().then((hsd) => {
-            console.log(hsd.results);
+            // console.log(hsd.results);
             const categories = [
               ...json.results[0].health_system_disease.raw.map(hsd => ({
                 name: hsd,
@@ -164,8 +164,20 @@ function HerbDetail() {
                 icon: 'circle'
               }))
             ]
-            const nodes = hsd.results.map((result, index) => ({
+            const sources = categories.filter(cat => cat.icon === 'triangle').map((hsd, index) => ({
               id: index,
+              name: hsd.name,
+              category: index,
+              symbol: 'triangle',
+              label: {
+                // show: true,
+                align: 'center',
+                fontSize: 14,
+                fontFamily: 'monospace'
+              }
+            }))
+            const targets = hsd.results.map((result, index) => ({
+              id: categories.filter(cat => cat.icon === 'triangle').length + index,
               name: result.functional_ingredient.raw,
               hsd: result.health_system_disease.raw,
               gfi: result.group_of_functional_ingredient.raw,
@@ -173,58 +185,71 @@ function HerbDetail() {
               label: {
                 show: true,
                 align: 'center',
-                fontSize: 16,
+                fontSize: 12,
                 fontFamily: 'monospace'
               }
             }))
-            // setFetchData({
-            //   ...fetchData,
-            //   categories: categories,
-            //   nodes: nodes
-            // })
-            setGraphForceLayout({
-              ...graphForceLayout,
-              legend: [
-                {
-                  data: categories
-                }
-              ],
-              series: [
-                {
-                  name: null,
-                  type: 'graph',
-                  layout: 'force',
-                  data: nodes,
-                  // links: graph.links,
-                  categories: categories,
-                  roam: true,
-                  label: {
-                    position: 'right'
-                  },
-                  force: {
-                    repulsion: 100
-                  },
-                  // zoom: 0.6,
-                  // center: [500, '10%'],
-                  labelLayout: {
-                    hideOverlap: true
-                  },
-                  scaleLimit: {
-                    min: 0.7,
-                    max: 3
-                  },
-                  symbolSize: 20
-                }
-              ]
+            const nodes = [
+              ...sources,
+              ...targets
+            ]
+            // console.log(sources);
+            // console.log(targets);
+            let links = []
+            targets.forEach((target) => {
+              sources.forEach((source) => {
+                if (target.hsd.includes(source.name)) links.push({ source: source.id, target: target.id })
+              })
             })
+            // console.log(links)
+              // setFetchData({
+              //   ...fetchData,
+              //   categories: categories,
+              //   nodes: nodes
+              // })
+              setGraphForceLayout({
+                ...graphForceLayout,
+                legend: [
+                  {
+                    data: categories
+                  }
+                ],
+                series: [
+                  {
+                    name: null,
+                    type: 'graph',
+                    layout: 'force',
+                    data: nodes,
+                    links: links,
+                    categories: categories,
+                    roam: true,
+                    label: {
+                      position: 'right'
+                    },
+                    force: {
+                      repulsion: 100
+                    },
+                    // zoom: 0.6,
+                    // center: [500, '10%'],
+                    labelLayout: {
+                      hideOverlap: true
+                    },
+                    scaleLimit: {
+                      min: 1.5,
+                      max: 3.5
+                    },
+                    symbolSize: 20
+                  }
+                ]
+              })
           })
         })
 
-        // transform(json.results[0])
+        transform(json.results[0])
         // graphGenerate(json.results[0].health_system_disease.raw)
         // handleGenGraph(json.results[0])
         // setOption
-        // setIsLoaded(true)
+        setIsLoaded(true)
       })
     })
   }, [])
@@ -445,10 +470,10 @@ function HerbDetail() {
           <div className="title"><h1>{result.functional_ingredient}</h1></div>
         </div>
 
-        <div className='w-[100%] bg-slate-200'>
-          {/* {JSON.stringify(fetchData)} */}
+        {/* <div className='w-[100%] bg-slate-200 h-[1000]'>
+          {JSON.stringify(fetchData)}
           <ReactEcharts style={{ borderStyle: 'solid' }} option={graphForceLayout} />
-        </div>
+        </div> */}
 
         <div className="detail-container content">
           <div className="max-width">
@@ -479,9 +504,13 @@ function HerbDetail() {
                       },
                       {
                         name: 'รูปความสัมพันธ์',
-                        content: <CardDetail desc={
-                          <ReactEcharts style={{ borderStyle: 'solid', width: '100%' }} option={graphPlantOption} />
-                        } />
+                        content: <div style={{ width: '100%' }}>
+                          <ReactEcharts style={{ borderStyle: 'solid', height: '70vh' }} option={graphForceLayout} />
+                        </div>
+                        // <CardDetail desc={
+                        //   // <ReactEcharts style={{ borderStyle: 'solid', width: '100%' }} option={graphPlantOption} />
+                        //   <ReactEcharts style={{ borderStyle: 'solid' }} option={graphForceLayout} />
+                        // } />
                       }
                     ]
                     } />
